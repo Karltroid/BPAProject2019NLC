@@ -10,9 +10,12 @@ body
 
 #desktop
 {
+	/* Hide the desktop page/view */
 	display: none;
 }
 
+
+/* Header Styling */
 #mobile header
 {
 	display: block;
@@ -22,22 +25,18 @@ body
 	border-radius: 0px 0px 40px 40px;
 	box-shadow: 0 3px 20px rgba(0,0,0,0.10), 0 3px 20px rgba(0,0,0,0.17);
 }
-
 #mobile header div.header-top-left
 {
 	float: left;
 }
-
 #mobile header img.header-top-right
 {
 	float: right;
 }
-
 #mobile header div.header-top
 {
 	width: 100%;
 }
-
 #mobile header div.header-top-left p
 {
 	display: inline-block;
@@ -48,19 +47,23 @@ body
 	transform: translate(0, -55%);
 
 }
-
 #mobile header div img
 {
 	height: 80px;
 	display: inline-block;
 }
-
 #mobile header img.header-top-right
 {
 	margin-top: 4px;
 	height: 69px;
 }
 
+
+/*Search Bar Styling*/
+::placeholder
+{
+	color: var(--lightGray) 
+}
 #mobile header input
 {
 	width: 86%;
@@ -73,11 +76,12 @@ body
 	padding: 10.5px 7%;
 }
 
+
+/*Search Items Styling*/
 #mobile .items
 {
 	margin-top: 70px;
 }
-
 #mobile .item
 {
 	background-color: white;
@@ -86,19 +90,21 @@ body
 	width: 93.5%;
 	border-radius: 10px;
 }
-
 #mobile .item h1
 {
 	margin: 0; padding: 0;
-
+	display: inline-block;
 }
-
 #mobile .item p
 {
 	margin: 0; padding: 0;
+	color: var(--gray);
+	font-size: 1.4em;
+	display: inline-block;
 }
-
-::placeholder
+#mobile .item .item-pic
 {
-	color: var(--lightGray)
+	height: 146px;
+	display: inline-block;
+	float: left;
 }
