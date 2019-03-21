@@ -1,0 +1,104 @@
+body
+{
+	margin: 0px;
+	padding: 0px;
+	background-color: var(--blue);
+	font-family: product-sans-bold;
+	width: 100vw;
+	height: 100vh;
+}
+
+#desktop
+{
+	display: none;
+}
+
+#mobile header
+{
+	display: block;
+	background-color: var(--darkBlue);
+	color: white;
+	padding: 10px 15px 15px 15px;
+	border-radius: 0px 0px 40px 40px;
+	box-shadow: 0 3px 20px rgba(0,0,0,0.10), 0 3px 20px rgba(0,0,0,0.17);
+}
+
+#mobile header div.header-top-left
+{
+	float: left;
+}
+
+#mobile header img.header-top-right
+{
+	float: right;
+}
+
+#mobile header div.header-top
+{
+	width: 100%;
+}
+
+#mobile header div.header-top-left p
+{
+	display: inline-block;
+	font-size: 2.5em;
+	margin: 0 0 0 15px;
+	position: relative;
+	top: 55%;
+	transform: translate(0, -55%);
+
+}
+
+#mobile header div img
+{
+	height: 80px;
+	display: inline-block;
+}
+
+#mobile header img.header-top-right
+{
+	margin-top: 4px;
+	height: 69px;
+}
+
+#mobile header input
+{
+	width: 86%;
+	height: 60px;
+	border-radius: 50px;
+	border: none;
+	font-size: 2.7em;
+	font-family: product-sans-bold;
+	color: var(--lightGray);
+	padding: 10.5px 7%;
+}
+
+#mobile .items
+{
+	margin-top: 70px;
+}
+
+#mobile .item
+{
+	background-color: white;
+	display: block;
+	margin: 0 auto;
+	width: 93.5%;
+	border-radius: 10px;
+}
+
+#mobile .item h1
+{
+	margin: 0; padding: 0;
+
+}
+
+#mobile .item p
+{
+	margin: 0; padding: 0;
+}
+
+::placeholder
+{
+	color: var(--lightGray)
+}

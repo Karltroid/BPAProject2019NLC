@@ -1,0 +1,15 @@
+body
+{
+	margin: 0px;
+	padding: 0px;
+	background-color: var(--darkerWhite);
+	font-family: product-sans-bold;
+	width: 100vw;
+	height: 100vh;
+}
+
+
+#mobile
+{
+	display: none;
+}
