@@ -2,10 +2,16 @@ body
 {
 	margin: 0px;
 	padding: 0px;
-	background-color: var(--blue);
 	font-family: product-sans-bold;
-	width: 100vw;
-	height: 100vh;
+	background: rgb(147,176,255);
+	background: linear-gradient(180deg, rgba(147,176,255,1) 25%, rgba(73,88,129,1) 100%);
+	-webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar for mobile */
+::-webkit-scrollbar 
+{ 
+    display: none; 
 }
 
 #desktop
@@ -76,35 +82,80 @@ body
 	padding: 10.5px 7%;
 }
 
+/* Filter Buttons */
+#mobile .filters
+{
+	height: 70px;
+	width: 100%;
+	-webkit-overflow-scrolling: touch;
+}
+#mobile .filters ul
+{
+	list-style-type: none;
+	white-space: nowrap;
+	font-size: 1.4em;
+	margin-top: 5px;
+}
+#mobile .filters ul li
+{
+	display: inline-block;
+	padding: 20px;
+	color: var(--lightBlue);
+}
+#mobile .filters ul li#selected
+{
+	color: white;
+	border-bottom: 3px solid white;
+}
 
 /*Search Items Styling*/
 #mobile .items
 {
-	margin-top: 70px;
+	margin-top: 4px;
 }
 #mobile .item
 {
 	background-color: white;
-	display: block;
-	margin: 0 auto;
-	width: 93.5%;
+	margin: 0 auto 12px auto;
+	width: 88%;
 	border-radius: 10px;
+	display: flex;
+	padding: 12px;
 }
 #mobile .item h1
 {
 	margin: 0; padding: 0;
 	display: inline-block;
+	font-size: 1.75em;
 }
 #mobile .item p
 {
-	margin: 0; padding: 0;
+	margin: 0 0 12px 0; padding: 0;
 	color: var(--gray);
-	font-size: 1.4em;
+	font-size: 1.3em;
 	display: inline-block;
+	font-family: product-sans;
 }
 #mobile .item .item-pic
 {
-	height: 146px;
-	display: inline-block;
-	float: left;
+	margin-right: 12px;
+	align-items: stretch;
+	width: 600px;
+	overflow: hidden;
+	border-radius: 10px;
+}
+#mobile .item .item-pic
+{
+	background-image: url('../images/food/items/LoganTavern.jpg');
+	background-size: cover;
+	background-position: center;
+}
+#mobile .item .item-stars
+{
+	height: 30px;
+}
+#mobile .item .item-info
+{
+	align-items: stretch;
+	margin-top: -1.4%;
 }
