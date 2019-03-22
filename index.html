@@ -5,7 +5,8 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="css/vars.css" />
 		<link rel="stylesheet" type="text/css" media="(min-width: 701px)" href="css/index.css" />
-		<link rel="stylesheet" type="text/css" media="(max-width: 700px)" href="css/indexmobile.css"   />
+		<link rel="stylesheet" type="text/css" media="(max-width: 700px)" href="css/indexmobile.css" />
+		<script src="scripts/mobilenav.js"></script>
 	</head>
 	<body>
 		<div id="desktop">
@@ -18,7 +19,7 @@
 						<img src="images/food/headico.png" />
 						<p>FOOD</p>
 					</div>
-					<img class="header-top-right" src="images/mobilenav/menuopen.png" />
+					<img onclick="opennav()" class="header-top-right" src="images/mobilenav/menuopen.png" />
 				</div>
 				<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search...">
 			</header>
@@ -50,6 +51,7 @@
 							Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)
 						</p>
 						<img class="item-stars" src="images/food/stars_45_50.png" />
+						<aside>(431 Reviews)</aside>
 					</div>
 				</div>
 

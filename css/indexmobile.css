@@ -11,7 +11,7 @@ body
 /* Hide scrollbar for mobile */
 ::-webkit-scrollbar 
 { 
-    display: none; 
+	display: none; 
 }
 
 #desktop
@@ -20,6 +20,11 @@ body
 	display: none;
 }
 
+
+#mobile
+{
+	overflow-x: hidden;
+}
 
 /* Header Styling */
 #mobile header
@@ -116,7 +121,7 @@ body
 #mobile .item
 {
 	background-color: white;
-	margin: 0 auto 12px auto;
+	margin: 0 auto 8px auto;
 	width: 88%;
 	border-radius: 10px;
 	display: flex;
@@ -158,4 +163,11 @@ body
 {
 	align-items: stretch;
 	margin-top: -1.4%;
+}
+#mobile .item aside
+{
+	color: rgb(159, 159, 159);
+	font-family: product-sans;
+	display: inline-block;
+
 }
