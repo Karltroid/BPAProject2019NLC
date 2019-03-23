@@ -99,6 +99,7 @@ textarea:focus, input:focus { outline: none; }
 	width: 100%;
 	-webkit-overflow-scrolling: touch;
 	overflow-y: hidden; overflow-x: scroll;
+	margin-left: 5%
 }
 #mobile .filters ul
 {
@@ -106,6 +107,7 @@ textarea:focus, input:focus { outline: none; }
 	white-space: nowrap;
 	font-size: 1.4em;
 	margin-top: 5px;
+	padding: 0;
 }
 #mobile .filters ul li
 {
