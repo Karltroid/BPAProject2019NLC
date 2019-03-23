@@ -10,7 +10,6 @@ function opennav()
 	for (i = 0; i < navitems.length; i++)
 	{ 
 		document.getElementById(navitems[i]).style.animation = "slide-in " + openSpeed * speed + "s";
-		console.log("navitems[" + i + "].style.animation = 'slide-in' + " + openSpeed + " * " + speed + " + 's'");
 		speed += 0.1;
 	}
 }
@@ -23,7 +22,6 @@ function closenav()
 	for (i = 0; i < navitems.length; i++)
 	{ 
 		document.getElementById(navitems[i]).style.animation = "slide-out " + closeSpeed * speed + "s";
-		console.log("navitems[" + i + "].style.animation = 'slide-out' + " + closeSpeed + " * " + speed + " + 's'");
 		speed -= 0.1;
 	}
 
