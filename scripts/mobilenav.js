@@ -25,7 +25,7 @@ function closenav()
 		speed -= 0.1;
 	}
 
-	setTimeout(hide, ((closeSpeed * .1) * 1000));
+	setTimeout(hide, ((closeSpeed * .15) * 1000));
 }
 
 function hide()
