@@ -1,3 +1,5 @@
+var currentFilter = "all";
+
 function search()
 {
 	// Declare variables
@@ -21,4 +23,22 @@ function search()
 			items[i].style.display = "none";
 		}
 	}
+}
+
+
+function switchfilter(filter)
+{
+	var filterbutton = document.getElementById(currentFilter);
+	filterbutton.style.borderBottomColor = "rgba(0,0,0,0)"
+	filterbutton.style.color = "var(--lightBlue)";
+	currentFilter = filter;
+	filterbutton = document.getElementById(filter);
+	filterbutton.style.color = "white";
+	filterbutton.style.borderBottom = "solid 3px white";
+}
+
+// run when the page is ready
+window.onload = function()
+{
+	switchfilter('all'); // auto load the all filter to start
 }

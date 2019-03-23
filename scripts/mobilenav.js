@@ -8,9 +8,10 @@ function opennav()
 	document.getElementById("Home").style.animation = "slide-in " + openSpeed * 0.5 + "s";
 	document.getElementById("Maps").style.animation = "slide-in " + openSpeed * 0.6 + "s";
 	document.getElementById("Places").style.animation = "slide-in " + openSpeed * 0.7 + "s";
-	document.getElementById("Transit").style.animation = "slide-in " + openSpeed * 0.8 + "s";
-	document.getElementById("Attire").style.animation = "slide-in " + openSpeed * 0.9 + "s";
-	document.getElementById("Food").style.animation = "slide-in " + openSpeed * 1 + "s";
+	document.getElementById("Food").style.animation = "slide-in " + openSpeed * 0.8 + "s";
+	document.getElementById("Transit").style.animation = "slide-in " + openSpeed * 0.9 + "s";
+	document.getElementById("Attire").style.animation = "slide-in " + openSpeed * 1 + "s";
+
 
 }
 

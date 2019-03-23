@@ -2,8 +2,8 @@
 ::-webkit-scrollbar { display: none; }
 
 /* Change color of user highlighted text */
-::-moz-selection { background: var(--lightBlue); }
-::selection { background: var(--lightBlue); }
+::-moz-selection { background: var(--blue); }
+::selection { background: var(--blue); }
 
 /* Hide the desktop page/view */
 #desktop { display: none; }
@@ -32,6 +32,7 @@ body
 	padding: 10px 15px 15px 15px;
 	border-radius: 0px 0px 40px 40px;
 	box-shadow: 0 3px 20px rgba(0,0,0,0.10), 0 3px 20px rgba(0,0,0,0.17);
+	margin-bottom: 10px;
 }
 #mobile header div.header-top-left
 {
@@ -40,6 +41,14 @@ body
 #mobile header img.header-top-right
 {
 	float: right;
+	height: 80px;
+	transition: .075s;
+}
+#mobile header img.header-top-right:hover
+{
+	cursor: pointer;
+	transform:  scale(1.075);
+	transition: .075s;
 }
 #mobile header div.header-top
 {
@@ -62,8 +71,8 @@ body
 }
 #mobile header img.header-top-right
 {
-	margin-top: 4px;
-	height: 69px;
+	margin-top: 10px;
+	height: 60px;
 }
 
 
@@ -89,6 +98,7 @@ textarea:focus, input:focus { outline: none; }
 	height: 70px;
 	width: 100%;
 	-webkit-overflow-scrolling: touch;
+	overflow-y: hidden; overflow-x: scroll;
 }
 #mobile .filters ul
 {
@@ -102,6 +112,12 @@ textarea:focus, input:focus { outline: none; }
 	display: inline-block;
 	padding: 20px;
 	color: var(--lightBlue);
+	margin-top: -7px;
+}
+#mobile .filters ul li:hover
+{
+	cursor: pointer;
+	border-bottom: 3px solid var(--lightBlue);
 }
 #mobile .filters ul li#selected
 {
@@ -115,7 +131,7 @@ textarea:focus, input:focus { outline: none; }
 {
 	background-color: white;
 	margin: 0 auto 8px auto;
-	width: 88%;
+	width: 89%;
 	border-radius: 10px;
 	display: flex;
 	padding: 12px;
@@ -163,3 +179,224 @@ textarea:focus, input:focus { outline: none; }
 #mobile .item .item-pic#OldEbbittGrill{background-image: url('../images/food/items/OldEbbittGrill.jpg');}
 #mobile .item .item-pic#FoundingFarmersDC{background-image: url('../images/food/items/FoundingFarmersDC.jpg');}
 #mobile .item .item-pic#ZaytinyaDC{background-image: url('../images/food/items/ZaytinyaDC.jpg');}
+
+
+/* Mobile Navigation Styling */
+nav#mobile-nav
+{
+	display: none;
+}
+div#mobile-nav-items
+{
+	display: none;
+}
+.current-page
+{
+	color: rgba(255, 255, 255, .5);
+}
+div#mobile-nav-items header
+{
+	font-size: 150%;
+	background: var(--darkBlue);
+	-webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	-moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	-ms-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	-o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	position: relative;
+	z-index: 11;
+	border-radius: 0;
+}
+div#mobile-nav-items header div#mobile-nav-title
+{
+	display: inline-block;
+	height: 67.5px;
+	line-height:70px;
+	white-space: nowrap;
+	text-transform: uppercase;
+	color: white;
+	margin-left: 25px;
+	font-weight: bolder;
+}
+nav#mobile-nav
+{
+	display: inline-block;
+	position: absolute;
+	width: 100%;
+	height: 70px;
+	left: 0;
+}
+nav#mobile-nav div#webpage-title
+{
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	transition: .1s;
+	top: 48%;
+	transform: translate(0, -50%);
+	margin-left: 25px;
+	color: white;
+	font-size: 250%;
+	text-transform: uppercase;
+	font-weight: bolder;
+}
+nav#mobile-nav div#webpage-title-home
+{
+	position: absolute;
+	right: 35px;
+	transition: .1s;
+	top: 48%;
+	transform: translate(0, -50%);
+	margin-right: 35px;
+	color: white;
+	font-size: 250%;
+	text-transform: uppercase;
+	font-weight: bolder;
+	overflow-x: hidden;
+}
+nav#mobile-nav img#nav-button
+{
+	position: absolute;
+	right: 0;
+	height: 50px;
+	transition: .1s;
+	top: 50%;
+	transform: translate(0, -50%);
+	margin-right: 25px;
+}
+nav#mobile-nav img#nav-button:hover
+{
+	transform: translate(0, -50%) scale(1.1);
+	transition: .1s;
+	cursor: pointer;
+}
+nav#mobile-nav img#nav-button-home
+{
+	position: absolute;
+	right: 0px;
+	height: 50px;
+	transition: .1s;
+	top: 50%;
+	transform: translate(0, -50%);
+	margin-right: 10px;
+	overflow-x: hidden;
+}
+nav#mobile-nav img#nav-button-home:hover
+{
+	transform: translate(0, -50%) scale(1.1);
+	transition: .1s;
+	cursor: pointer;
+}
+div#mobile-nav-items
+{
+	display: none;
+	position: absolute;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+div#mobile-nav-items nav a
+{
+	letter-spacing: .5px;
+	display: block;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 80px;
+	text-align: center;
+	font-size: 300%;
+	font-weight: bolder;
+	letter-spacing: .5vw;
+	-webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	-moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	-ms-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	-o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	position: relative;
+}
+div#mobile-nav-items nav a#Home
+{
+	background-color: var(--blue);
+	z-index: 10;
+}
+div#mobile-nav-items nav a#Maps
+{
+	background-color: rgb(132, 161, 240);
+	z-index: 9;
+}
+div#mobile-nav-items nav a#Places
+{
+	background-color: rgb(117, 146, 225);
+	z-index: 8;
+}
+div#mobile-nav-items nav a#Food
+{
+	background-color: rgb(102, 131, 210);
+	z-index: 7;
+}
+div#mobile-nav-items nav a#Transit
+{
+	
+	background-color: rgb(87, 116, 195);
+	z-index: 6;
+}
+div#mobile-nav-items nav a#Attire
+{
+	
+	background-color: rgb(72, 101, 180);
+	z-index: 5;
+}
+
+
+/* Mobile Navigation Animations */
+@-webkit-keyframes slide-in
+{
+	0%
+	{
+		transform: translate(0px, -400vh);
+	}
+	100%
+	{
+		transform: translate(0px, 0px);
+	}
+} 
+
+@keyframes slide-in
+{
+	0%
+	{
+		transform: translate(0px, -400vh);
+	}
+	100%
+	{
+		transform: translate(0px, 0px);
+	}
+} 
+
+@-webkit-keyframes slide-out
+{
+	0%
+	{
+		transform: translate(0px, 0px);
+	}
+	100%
+	{
+		transform: translate(0px, -400vh);
+	}
+}
+
+@keyframes slide-out
+{
+	0%
+	{
+		transform: translate(0px, 0px);
+	}
+	100%
+	{
+		transform: translate(0px, -400vh);
+	}
+}
