@@ -1,7 +1,7 @@
 var currentFilter = "all"; // default filter to start
 
 
-function switchfilter(filter)
+function categoryfilter(filter)
 {
 	// Declare local variables
 	var filterbutton, itemlist, items, filteredList = [];
@@ -11,7 +11,7 @@ function switchfilter(filter)
 	filterbutton = document.getElementById(currentFilter);
 	filterbutton.style.borderBottomColor = "rgba(0,0,0,0)"
 	filterbutton.style.color = "var(--lightBlue)";
-	currentFilter = filter; // Update currentFilter with the new filter for the next method run
+	if(currentFilter != filter){currentFilter = filter;} // Update currentFilter with the new filter for the next method run
 	// 2. Turn on new filter button 
 	filterbutton = document.getElementById(filter);
 	filterbutton.style.color = "white";
@@ -29,11 +29,11 @@ function switchfilter(filter)
 			filteredList.push(items[i]);
 		}
 	}
-	search(filteredList); // send the filtered list to search to be filtered even more with the user's search
+	searchfilter(filteredList); // send the filtered list to search to be filtered even more with the user's search
 }
 
 
-function search(filtereditems)
+function searchfilter(filtereditems)
 {
 	// Declare local variables
 	var input, filter, itemTitle, i, txtValue;
@@ -60,5 +60,5 @@ function search(filtereditems)
 // run when the page is ready
 window.onload = function()
 {
-	switchfilter('all'); // auto load the all filter to start
+	categoryfilter(currentFilter); // auto load the all filter to start
 }

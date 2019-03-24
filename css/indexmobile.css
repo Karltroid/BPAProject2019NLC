@@ -15,7 +15,7 @@ body
 	margin: 0px;
 	padding: 0px;
 	font-family: product-sans-bold;
-	background: rgb(73,88,129);
+	background: rgb(103,118,159);
 }
 
 
@@ -41,6 +41,7 @@ body
 	padding: 10px 15px 15px 15px;
 	border-radius: 0px 0px 40px 40px;
 	box-shadow: 0 3px 20px rgba(0,0,0,0.10), 0 3px 20px rgba(0,0,0,0.17);
+	z-index: 2;
 	margin-bottom: 10px;
 }
 #mobile header div.header-top-left
@@ -67,10 +68,10 @@ body
 {
 	display: inline-block;
 	font-size: 2.5em;
-	margin: 0 0 0 15px;
+	margin: 0 0 0 10px;
 	position: relative;
-	top: 55%;
-	transform: translate(0, -55%);
+	top: 60%;
+	transform: translate(0, -52%);
 
 }
 #mobile header div img
@@ -107,16 +108,31 @@ textarea:focus, input:focus { outline: none; }
 	height: 70px;
 	width: 100%;
 	overflow-y: hidden; overflow-x: scroll;
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+	margin-right: 30px;
 }
 #mobile .filters ul
 {
 	list-style-type: none;
 	white-space: nowrap;
 	font-size: 1.4em;
-	margin-top: 5px;
-	margin-left: 25px;
+	margin: 5px 0 0 25px;
 	padding: 0;
+	position: relative;
+}
+#mobile .filters:after
+{
+	background: -moz-linear-gradient(left, rgba(147,176,255,0) 0%, rgba(145,174,254,0) 80%, rgba(145,174,254,1) 100%);
+	background: -webkit-linear-gradient(left, rgba(147,176,255,0) 0%,rgba(145,174,254,0) 80%,rgba(145,174,254,1) 100%); 
+	background: linear-gradient(to right, rgba(147,176,255,0) 0%,rgba(145,174,254,0) 80%,rgba(145,174,254,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0093b0ff', endColorstr='#91aefe',GradientType=1 );
+	content: "";
+	position: absolute;
+	top: 215px;
+	right: 0;
+	z-index: 1;
+	width: 100%;
+	height: 50px;
+	pointer-events: none;
 }
 #mobile .filters ul li
 {
@@ -136,11 +152,11 @@ textarea:focus, input:focus { outline: none; }
 #mobile .item
 {
 	background-color: white;
-	margin: 0 auto 8px auto;
+	margin: 0 auto 8px;
+	padding: 12px;
 	width: 89%;
 	border-radius: 10px;
 	display: flex;
-	padding: 12px;
 }
 #mobile .item h1
 {
@@ -184,10 +200,6 @@ textarea:focus, input:focus { outline: none; }
 	background-size: cover;
 	background-position: center;
 }
-#mobile .item .item-pic#LoganTavern{background-image: url('../images/food/items/LoganTavern.jpg');}
-#mobile .item .item-pic#OldEbbittGrill{background-image: url('../images/food/items/OldEbbittGrill.jpg');}
-#mobile .item .item-pic#FoundingFarmersDC{background-image: url('../images/food/items/FoundingFarmersDC.jpg');}
-#mobile .item .item-pic#ZaytinyaDC{background-image: url('../images/food/items/ZaytinyaDC.jpg');}
 
 
 /* Mobile Navigation Styling */

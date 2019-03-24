@@ -1,11 +1,10 @@
-var openSpeed = 1;
-var closeSpeed = 2;
 var navitems = ["mobile-nav-header", "Home", "Maps", "Places", "Food", "Transit", "Attire"];
 
 function opennav()
 {
 	document.getElementsByTagName("body")[0].style.overflow = "hidden";
 	document.getElementById("mobile-nav-items").style.display = "block";
+	var openSpeed = 1;
 	var speed = 0.4;
 	for (i = 0; i < navitems.length; i++)
 	{ 
@@ -18,6 +17,7 @@ function closenav()
 {
 	document.getElementsByTagName("body")[0].style.overflow = "auto";
 	document.getElementById("mobile-nav-header").style.animation = "slide-out " + closeSpeed * 1 + "s";
+	var closeSpeed = 2;
 	var speed = 1;
 	for (i = 0; i < navitems.length; i++)
 	{ 

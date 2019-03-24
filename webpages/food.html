@@ -8,7 +8,6 @@
 		<link rel="stylesheet" type="text/css" media="(max-width: 700px)" href="css/indexmobile.css" />
 		<script src="scripts/mobilenav.js"></script>
 		<script src="scripts/search.js"></script>
-		<script src="scripts/scrolltop.js"></script>
 	</head>
 	<body>
 		<div id="desktop">DESKTOP MODE: Shrink to mobile</div>
@@ -40,21 +39,20 @@
 					</div>
 					<img onclick="opennav()" class="header-top-right" src="images/mobilenav/menuopen.png" />
 				</div>
-				<input type="text" id="searchbar" onkeyup="categoryfilter(currentFilter)" placeholder="Search...">
+				<input type="text" id="searchbar" onkeyup="switchfilter(currentFilter)" placeholder="Search...">
 			</header>
 			<div class="filters">
 				<ul>
-					<li onclick="categoryfilter('all')" id="all">ALL</li>
-					<li onclick="categoryfilter('breakfast')" id="breakfast">BREAKFAST</li>
-					<li onclick="categoryfilter('lunch')" id="lunch">LUNCH</li>
-					<li onclick="categoryfilter('dinner')" id="dinner"> DINNER</li>
-					<li onclick="categoryfilter('vegan')" id="vegan">VEGAN</li>
-					<li style="pointer-events: none;"><!-- empty space so last option isn't on the edge of the screen --></li>
+					<li onclick="switchfilter('all')" id="all">ALL</li>
+					<li onclick="switchfilter('breakfast')" id="breakfast">BREAKFAST</li>
+					<li onclick="switchfilter('lunch')" id="lunch">LUNCH</li>
+					<li onclick="switchfilter('dinner')" id="dinner"> DINNER</li>
+					<li onclick="switchfilter('vegan')" id="vegan">VEGAN</li>
 				</ul>
 			</div>
 			<div id="items">
 				<div class="item all">
-					<div class="item-pic" style="background-image: url('images/food/items/OldEbbittGrill.jpg')"></div>
+					<div class="item-pic" id="OldEbbittGrill"></div>
 					<div class="item-info">
 						<h1>Old Ebbitt Grill</h1>
 						<p>Iconic tavern offering American meals, including popular oyster specials, in Victorian-style digs.</p>
@@ -64,7 +62,7 @@
 				</div>
 
 				<div class="item all">
-					<div class="item-pic" style="background-image: url('images/food/items/FoundingFarmersDC.jpg')"></div>
+					<div class="item-pic" id="FoundingFarmersDC"></div>
 					<div class="item-info">
 						<h1>Founding Farmers DC</h1>
 						<p>Co-op-owned American eatery dishing out market-driven comfort cuisine along with rustic-chic style.</p>
@@ -74,7 +72,7 @@
 				</div>
 
 				<div class="item all">
-					<div class="item-pic"  style="background-image: url('images/food/items/ZaytinyaDC.jpg')"></div>
+					<div class="item-pic" id="ZaytinyaDC"></div>
 					<div class="item-info">
 						<h1>Zaytinya DC</h1>
 						<p>Chef José Andrés' light, airy mainstay offers Eastern Mediterranean small plates & regional wines.</p>
@@ -84,7 +82,7 @@
 				</div>
 
 				<div class="item all lunch vegan">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern.jpg')"></div>
+					<div class="item-pic" id="LoganTavern"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
@@ -94,7 +92,7 @@
 				</div>
 
 				<div class="item all">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern.jpg')"></div>
+					<div class="item-pic" id="LoganTavern"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
@@ -104,7 +102,7 @@
 				</div>
 
 				<div class="item all">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern.jpg')"></div>
+					<div class="item-pic" id="LoganTavern"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
@@ -114,7 +112,7 @@
 				</div>
 
 				<div class="item all">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern.jpg')"></div>
+					<div class="item-pic" id="LoganTavern"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
@@ -124,7 +122,7 @@
 				</div>
 
 				<div class="item all">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern.jpg')"></div>
+					<div class="item-pic" id="LoganTavern"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
@@ -134,7 +132,7 @@
 				</div>
 
 				<div class="item all">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern.jpg')"></div>
+					<div class="item-pic" id="LoganTavern"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
@@ -144,7 +142,7 @@
 				</div>
 
 				<div class="item all">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern.jpg')"></div>
+					<div class="item-pic" id="LoganTavern"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
@@ -154,7 +152,7 @@
 				</div>
 
 				<div class="item all">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern.jpg')"></div>
+					<div class="item-pic" id="LoganTavern"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
@@ -164,7 +162,7 @@
 				</div>
 
 				<div class="item all">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern.jpg')"></div>
+					<div class="item-pic" id="LoganTavern"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
@@ -174,7 +172,7 @@
 				</div>
 
 				<div class="item all">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern.jpg')"></div>
+					<div class="item-pic" id="LoganTavern"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
