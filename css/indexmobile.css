@@ -8,20 +8,29 @@
 /* Hide the desktop page/view */
 #desktop { display: none; }
 
+*{ -webkit-overflow-scrolling: touch; }
+
 body
 {
 	margin: 0px;
 	padding: 0px;
 	font-family: product-sans-bold;
-	background: rgb(147,176,255);
-	background: linear-gradient(180deg, rgba(147,176,255,1) 25%, rgba(73,88,129,1) 100%), rgb(73,88,129,1);
-	-webkit-overflow-scrolling: touch;
+	background: rgb(73,88,129);
 }
 
 
 /* Stopping the user from being able to scroll horizontally */
 #mobile { overflow-x: hidden; }
 
+#mobile .bg-gradient
+{
+	z-index: -10;
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	background: rgb(147,176,255);
+	background: linear-gradient(180deg, rgb(147,176,255) 30%, rgb(103,118,159) 100%), rgb(103,118,159);
+}
 
 /* Header Styling */
 #mobile header
@@ -97,7 +106,6 @@ textarea:focus, input:focus { outline: none; }
 {
 	height: 70px;
 	width: 100%;
-	-webkit-overflow-scrolling: touch;
 	overflow-y: hidden; overflow-x: scroll;
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
 }
@@ -116,11 +124,6 @@ textarea:focus, input:focus { outline: none; }
 	padding: 20px;
 	color: var(--lightBlue);
 	margin-top: -7px;
-}
-#mobile .filters ul li:hover
-{
-	cursor: pointer;
-	border-bottom: 3px solid var(--lightBlue);
 }
 #mobile .filters ul li#selected
 {
@@ -217,11 +220,10 @@ div#mobile-nav-items header
 div#mobile-nav-items header div#mobile-nav-title
 {
 	display: inline-block;
-	height: 100%;
 	line-height:65px;
 	white-space: nowrap;
 	text-transform: uppercase;
-	margin: 10px 0 0 0px;
+	margin: 8px 0 0 0px;
 }
 nav#mobile-nav
 {
@@ -240,7 +242,6 @@ nav#mobile-nav div#webpage-title
 	transition: .1s;
 	color: white;
 	font-size: 250%;
-	text-transform: uppercase;
 	font-weight: bolder;
 	margin-top: 20px;
 }
@@ -254,7 +255,6 @@ nav#mobile-nav div#webpage-title-home
 	margin-right: 35px;
 	color: white;
 	font-size: 250%;
-	text-transform: uppercase;
 	font-weight: bolder;
 	overflow-x: hidden;
 }
@@ -309,7 +309,6 @@ div#mobile-nav-items nav a
 	display: block;
 	color: white;
 	text-decoration: none;
-	text-transform: uppercase;
 	padding: 70px;
 	text-align: center;
 	font-size: 300%;

@@ -35,6 +35,17 @@ function switchfilter(filter)
 	filterbutton = document.getElementById(filter);
 	filterbutton.style.color = "white";
 	filterbutton.style.borderBottom = "solid 3px white";
+
+	var itemlist = document.getElementById("items");
+	var items = itemlist.getElementsByClassName('item');
+	for (i = 0; i < items.length; i++)
+	{ 
+		items[i].style.display = "none";
+		if(items[i].classList.contains(filter))
+		{
+			items[i].style.display = "flex";
+		}
+	}
 }
 
 // run when the page is ready
