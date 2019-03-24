@@ -1,9 +1,14 @@
 var winheight = 0;
 var scrollTop = 0;
 var scrolledDown = false;
+var scrollTopBtn;
 
 window.addEventListener("scroll", function()
 {
+   if (scrollTopBtn == null)
+   {
+		scrollTopBtn = document.getElementById("scrolltotop");
+   }
     winheight = window.innerHeight || (document.documentElement || document.body).clientHeight;
     scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
     if (scrollTop > winheight)
@@ -11,12 +16,46 @@ window.addEventListener("scroll", function()
 		if (scrolledDown == false)
 		{
 	    	scrolledDown = true;
-	    	console.log(scrolledDown);
+	    	scrollTopBtn.style.display = "block";
+	    	scrollTopBtn.style.animation = "scrollbtn-slide-in " + 1 + "s";
     	}
     }
     else
     {
-    	scrolledDown = false;
-    	console.log(scrolledDown);
+    	if (scrolledDown == true)
+		{
+	    	scrolledDown = false;
+	    	scrollTopBtn.style.animation = "scrollbtn-slide-out " + 1 + "s";
+	    	setTimeout(function() { scrollTopBtn.style.display = "none"; }, 1000);
+    	}
     }
 }, false)
+
+
+var html, body;
+window.onload = function() {
+  html = document.documentElement;
+  body = document.body;
+};
+
+function scrollToTop(totalTime, easingPower)
+{
+	var timeInterval = 1;
+	var scrollTop = Math.round(body.scrollTop || html.scrollTop);
+	var timeLeft = totalTime;
+	var scrollByPixel = setInterval(function()
+	{
+		var percentSpent = (totalTime - timeLeft) / totalTime;
+		if (timeLeft >= 0) {
+		  var newScrollTop = scrollTop * (1 - Math.pow(2 * percentSpent, easingPower));
+		  body.scrollTop = newScrollTop;
+		  html.scrollTop = newScrollTop;
+		  //console.log(easeInOut(percentSpent,easingPower));
+		  timeLeft--;
+		} else {
+		  clearInterval(scrollByPixel);
+		  //Add hash to the url after scrolling
+		  //window.location.hash = hash;
+		}
+	}, timeInterval);
+}

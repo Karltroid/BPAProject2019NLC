@@ -8,14 +8,40 @@
 /* Hide the desktop page/view */
 #desktop { display: none; }
 
-*{ -webkit-overflow-scrolling: touch; }
+/* Smooth mobile/touch scrolling styling */
+*{ -webkit-overflow-scrolling: touch; scroll-behavior: smooth;}
 
+
+/* Page styling */
 body
 {
 	margin: 0px;
 	padding: 0px;
 	font-family: product-sans-bold;
 	background: rgb(103,118,159);
+}
+
+
+/* Scroll To Top Button Stying (Appears when user scrolls far down) */
+#mobile #scrolltotop
+{
+	width: 60%;
+	height: 50px;
+	background-color: var(--darkBlue);
+	border-radius: 25px;
+	position: fixed;
+	bottom: 62px;
+	left: 50%;
+	transform: translate(-50%,  50px);
+	color: white;
+	text-align: center;
+	margin: 0 auto;
+	box-shadow: 0 5px 20px rgba(0,0,0,0.29), 0 3px 6px rgba(0,0,0,0.33);
+	font-size: 1.5em;
+	line-height: 50px;
+	display: none;
+	border: 0;
+	font-family: product-sans-bold;
 }
 
 
@@ -88,7 +114,7 @@ body
 
 /*Search Bar Styling*/
 ::placeholder { color: var(--lightGray) }
-textarea:focus, input:focus { outline: none; }
+textarea:focus, input:focus, button:focus { outline: none; }
 #mobile header input
 {
 	width: 86%;
@@ -415,3 +441,59 @@ div#mobile-nav-items nav a#Attire
 		transform: translate(0px, -400vh);
 	}
 }
+
+@-webkit-keyframes scrollbtn-slide-in
+{
+	from
+	{
+		transform: translate(-50%, 112px);
+		opacity: 0;
+	}
+	to
+	{
+		transform: translate(-50%, 50px);
+		opacity: 1;
+	}
+} 
+
+@keyframes scrollbtn-slide-in
+{
+	from
+	{
+		transform: translate(-50%, 112px);
+		opacity: 0;
+	}
+	to
+	{
+		transform: translate(-50%, 50px);
+		opacity: 1;
+	}
+} 
+
+@-webkit-keyframes scrollbtn-slide-out
+{
+	from
+	{
+		transform: translate(-50%, 50px);
+		opacity: 1;
+	}
+	to
+	{
+		transform: translate(-50%, 112px);
+		opacity: 0;
+	}
+} 
+
+@keyframes scrollbtn-slide-out
+{
+	from
+	{
+		transform: translate(-50%, 50px);
+		opacity: 1;
+	}
+	to
+	{
+		transform: translate(-50%, 112px);
+		opacity: 0;
+	}
+} 
