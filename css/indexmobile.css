@@ -52,7 +52,7 @@ body
 {
 	z-index: -10;
 	position: absolute;
-	height: 100vh;
+	height: 800px;
 	width: 100vw;
 	background: rgb(147,176,255);
 	background: linear-gradient(180deg, rgb(147,176,255) 30%, rgb(103,118,159) 100%), rgb(103,118,159);
