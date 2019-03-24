@@ -160,6 +160,11 @@ textarea:focus, input:focus, button:focus { outline: none; }
 	height: 50px;
 	pointer-events: none;
 }
+#mobile .filters #all
+{
+	color: white;
+	border-bottom: solid 3px white;
+}
 #mobile .filters ul li
 {
 	display: inline-block;
