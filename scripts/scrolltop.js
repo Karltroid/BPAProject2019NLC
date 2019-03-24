@@ -50,12 +50,9 @@ function scrollToTop(totalTime, easingPower)
 		  var newScrollTop = scrollTop * (1 - Math.pow(2 * percentSpent, easingPower));
 		  body.scrollTop = newScrollTop;
 		  html.scrollTop = newScrollTop;
-		  //console.log(easeInOut(percentSpent,easingPower));
 		  timeLeft--;
 		} else {
 		  clearInterval(scrollByPixel);
-		  //Add hash to the url after scrolling
-		  //window.location.hash = hash;
 		}
 	}, timeInterval);
 }

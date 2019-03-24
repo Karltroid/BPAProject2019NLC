@@ -153,7 +153,7 @@ textarea:focus, input:focus, button:focus { outline: none; }
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0093b0ff', endColorstr='#91aefe',GradientType=1 );
 	content: "";
 	position: absolute;
-	top: 215px;
+	top: 225px;
 	right: 0;
 	z-index: 1;
 	width: 100%;
