@@ -55,3 +55,9 @@ function scrollToTop(totalTime, easingPower)
 		}
 	}, timeInterval);
 }
+
+function instantscrolltotop()
+{
+	var element = document.getElementById('item-info');
+	element.scrollTop = 0;
+}

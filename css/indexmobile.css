@@ -1,15 +1,18 @@
 /* Hide scrollbar for mobile */
 ::-webkit-scrollbar { display: none; }
 
+
 /* Change color of user highlighted text */
 ::-moz-selection { background: var(--blue); }
 ::selection { background: var(--blue); }
 
+
 /* Hide the desktop page/view */
 #desktop { display: none; }
 
-/* Smooth mobile/touch scrolling styling */
-*{ -webkit-overflow-scrolling: touch; scroll-behavior: smooth;}
+
+/* Support for mobile/touch scrolling */
+*{ -webkit-overflow-scrolling: touch; }
 
 
 /* Page styling */
@@ -20,6 +23,9 @@ body
 	font-family: product-sans-bold;
 	background: rgb(103,118,159);
 }
+
+/* adding a space at the bottom of the page so the scroll top button doesn't cover anything */
+#mobile { padding-bottom: 65px; }
 
 
 /* Scroll To Top Button Stying (Appears when user scrolls far down) */
@@ -43,7 +49,7 @@ body
 	border: 0;
 	font-family: product-sans-bold;
 }
-#mobile #scrolltotop:hover { cursor: pointer; }
+button,#mobile .item { cursor: pointer; }
 
 
 /* Stopping the user from being able to scroll horizontally */
@@ -402,13 +408,14 @@ div#mobile-nav-items nav a#Attire
 /* Search item info pop-up styling */
 #mobile #item-info
 {
-	position: absolute;
+	position: fixed;
 	top: 0; left: 0;
 	width: 95vw; height: 100vh;	
 	background-color: white;
 	z-index: 10;
 	padding: 2.5vw;
 	display: none;
+	overflow-y: scroll;
 }
 #mobile #item-info h1
 {
@@ -421,7 +428,7 @@ div#mobile-nav-items nav a#Attire
 {
 	margin: 0 0 12px 0; padding: 0;
 	color: var(--gray);
-	font-size: 1.75em;
+	font-size: 1.9em;
 	display: inline-block;
 	font-family: product-sans;	
 }
@@ -446,10 +453,17 @@ div#mobile-nav-items nav a#Attire
 	width: 100%;
 	height: 100%;
 }
+#mobile #item-info #item-info-extra
+{
+	color: var(--darkBlue);
+	list-style: none;
+	font-size: 1.2em;
+}
 #mobile #item-info #item-gallery
 {
 	width: 100%;
 	text-align: center;
+	margin-bottom: 75px;
 }
 #mobile #item-info #item-gallery h1
 {
@@ -457,6 +471,12 @@ div#mobile-nav-items nav a#Attire
 	display: inline-block;
 	font-size: 2em;	
 	color: rgb(63, 63, 63);
+}
+#mobile #item-info #item-gallery img
+{
+	width: 95%;
+	margin: 6px 0;
+	border-radius: 35px;
 }
 #mobile #item-info #item-back
 {
