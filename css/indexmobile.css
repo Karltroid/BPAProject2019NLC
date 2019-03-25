@@ -485,12 +485,13 @@ div#mobile-nav-items nav a#Attire
 	height: 225px;
 	width: 100%;
 	margin-left: -2.5vw;
+	pointer-events: none;
 	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 100%);
 	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.25) 100%);
 	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.25) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#40000000',GradientType=0 );
 }
-
+#mobile #item-info #item-back button { pointer-events: auto; }
 
 /* Mobile Navigation Animations */
 @-webkit-keyframes slide-in
