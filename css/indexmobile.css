@@ -23,7 +23,7 @@ body
 
 
 /* Scroll To Top Button Stying (Appears when user scrolls far down) */
-#mobile #scrolltotop
+#mobile .bottombutton
 {
 	width: 60%;
 	height: 50px;
@@ -43,6 +43,7 @@ body
 	border: 0;
 	font-family: product-sans-bold;
 }
+#mobile #scrolltotop:hover { cursor: pointer; }
 
 
 /* Stopping the user from being able to scroll horizontally */
@@ -250,11 +251,11 @@ div#mobile-nav-items header
 {
 	font-size: 2.5em;
 	background: var(--darkBlue);
-	-webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-	-moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-	-ms-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-	-o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	-webkit-box-shadow: var(--perspectiveBoxShadow);
+	-moz-box-shadow: var(--perspectiveBoxShadow);
+	-ms-box-shadow: var(--perspectiveBoxShadow);
+	-o-box-shadow: var(--perspectiveBoxShadow);
+	box-shadow: var(--perspectiveBoxShadow);
 	position: relative;
 	z-index: 11;
 	border-radius: 0;
@@ -357,11 +358,11 @@ div#mobile-nav-items nav a
 	font-size: 300%;
 	font-weight: bolder;
 	letter-spacing: .5vw;
-	-webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-	-moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-	-ms-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-	-o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	-webkit-box-shadow: var(--perspectiveBoxShadow);
+	-moz-box-shadow: var(--perspectiveBoxShadow);
+	-ms-box-shadow: var(--perspectiveBoxShadow);
+	-o-box-shadow: var(--perspectiveBoxShadow);
+	box-shadow: var(--perspectiveBoxShadow);
 	position: relative;
 }
 div#mobile-nav-items nav a#Home
@@ -395,6 +396,79 @@ div#mobile-nav-items nav a#Attire
 	
 	background-color: rgb(72, 101, 180);
 	z-index: 5;
+}
+
+
+/* Search item info pop-up styling */
+#mobile #item-info
+{
+	position: absolute;
+	top: 0; left: 0;
+	width: 95vw; height: 100vh;	
+	background-color: white;
+	z-index: 10;
+	padding: 2.5vw;
+	display: none;
+}
+#mobile #item-info h1
+{
+	margin: -1vw 0 0 0; padding: 0;
+	display: inline-block;
+	font-size: 2.75em;	
+	color: rgb(63, 63, 63);
+}
+#mobile #item-info p
+{
+	margin: 0 0 12px 0; padding: 0;
+	color: var(--gray);
+	font-size: 1.75em;
+	display: inline-block;
+	font-family: product-sans;	
+}
+#mobile #item-info #item-map
+{
+	width: 100%;
+	height: 250px;
+	margin: 0 auto;
+	display: block;
+	border-radius: 40px;
+	overflow: hidden;
+	-webkit-box-shadow: var(--centeredBoxShadow);
+	-moz-box-shadow: var(--centeredBoxShadow);
+	-ms-box-shadow: var(--centeredBoxShadow);
+	-o-box-shadow: var(--centeredBoxShadow);
+	box-shadow: var(--centeredBoxShadow);
+	position: relative;
+	z-index: 15;
+}
+#mobile #item-info #item-map iframe
+{
+	width: 100%;
+	height: 100%;
+}
+#mobile #item-info #item-gallery
+{
+	width: 100%;
+	text-align: center;
+}
+#mobile #item-info #item-gallery h1
+{
+	margin: -1vw 0 0 0; padding: 0;
+	display: inline-block;
+	font-size: 2em;	
+	color: rgb(63, 63, 63);
+}
+#mobile #item-info #item-back
+{
+	position: fixed;
+	bottom: 0;
+	height: 225px;
+	width: 100%;
+	margin-left: -2.5vw;
+	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 100%);
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.25) 100%);
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.25) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#40000000',GradientType=0 );
 }
 
 
@@ -499,6 +573,62 @@ div#mobile-nav-items nav a#Attire
 	to
 	{
 		transform: translate(-50%, 112px);
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes itempage-slide-in
+{
+	from
+	{
+		transform: translate(0, 100vh);
+		opacity: 0;
+	}
+	to
+	{
+		transform: translate(0, 0);
+		opacity: 1;
+	}
+} 
+
+@keyframes itempage-slide-in
+{
+	from
+	{
+		transform: translate(0, 100vh);
+		opacity: 0;
+	}
+	to
+	{
+		transform: translate(0, 0);
+		opacity: 1;
+	}
+} 
+
+@-webkit-keyframes itempage-slide-out
+{
+	from
+	{
+		transform: translate(0, 0);
+		opacity: 1;
+	}
+	to
+	{
+		transform: translate(0, 100vh);
+		opacity: 0;
+	}
+} 
+
+@keyframes itempage-slide-out
+{
+	from
+	{
+		transform: translate(0, 0);
+		opacity: 1;
+	}
+	to
+	{
+		transform: translate(0, 100vh);
 		opacity: 0;
 	}
 } 

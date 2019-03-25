@@ -2,6 +2,7 @@ var winheight = 0;
 var scrollTop = 0;
 var scrolledDown = false;
 var scrollTopBtn;
+var html, body;
 
 window.addEventListener("scroll", function()
 {
@@ -32,14 +33,10 @@ window.addEventListener("scroll", function()
 }, false)
 
 
-var html, body;
-window.onload = function() {
-  html = document.documentElement;
-  body = document.body;
-};
-
 function scrollToTop(totalTime, easingPower)
 {
+	html = document.documentElement;
+  	body = document.body;
 	var timeInterval = 1;
 	var scrollTop = Math.round(body.scrollTop || html.scrollTop);
 	var timeLeft = totalTime;
@@ -51,7 +48,9 @@ function scrollToTop(totalTime, easingPower)
 		  body.scrollTop = newScrollTop;
 		  html.scrollTop = newScrollTop;
 		  timeLeft--;
-		} else {
+		}
+		else
+		{
 		  clearInterval(scrollByPixel);
 		}
 	}, timeInterval);
