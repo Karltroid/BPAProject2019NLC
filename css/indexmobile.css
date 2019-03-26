@@ -446,7 +446,6 @@ div#mobile-nav-items nav a#Attire
 	-o-box-shadow: var(--centeredBoxShadow);
 	box-shadow: var(--centeredBoxShadow);
 	position: relative;
-	z-index: 15;
 }
 #mobile #item-info #item-map iframe
 {
