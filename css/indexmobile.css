@@ -42,7 +42,7 @@ body
 	color: white;
 	text-align: center;
 	margin: 0 auto;
-	box-shadow: 0 5px 20px rgba(0,0,0,0.29), 0 3px 6px rgba(0,0,0,0.33);
+	box-shadow: var(--perspectiveBoxShadow);
 	font-size: 1.5em;
 	line-height: 50px;
 	display: none;
@@ -73,7 +73,7 @@ button,#mobile .item { cursor: pointer; }
 	color: white;
 	padding: 10px 15px 15px 15px;
 	border-radius: 0px 0px 40px 40px;
-	box-shadow: 0 3px 20px rgba(0,0,0,0.10), 0 3px 20px rgba(0,0,0,0.17);
+	box-shadow: var(--perspectiveBoxShadow);
 	z-index: 2;
 	margin-bottom: 10px;
 }
