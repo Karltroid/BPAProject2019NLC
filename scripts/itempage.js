@@ -93,7 +93,7 @@ function openclosedropmenu()
 {
 	if (hoursopendropdown.innerHTML == "&#x23F7;" || hoursopendropdown.innerHTML == "⏷") // if open emoji
 	{
-		hoursopendropdown.innerHTML = "&#x23F5;"; // set close emoji
+		hoursopendropdown.innerHTML = "➤"; // set close emoji
 		itemextrainfo.getElementsByTagName("ul")[0].style.display = "none";
 	}
 	else
