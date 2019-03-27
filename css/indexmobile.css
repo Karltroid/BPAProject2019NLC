@@ -451,6 +451,23 @@ div#mobile-nav-items nav a#Attire
 {
 	padding: 0px 10px;
 }
+#mobile #item-info ul li
+{
+	padding: 0px 10px;
+}
+#mobile #item-info ul li ul
+{
+	list-style: none;
+	font-family: product-sans;
+	font-variant-numeric: tabular-nums;
+	display: none;
+
+}
+#mobile #item-info ul li ul span
+{
+	display: inline-block;
+	width: 60px;
+}
 #mobile #item-info #item-map
 {
 	width: 100%;
