@@ -1,4 +1,4 @@
-var itempage, itemgallery, itemextrainfo, hoursopendropdown;
+var itempage, itemgallery, itemextrainfo, hoursopendropdown, hoursopen;
 var items = 
 [
 	[
@@ -29,7 +29,7 @@ function loaditem(itemtype, item)
 			itempage.getElementsByTagName("p")[0].innerHTML = items[itemtype][i][1];
 			itempage.getElementsByTagName("a")[0].href = items[itemtype][i][2];
 			itempage.getElementsByTagName("iframe")[0].src = items[itemtype][i][3];
-			itempage.getElementsByTagName("li")[0].innerHTML = items[itemtype][i][4];
+			itempage.getElementsByTagName("span")[0].innerHTML = items[itemtype][i][4];
 			itemextrainfo.getElementsByTagName("li")[0].innerHTML = items[itemtype][i][5];
 			itemextrainfo.getElementsByTagName("li")[1].innerHTML = items[itemtype][i][6];
 			itemextrainfo.getElementsByTagName("li")[2].innerHTML = items[itemtype][i][7];
@@ -67,7 +67,7 @@ function hideitem()
 	itempage.getElementsByTagName("h1")[0].innerHTML = "";
 	itempage.getElementsByTagName("p")[0].innerHTML = "";
 	itempage.getElementsByTagName("iframe")[0].src = "";
-	itempage.getElementsByTagName("li")[0].innerHTML = "";
+	itempage.getElementsByTagName("span")[0].innerHTML = "";
 	itemextrainfo.getElementsByTagName("li")[0].innerHTML = "";
 	itemextrainfo.getElementsByTagName("li")[1].innerHTML = "";
 	itemextrainfo.getElementsByTagName("li")[2].innerHTML = "";
@@ -81,9 +81,10 @@ function hideitem()
 		oldimages[oldimage].parentNode.removeChild(oldimages[oldimage]);
 	}
 	// close drop down menu if open
-	if (hoursopendropdown.innerHTML == "&#x23F7;" || hoursopendropdown.innerHTML == "⏷")
+	if (hoursopen)
 	{
-		hoursopendropdown.innerHTML = "&#x23F5;";
+		hoursopen = false;
+		hoursopendropdown.style.transform = "rotate(0deg)";
 		itemextrainfo.getElementsByTagName("ul")[0].style.display = "none";
 	}
 }
@@ -91,14 +92,16 @@ function hideitem()
 
 function openclosedropmenu()
 {
-	if (hoursopendropdown.innerHTML == "&#x23F7;" || hoursopendropdown.innerHTML == "⏷") // if open emoji
+	if (hoursopen)
 	{
-		hoursopendropdown.innerHTML = "➤"; // set close emoji
+		hoursopen = false;
+		hoursopendropdown.style.transform = "rotate(0deg)";
 		itemextrainfo.getElementsByTagName("ul")[0].style.display = "none";
 	}
 	else
 	{
-		hoursopendropdown.innerHTML = "&#x23F7;";
+		hoursopen = true;
+		hoursopendropdown.style.transform = "rotate(90deg)";
 		itemextrainfo.getElementsByTagName("ul")[0].style.display = "block";
 	}
 }
@@ -110,5 +113,5 @@ window.onload = function()
 	itempage = document.getElementById('item-info');
 	itemgallery = document.getElementById("item-gallery");
 	itemextrainfo = itempage.getElementsByTagName("li")[1];
-	hoursopendropdown = itemextrainfo.getElementsByTagName('span')[0];
+	hoursopendropdown = document.getElementById("item-hours-arrow")
 }
