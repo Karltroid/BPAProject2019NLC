@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BPA NLC</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="../css/vars.css" />
+		<link rel="stylesheet" type="text/css" media="(min-width: 801px)" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" media="(max-width: 800px)" href="../css/indexmobile.css" />
+		<script src="../scripts/mobilenav.js"></script>
+		<script src="../scripts/search.js"></script>
+		<script src="../scripts/scrolltop.js"></script>
+		<script src="../scripts/itempage.js"></script>
+	</head>
+	<body>
+		<div id="desktop">DESKTOP MODE: Shrink to mobile</div>
+		<div id="mobile">
+			<button id="scrolltotop" class="bottombutton" onclick="scrollToTop(100,1)">
+				GO TO TOP
+			</button>
+			<div id="mobile-nav-items">
+				<header id="mobile-nav-header">
+					<div id="mobile-nav-title">
+						MENU
+					</div>
+					<nav id="mobile-nav">
+						<img onclick="closenav()" id="nav-button" src="../images/mobilenav/menuclose.png" />
+					</nav>
+				</header>
+				<nav>
+					<a id="Home" href="../index.html">HOME</a>
+					<a id="Maps" href="map.html">MAP</a>
+					<a id="Places" href="places.html">PLACES</a>
+					<a id="Food" href="food.html"><font class="current-page">FOOD</font></a>
+					<a id="Transit" href="transit.html">TRANSIT</a>
+					<a id="Attire" href="attire.html">ATTIRE</a>
+				</nav>
+			</div>
+			<div class="bg-gradient"></div>
+			<header class="no-search">
+				<div class="header-top">
+					<div class="header-top-left">
+						<img src="../images/map/headico.png" />
+						<p>MAP</p>
+					</div>
+					<img onclick="opennav()" class="header-top-right" src="../images/mobilenav/menuopen.png" />
+				</div>
+			</header>
+			<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d99358.39918235817!2d-77.04084188749994!3d38.90225927729798!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1553781677840" frameborder="0" style="border:0" allowfullscreen></iframe>
+		</div>
+	</body>
+</html>

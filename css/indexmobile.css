@@ -77,6 +77,11 @@ button,#mobile .item,#mobile .filters li { cursor: pointer; }
 	z-index: 2;
 	margin-bottom: 10px;
 }
+#mobile header.no-search
+{
+	height: 75px;
+	border-radius: 0px 0px 25px 25px;
+}
 #mobile header div.header-top-left
 {
 	float: left;
@@ -556,6 +561,16 @@ div#mobile-nav-items nav a#Attire
 	color: white;
 	border-radius: 40px;
 	font-size: 1.5em;
+}
+
+
+#map
+{
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0; left: 0;
+	z-index: -1;
 }
 
 
