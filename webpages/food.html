@@ -3,182 +3,232 @@
 	<head>
 		<title>BPA NLC</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="css/vars.css" />
-		<link rel="stylesheet" type="text/css" media="(min-width: 701px)" href="css/index.css" />
-		<link rel="stylesheet" type="text/css" media="(max-width: 700px)" href="css/indexmobile.css" />
-		<script src="scripts/mobilenav.js"></script>
-		<script src="scripts/search.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/vars.css" />
+		<link rel="stylesheet" type="text/css" media="(min-width: 801px)" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" media="(max-width: 800px)" href="../css/indexmobile.css" />
+		<script src="../scripts/mobilenav.js"></script>
+		<script src="../scripts/search.js"></script>
+		<script src="../scripts/scrolltop.js"></script>
+		<script src="../scripts/itempage.js"></script>
 	</head>
 	<body>
 		<div id="desktop">DESKTOP MODE: Shrink to mobile</div>
 		<div id="mobile">
+			<button id="scrolltotop" class="bottombutton" onclick="scrollToTop(100,1)">
+				GO TO TOP
+			</button>
 			<div id="mobile-nav-items">
 				<header id="mobile-nav-header">
 					<div id="mobile-nav-title">
 						MENU
 					</div>
 					<nav id="mobile-nav">
-						<img onclick="closenav()" id="nav-button" src="images/mobilenav/menuclose.png" />
+						<img onclick="closenav()" id="nav-button" src="../images/mobilenav/menuclose.png" />
 					</nav>
 				</header>
 				<nav>
 					<a id="Home" href="../index.html">HOME</a>
-					<a id="Maps" href="webpages/maps.html">MAP</a>
-					<a id="Places" href="webpages/places.html">PLACES</a>
-					<a id="Food" href="webpages/food.html"><font class="current-page">FOOD</font></a>
-					<a id="Transit" href="webpages/transit.html">TRANSIT</a>
-					<a id="Attire" href="webpages/attire.html">ATTIRE</a>
+					<a id="Maps" href="maps.html">MAP</a>
+					<a id="Places" href="places.html">PLACES</a>
+					<a id="Food" href="food.html"><font class="current-page">FOOD</font></a>
+					<a id="Transit" href="transit.html">TRANSIT</a>
+					<a id="Attire" href="attire.html">ATTIRE</a>
 				</nav>
 			</div>
 			<div class="bg-gradient"></div>
 			<header>
 				<div class="header-top">
 					<div class="header-top-left">
-						<img src="images/food/headico.png" />
+						<img src="../images/food/headico.png" />
 						<p>FOOD</p>
 					</div>
-					<img onclick="opennav()" class="header-top-right" src="images/mobilenav/menuopen.png" />
+					<img onclick="opennav()" class="header-top-right" src="../images/mobilenav/menuopen.png" />
 				</div>
-				<input type="text" id="searchbar" onkeyup="switchfilter(currentFilter)" placeholder="Search...">
+				<input type="text" id="searchbar" onkeyup="categoryfilter(currentFilter)" placeholder="Search...">
 			</header>
 			<div class="filters">
 				<ul>
-					<li onclick="switchfilter('all')" id="all">ALL</li>
-					<li onclick="switchfilter('breakfast')" id="breakfast">BREAKFAST</li>
-					<li onclick="switchfilter('lunch')" id="lunch">LUNCH</li>
-					<li onclick="switchfilter('dinner')" id="dinner"> DINNER</li>
-					<li onclick="switchfilter('vegan')" id="vegan">VEGAN</li>
+					<li onclick="categoryfilter('all')" id="all">ALL</li>
+					<li onclick="categoryfilter('breakfast')" id="breakfast">BREAKFAST</li>
+					<li onclick="categoryfilter('lunch')" id="lunch">LUNCH</li>
+					<li onclick="categoryfilter('dinner')" id="dinner">DINNER</li>
+					<li onclick="categoryfilter('vegan')" id="vegan">VEGAN</li>
+					<li onclick="categoryfilter('american')" id="american">AMERICAN</li>
+					<li onclick="categoryfilter('mexican')" id="mexican">MEXICAN</li>
+					<li onclick="categoryfilter('greek')" id="greek">GREEK</li>
+					<li onclick="categoryfilter('chinese')" id="chinese">CHINESE</li>
+					<li onclick="categoryfilter('italian')" id="italian">ITALIAN</li>
+					<li onclick="categoryfilter('japanese')" id="japanese">JAPANESE</li>
+					<li onclick="categoryfilter('thai')" id="thai">THAI</li>
+					<li onclick="categoryfilter('delivery')" id="delivery">DELIVERY</li>
+					<li onclick="categoryfilter('outdoor-seats')" id="outdoor-seats">OUTDOOR-SEATS</li>
+					<li onclick="categoryfilter('free-wifi')" id="free-wifi">FREE-WIFI</li>
+					<li style="pointer-events: none;"><!-- empty space so last option isn't on the edge of the screen --></li>
 				</ul>
 			</div>
 			<div id="items">
-				<div class="item all">
-					<div class="item-pic" id="OldEbbittGrill"></div>
+				<div class="item all breakfast lunch dinner vegan american" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/food/items/OldEbbittGrill/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Old Ebbitt Grill</h1>
 						<p>Iconic tavern offering American meals, including popular oyster specials, in Victorian-style digs.</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
 						<aside>(7,111)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="FoundingFarmersDC"></div>
+				<div class="item all breakfast lunch dinner vegan american free-wifi" onclick="loaditem(0, 'Founding Farmers DC'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/food/items/FoundingFarmersDC/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Founding Farmers DC</h1>
 						<p>Co-op-owned American eatery dishing out market-driven comfort cuisine along with rustic-chic style.</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
 						<aside>(6,611)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="ZaytinyaDC"></div>
+				<div class="item all breakfast lunch dinner vegan greek outdoor-seats" onclick="loaditem(0, 'Zaytinya DC'); instantscrolltotop();">
+					<div class="item-pic"  style="background-image: url('../images/food/items/ZaytinyaDC/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Zaytinya DC</h1>
 						<p>Chef José Andrés' light, airy mainstay offers Eastern Mediterranean small plates & regional wines.</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
 						<aside>(2,887)</aside>
 					</div>
 				</div>
 
-				<div class="item all lunch vegan">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
+					<div class="item-pic"  style="background-image: url('../images/food/items/LoganTavern/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
 						<aside>(431)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
+					<div class="item-pic"  style="background-image: url('../images/food/items/LoganTavern/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
 						<aside>(431)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
+					<div class="item-pic"  style="background-image: url('../images/food/items/LoganTavern/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
 						<aside>(431)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
+					<div class="item-pic"  style="background-image: url('../images/food/items/LoganTavern/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
 						<aside>(431)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
+					<div class="item-pic"  style="background-image: url('../images/food/items/LoganTavern/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
 						<aside>(431)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
+					<div class="item-pic"  style="background-image: url('../images/food/items/LoganTavern/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
 						<aside>(431)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
+					<div class="item-pic"  style="background-image: url('../images/food/items/LoganTavern/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
 						<aside>(431)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
+					<div class="item-pic"  style="background-image: url('../images/food/items/LoganTavern/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
 						<aside>(431)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
+					<div class="item-pic"  style="background-image: url('../images/food/items/LoganTavern/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
 						<aside>(431)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
+					<div class="item-pic"  style="background-image: url('../images/food/items/LoganTavern/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Logan Tavern</h1>
 						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
 						<aside>(431)</aside>
 					</div>
+				</div>
+			</div>
+
+			<div id="item-info">
+				<h1><!--Item Title--></h1>
+				<p><!--Item Desc--></p>
+				<a href=""><button><img src="../images/generalicos/cursor.png" alt="Click! " />Visit Their Site</button></a>
+				<a href=""><button><img src="../images/generalicos/cursor.png" alt="Click! " />Menu</button></a>
+				<div id="item-map">
+					<iframe src="" frameborder="0" style="border:0" allowfullscreen><!--GoogleMap--></iframe>
+				</div>
+				<ul id="item-info-extra">
+					<li id="item-address"><img src="../images/generalicos/location.png" /> <span><!--Address--></span></li><br />
+					<li id="item-hours"><img src="../images/generalicos/time.png" /> <span  onclick="openclosedropmenu();">Hours Open <span id="item-hours-arrow">&#10148;</span></span>
+						<ul id="item-hours-info">
+							<li><!--sun--></li>
+							<li><!--mon--></li>
+							<li><!--tue--></li>
+							<li><!--wed--></li>
+							<li><!--thu--></li>
+							<li><!--fri--></li>
+							<li><!--sat--></li>
+						</ul>
+					</li>
+				</ul>
+				<div id="item-gallery">
+					<h1>
+						GALLERY
+					</h1>
+				</div>
+				<div id="item-back">
+					<button onclick="hideitem();" class="bottombutton" style="display: block;">
+						BACK
+					</button>
 				</div>
 			</div>
 		</div>

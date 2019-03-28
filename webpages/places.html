@@ -3,182 +3,273 @@
 	<head>
 		<title>BPA NLC</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="css/vars.css" />
-		<link rel="stylesheet" type="text/css" media="(min-width: 701px)" href="css/index.css" />
-		<link rel="stylesheet" type="text/css" media="(max-width: 700px)" href="css/indexmobile.css" />
-		<script src="scripts/mobilenav.js"></script>
-		<script src="scripts/search.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/vars.css" />
+		<link rel="stylesheet" type="text/css" media="(min-width: 801px)" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" media="(max-width: 800px)" href="../css/indexmobile.css" />
+		<script src="../scripts/mobilenav.js"></script>
+		<script src="../scripts/search.js"></script>
+		<script src="../scripts/scrolltop.js"></script>
+		<script src="../scripts/itempage.js"></script>
 	</head>
 	<body>
 		<div id="desktop">DESKTOP MODE: Shrink to mobile</div>
 		<div id="mobile">
+			<button id="scrolltotop" class="bottombutton" onclick="scrollToTop(100,1)">
+				GO TO TOP
+			</button>
 			<div id="mobile-nav-items">
 				<header id="mobile-nav-header">
 					<div id="mobile-nav-title">
 						MENU
 					</div>
 					<nav id="mobile-nav">
-						<img onclick="closenav()" id="nav-button" src="images/mobilenav/menuclose.png" />
+						<img onclick="closenav()" id="nav-button" src="../images/mobilenav/menuclose.png" />
 					</nav>
 				</header>
 				<nav>
 					<a id="Home" href="../index.html">HOME</a>
-					<a id="Maps" href="webpages/maps.html">MAP</a>
-					<a id="Places" href="webpages/places.html">PLACES</a>
-					<a id="Food" href="webpages/food.html"><font class="current-page">FOOD</font></a>
-					<a id="Transit" href="webpages/transit.html">TRANSIT</a>
-					<a id="Attire" href="webpages/attire.html">ATTIRE</a>
+					<a id="Maps" href="maps.html">MAP</a>
+					<a id="Places" href="places.html"><font class="current-page">PLACES</font></a>
+					<a id="Food" href="food.html">FOOD</a>
+					<a id="Transit" href="transit.html">TRANSIT</a>
+					<a id="Attire" href="attire.html">ATTIRE</a>
 				</nav>
 			</div>
 			<div class="bg-gradient"></div>
 			<header>
 				<div class="header-top">
 					<div class="header-top-left">
-						<img src="images/food/headico.png" />
-						<p>FOOD</p>
+						<img src="../images/places/headico.png" />
+						<p>PLACES</p>
 					</div>
-					<img onclick="opennav()" class="header-top-right" src="images/mobilenav/menuopen.png" />
+					<img onclick="opennav()" class="header-top-right" src="../images/mobilenav/menuopen.png" />
 				</div>
-				<input type="text" id="searchbar" onkeyup="switchfilter(currentFilter)" placeholder="Search...">
+				<input type="text" id="searchbar" onkeyup="categoryfilter(currentFilter)" placeholder="Search...">
 			</header>
 			<div class="filters">
 				<ul>
-					<li onclick="switchfilter('all')" id="all">ALL</li>
-					<li onclick="switchfilter('breakfast')" id="breakfast">BREAKFAST</li>
-					<li onclick="switchfilter('lunch')" id="lunch">LUNCH</li>
-					<li onclick="switchfilter('dinner')" id="dinner"> DINNER</li>
-					<li onclick="switchfilter('vegan')" id="vegan">VEGAN</li>
+					<li onclick="categoryfilter('all')" id="all">ALL</li>
+					<li onclick="categoryfilter('monument')" id="monument">MONUMENTS</li>
+					<li onclick="categoryfilter('museum')" id="museum">MUSEUMS</li>
+					<li onclick="categoryfilter('government')" id="government">GOVERNMENT</li>
+					<li onclick="categoryfilter('cathedral')" id="cathedral">CATHEDRALS</li>
+					<li onclick="categoryfilter('park')" id="park">PARKS</li>
+					<li style="pointer-events: none;"><!-- empty space so last option isn't on the edge of the screen --></li>
 				</ul>
 			</div>
 			<div id="items">
-				<div class="item all">
-					<div class="item-pic" id="OldEbbittGrill"></div>
+				<div class="item all government" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/places/items/UnitedStatesCapitol/1.jpg')"></div>
 					<div class="item-info">
-						<h1>Old Ebbitt Grill</h1>
-						<p>Iconic tavern offering American meals, including popular oyster specials, in Victorian-style digs.</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
+						<h1>United States Capitol</h1>
+						<p>Home of the United States Congress and the seat of the legislative branch of the U.S. federal government. It is located on Capitol Hill at the eastern end of the National Mall in Washington, D.C.</p>
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
 						<aside>(7,111)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="FoundingFarmersDC"></div>
+				<div class="item all monument" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/places/items/LincolnMemorial/1.jpg')"></div>
 					<div class="item-info">
-						<h1>Founding Farmers DC</h1>
-						<p>Co-op-owned American eatery dishing out market-driven comfort cuisine along with rustic-chic style.</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(6,611)</aside>
+						<h1>Lincoln Memorial</h1>
+						<p>An American national monument built to honor the 16th President of the United States, Abraham Lincoln. It is located on the western end of the National Mall in Washington, D.C., across from the Washington Monument.</p>
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
+						<aside>(7,111)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="ZaytinyaDC"></div>
+				<div class="item all monument" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/places/items/WashingtonMonument/1.jpg')"></div>
 					<div class="item-info">
-						<h1>Zaytinya DC</h1>
-						<p>Chef José Andrés' light, airy mainstay offers Eastern Mediterranean small plates & regional wines.</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(2,887)</aside>
+						<h1>Washington Monument</h1>
+						<p>An obelisk on the National Mall in Washington, D.C., built to commemorate George Washington, once commander-in-chief of the Continental Army and the first President of the United States. Located almost due east of the Reflecting Pool and the Lincoln Memorial</p>
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
+						<aside>(7,111)</aside>
 					</div>
 				</div>
 
-				<div class="item all lunch vegan">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all government" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/places/items/TheWhiteHouse/1.jpg')"></div>
 					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
+						<h1>The White House</h1>
+						<p>The official residence and workplace of the President of the United States. It is located at 1600 Pennsylvania Avenue NW in Washington, D.C. and has been the residence of every U.S. President since John Adams in 1800.</p>
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
+						<aside>(7,111)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all monument" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/places/items/ThomasJeffersonMemorial/1.jpg')"></div>
 					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
+						<h1>Thomas Jefferson Memorial</h1>
+						<p>A presidential memorial dedicated to Thomas Jefferson, an important American Founding Father as the main drafter and writer of the Declaration of Independence, governor of the newly independent Commonwealth of Virginia, and much more...</p>
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
+						<aside>(7,111)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all museum" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/places/items/NationalGalleryOfArt/1.jpg')"></div>
 					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
+						<h1>National Gallery of Art</h1>
+						<p>A national art museum open to the public and free of charge, the museum was privately established in 1937 for the American people by a joint resolution of the United States Congress. Works include: Leonardo da Vinci, Andrew W. Mellon, Paul Mellon, Ailsa Mellon Bruce, Lessing J. Rosenwald, Samuel Henry Kress, and much more...</p>
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
+						<aside>(7,111)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all monument" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/places/items/ArlingtonNationalCemetary/1.jpg')"></div>
 					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
+						<h1>Arlington National Cemetary</h1>
+						<p>A US military cemetery in Arlington County, Virginia, across the Potomac River from Washington, D.C., in whose 624 acres the dead of the nation's conflicts have been buried, beginning with the Civil War, as well as reinterred dead from earlier wars. The United States Department of the Army and a component of the United States Department of Defense controls the cemetery.</p>
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
+						<aside>(7,111)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all park" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/places/items/SmithsonianNationalZoologicalPark/1.jpg')"></div>
 					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
+						<h1>Smithsonian National Zoological Park</h1>
+						<p>One of the oldest zoos in the US, founded in 1889 with the mission to "provide engaging experiences with animals and create/share knowledge to save wildlife and habitats," free of charge for admission.</p>
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
+						<aside>(7,111)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all monument" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/places/items/VietnamVeteransMemorial/1.jpg')"></div>
 					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
+						<h1>Vietnam Veterans Memorial</h1>
+						<p>A memorial honoring service members of the U.S. armed forces who fought in the Vietnam War, service members who died in service in Vietnam/South East Asia, and those service members who were unaccounted for (missing in action) during the war.</p>
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
+						<aside>(7,111)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all museum" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/places/items/NationalMuseumOfAmericanHistory/1.jpg')"></div>
 					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
+						<h1>National Museum of American History</h1>
+						<p>A museum that collects, preserves, and displays the heritage of the United States in the areas of social, political, cultural, scientific, and military history with free admission. </p>
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
+						<aside>(7,111)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all museum" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/places/items/NationalMuseumOfNaturalHistory/1.jpg')"></div>
 					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
+						<h1>National Museum of Natural History</h1>
+						<p>The most visited natural history museum in the world with collections of over 126 million specimens of plants, animals, fossils, minerals, rocks, meteorites, human remains, and human cultural artifacts. It is also home to the largest group of scientists dedicated to the study of natural and cultural history in the world.</p>
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
+						<aside>(7,111)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all monument" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/places/items/WorldWarIIMemorial/1.jpg')"></div>
 					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
+						<h1>World War II Memorial</h1>
+						<p>A memorial of national significance dedicated to Americans who served in the armed forces and as civilians during World War II, consisting of 56 pillars and a pair of small triumphal arches surrounding a square and fountain.</p>
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
+						<aside>(7,111)</aside>
 					</div>
 				</div>
 
-				<div class="item all">
-					<div class="item-pic" id="LoganTavern"></div>
+				<div class="item all monument" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/places/items/MartinLutherKingJrMemorial/1.jpg')"></div>
 					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
+						<h1>Martin Luther King, Jr. Memorial</h1>
+						<p>A granite statue memorial of the Civil Rights Movement leader, Martin Luther King. The memorial design is a line from King's "I Have A Dream" speech: "Out of the mountain of despair, a stone of hope."</p>
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
+						<aside>(7,111)</aside>
 					</div>
+				</div>
+
+				<div class="item all museum monument" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/places/items/HolocaustMemorialMuseum/1.jpg')"></div>
+					<div class="item-info">
+						<h1>Holocaust Memorial Museum</h1>
+						<p>The US' official memorial to the Holocaust, providing the documentation, study, and interpretation of Holocaust history. It is dedicated to helping leaders and citizens of the world confront hatred, prevent genocide, promote human dignity, and strengthen democracy.</p>
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
+						<aside>(7,111)</aside>
+					</div>
+				</div>
+
+				<div class="item all museum" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/places/items/NationalAirAndSpaceMuseum/1.jpg')"></div>
+					<div class="item-info">
+						<h1>National Air and Space Museum</h1>
+						<p>The most visited museum in the US, a center for research into the history and science of aviation and spaceflight, as well as planetary science and terrestrial geology and geophysics with almost all space and aircraft on display being originals.</p>
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
+						<aside>(7,111)</aside>
+					</div>
+				</div>
+
+				<div class="item all government" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/places/items/ThePentagon/1.jpg')"></div>
+					<div class="item-info">
+						<h1>The Pentagon</h1>
+						<p>The headquarters of the United States Department of Defense. As a symbol of the U.S. military, the phrase The Pentagon is often used as a metonym for the Department of Defense and its leadership.</p>
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
+						<aside>(7,111)</aside>
+					</div>
+				</div>
+
+				<div class="item all cathedral" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/places/items/WashingtonNationalCathedral/1.jpg')"></div>
+					<div class="item-info">
+						<h1>Washington National Cathedral</h1>
+						<p>An American cathedral of the Episcopal Church. It is the second largest church building in the US., seating both the Presiding Bishop of the Episcopal Church, Michael Bruce Curry, and the bishop of the Diocese of Washington, Mariann Edgar Budde. </p>
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
+						<aside>(7,111)</aside>
+					</div>
+				</div>
+
+				<div class="item all monument" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
+					<div class="item-pic" style="background-image: url('../images/places/items/KoreanWarVeteransMemorial/1.jpg')"></div>
+					<div class="item-info">
+						<h1>Korean War Veterans Memorial</h1>
+						<p>A memorial that is dedicated to the veterans who served in the Korean War, located in the West Potomac Park in DC.</p>
+						<img class="item-stars" src="../images/food/stars_45_50.png" />
+						<aside>(7,111)</aside>
+					</div>
+				</div>
+			</div>
+
+			<div id="item-info">
+				<h1><!--Item Title--></h1>
+				<p><!--Item Desc--></p>
+				<a href=""><button><img src="../images/generalicos/cursor.png" alt="Click! " />Visit Their Site</button></a>
+				<a href=""><button><img src="../images/generalicos/cursor.png" alt="Click! " />Menu</button></a>
+				<div id="item-map">
+					<iframe src="" frameborder="0" style="border:0" allowfullscreen><!--GoogleMap--></iframe>
+				</div>
+				<ul id="item-info-extra">
+					<li id="item-address"><img src="../images/generalicos/location.png" /> <span><!--Address--></span></li><br />
+					<li id="item-hours"><img src="../images/generalicos/time.png" /> <span  onclick="openclosedropmenu();">Hours Open <span id="item-hours-arrow">&#10148;</span></span>
+						<ul id="item-hours-info">
+							<li><!--sun--></li>
+							<li><!--mon--></li>
+							<li><!--tue--></li>
+							<li><!--wed--></li>
+							<li><!--thu--></li>
+							<li><!--fri--></li>
+							<li><!--sat--></li>
+						</ul>
+					</li>
+				</ul>
+				<div id="item-gallery">
+					<h1>
+						GALLERY
+					</h1>
+				</div>
+				<div id="item-back">
+					<button onclick="hideitem();" class="bottombutton" style="display: block;">
+						BACK
+					</button>
 				</div>
 			</div>
 		</div>

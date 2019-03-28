@@ -27,7 +27,7 @@
 					</nav>
 				</header>
 				<nav>
-					<a id="Home" href="../index.html">HOME</a>
+					<a id="Home" href="index.html">HOME</a>
 					<a id="Maps" href="webpages/maps.html">MAP</a>
 					<a id="Places" href="webpages/places.html">PLACES</a>
 					<a id="Food" href="webpages/food.html"><font class="current-page">FOOD</font></a>
@@ -40,197 +40,13 @@
 				<div class="header-top">
 					<div class="header-top-left">
 						<img src="images/food/headico.png" />
-						<p>FOOD</p>
+						<p>HOME</p>
 					</div>
 					<img onclick="opennav()" class="header-top-right" src="images/mobilenav/menuopen.png" />
 				</div>
 				<input type="text" id="searchbar" onkeyup="categoryfilter(currentFilter)" placeholder="Search...">
 			</header>
-			<div class="filters">
-				<ul>
-					<li onclick="categoryfilter('all')" id="all">ALL</li>
-					<li onclick="categoryfilter('breakfast')" id="breakfast">BREAKFAST</li>
-					<li onclick="categoryfilter('lunch')" id="lunch">LUNCH</li>
-					<li onclick="categoryfilter('dinner')" id="dinner">DINNER</li>
-					<li onclick="categoryfilter('vegan')" id="vegan">VEGAN</li>
-					<li onclick="categoryfilter('american')" id="american">AMERICAN</li>
-					<li onclick="categoryfilter('mexican')" id="mexican">MEXICAN</li>
-					<li onclick="categoryfilter('greek')" id="greek">GREEK</li>
-					<li onclick="categoryfilter('chinese')" id="chinese">CHINESE</li>
-					<li onclick="categoryfilter('italian')" id="italian">ITALIAN</li>
-					<li onclick="categoryfilter('japanese')" id="japanese">JAPANESE</li>
-					<li onclick="categoryfilter('thai')" id="thai">THAI</li>
-					<li onclick="categoryfilter('delivery')" id="delivery">DELIVERY</li>
-					<li onclick="categoryfilter('outdoor-seats')" id="outdoor-seats">OUTDOOR-SEATS</li>
-					<li onclick="categoryfilter('free-wifi')" id="free-wifi">FREE-WIFI</li>
-					<li style="pointer-events: none;"><!-- empty space so last option isn't on the edge of the screen --></li>
-				</ul>
-			</div>
-			<div id="items">
-				<div class="item all breakfast lunch dinner vegan american" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop();">
-					<div class="item-pic" style="background-image: url('images/food/items/OldEbbittGrill/1.jpg')"></div>
-					<div class="item-info">
-						<h1>Old Ebbitt Grill</h1>
-						<p>Iconic tavern offering American meals, including popular oyster specials, in Victorian-style digs.</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(7,111)</aside>
-					</div>
-				</div>
-
-				<div class="item all breakfast lunch dinner vegan american free-wifi" onclick="loaditem(0, 'Founding Farmers DC'); instantscrolltotop();">
-					<div class="item-pic" style="background-image: url('images/food/items/FoundingFarmersDC/1.jpg')"></div>
-					<div class="item-info">
-						<h1>Founding Farmers DC</h1>
-						<p>Co-op-owned American eatery dishing out market-driven comfort cuisine along with rustic-chic style.</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(6,611)</aside>
-					</div>
-				</div>
-
-				<div class="item all breakfast lunch dinner vegan greek outdoor-seats" onclick="loaditem(0, 'Zaytinya DC'); instantscrolltotop();">
-					<div class="item-pic"  style="background-image: url('images/food/items/ZaytinyaDC/1.jpg')"></div>
-					<div class="item-info">
-						<h1>Zaytinya DC</h1>
-						<p>Chef José Andrés' light, airy mainstay offers Eastern Mediterranean small plates & regional wines.</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(2,887)</aside>
-					</div>
-				</div>
-
-				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern/1.jpg')"></div>
-					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
-					</div>
-				</div>
-
-				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern/1.jpg')"></div>
-					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
-					</div>
-				</div>
-
-				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern/1.jpg')"></div>
-					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
-					</div>
-				</div>
-
-				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern/1.jpg')"></div>
-					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
-					</div>
-				</div>
-
-				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern/1.jpg')"></div>
-					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
-					</div>
-				</div>
-
-				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern/1.jpg')"></div>
-					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
-					</div>
-				</div>
-
-				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern/1.jpg')"></div>
-					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
-					</div>
-				</div>
-
-				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern/1.jpg')"></div>
-					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
-					</div>
-				</div>
-
-				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern/1.jpg')"></div>
-					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
-					</div>
-				</div>
-
-				<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop();">
-					<div class="item-pic"  style="background-image: url('images/food/items/LoganTavern/1.jpg')"></div>
-					<div class="item-info">
-						<h1>Logan Tavern</h1>
-						<p>Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)</p>
-						<img class="item-stars" src="images/food/stars_45_50.png" />
-						<aside>(431)</aside>
-					</div>
-				</div>
-			</div>
-
-			<div id="item-info">
-				<h1><!--Item Title--></h1>
-				<p><!--Item Desc--></p>
-				<a href=""><button><img src="images/generalicos/cursor.png" alt="Click! " />Visit Their Site</button></a>
-				<a href=""><button><img src="images/generalicos/cursor.png" alt="Click! " />Menu</button></a>
-				<div id="item-map">
-					<iframe src="" frameborder="0" style="border:0" allowfullscreen><!--GoogleMap--></iframe>
-				</div>
-				<ul id="item-info-extra">
-					<li id="item-address"><img src="images/generalicos/location.png" /> <span><!--Address--></span></li><br />
-					<li id="item-hours"><img src="images/generalicos/time.png" /> <span  onclick="openclosedropmenu();">Hours Open <span id="item-hours-arrow">&#10148;</span></span>
-						<ul id="item-hours-info">
-							<li><!--sun--></li>
-							<li><!--mon--></li>
-							<li><!--tue--></li>
-							<li><!--wed--></li>
-							<li><!--thu--></li>
-							<li><!--fri--></li>
-							<li><!--sat--></li>
-						</ul>
-					</li>
-				</ul>
-				<div id="item-gallery">
-					<h1>
-						GALLERY
-					</h1>
-				</div>
-				<div id="item-back">
-					<button onclick="hideitem();" class="bottombutton" style="display: block;">
-						BACK
-					</button>
-				</div>
-			</div>
+			<font style="font-size: 1.5em; padding: 15px; color: red;">This is a TEMPORARY home page for testing, use the navigation on the top right to go to the actual pages</font>
 		</div>
 	</body>
 </html>
