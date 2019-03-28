@@ -43,7 +43,8 @@ function scrollToTop(totalTime, easingPower)
 	var scrollByPixel = setInterval(function()
 	{
 		var percentSpent = (totalTime - timeLeft) / totalTime;
-		if (timeLeft >= 0) {
+		if (timeLeft >= 0)
+		{
 		  var newScrollTop = scrollTop * (1 - Math.pow(2 * percentSpent, easingPower));
 		  body.scrollTop = newScrollTop;
 		  html.scrollTop = newScrollTop;
