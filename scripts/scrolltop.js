@@ -37,7 +37,6 @@ function scrollToTop(totalTime, easingPower)
 {
 	html = document.documentElement;
   	body = document.body;
-	var timeInterval = 1;
 	var scrollTop = Math.round(body.scrollTop || html.scrollTop);
 	var timeLeft = totalTime;
 	var scrollByPixel = setInterval(function()
@@ -54,7 +53,7 @@ function scrollToTop(totalTime, easingPower)
 		{
 		  clearInterval(scrollByPixel);
 		}
-	}, timeInterval);
+	}, 1);
 }
 
 function instantscrolltotop()
