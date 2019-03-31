@@ -21,7 +21,7 @@ body
 	margin: 0px;
 	padding: 0px;
 	font-family: product-sans-bold;
-	background: rgb(103,118,159);
+	background: var(--blue);
 }
 
 /* adding a space at the bottom of the page so the scroll top button doesn't cover anything */
@@ -735,4 +735,98 @@ div#mobile-nav-items nav a#Attire
 		transform: translate(0, 100vh);
 		opacity: 0;
 	}
-} 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.parallax-bg
+{
+	-webkit-perspective: 100px;
+	perspective: 100px;
+	height: 100vh;
+	overflow-x: hidden;
+}
+
+.parallax-layer
+{
+	position: absolute;
+	top: 0; right: 0;  bottom: 0; left: 0;
+}
+.parallax-layer img
+{
+	display: block;
+	position: absolute;
+	bottom: 0;
+	right: 50%;
+	transform: translate(50%, 0);
+}
+
+#parallax-layer-0
+{
+	-webkit-transform: translateZ(-200px) scale(3);
+	transform: translateZ(-200px) scale(3);
+	z-index: -100;
+}
+
+#parallax-layer-1
+{
+	-webkit-transform: translateZ(-150px) scale(2.5);
+	transform: translateZ(-150px) scale(2.5);
+	z-index: -100;
+}
+
+#parallax-layer-2
+{
+	-webkit-transform: translateZ(-100px) scale(2);
+	transform: translateZ(-100px) scale(2);
+	z-index: -100;
+}
+#parallax-layer-3
+{
+	-webkit-transform: translateZ(-50px) scale(1.5);
+	transform: translateZ(-50px) scale(1.5);
+	z-index: -100;
+}
+#parallax-layer-4
+{
+	-webkit-transform: translateZ(0px) scale(1);
+	transform: translateZ(0px) scale(1);
+	z-index: -100;
+}
+
+.below-info
+{
+	margin-top: calc(100vh - 105px);
+}
+
+ .info-section
+{
+	position: relative;
+	height: 100vh;
+	background: var(--darkerBlue);
+	color: white;
+	z-index: 100;
+}
+#parallax-layer-3 #man
+{
+	height: 65vh;
+	bottom: 10vh;
+	right: 20%;
+	transform: translate(20%, 0);
+}
+#parallax-layer-3 #woman
+{
+	height: 65vh;
+	bottom: 10.5vh;
+	right: 1%;
+	transform: translate(1%, 0);
+}

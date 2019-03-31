@@ -6,7 +6,8 @@ var html, body;
 
 window.addEventListener("scroll", function()
 {
-   if (scrollTopBtn == null)
+	console.log("yeet"); 
+	if (scrollTopBtn == null)
    {
 		scrollTopBtn = document.getElementById("scrolltotop");
    }
