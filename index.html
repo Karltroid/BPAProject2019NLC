@@ -20,7 +20,7 @@
 		<link rel="icon" type="image/x-icon" href="images/meta/favicon.png" />
 		<title>BPA NLC</title>
 	</head>
-	<body>
+	<body id="home">
 		<div id="desktop">
 	
 			<!--
@@ -161,7 +161,7 @@
 			</div>
 		
 		</div>
-		<div id="mobile" style="padding-bottom: 0;">
+		<div id="mobile">
 			<button id="scrolltotop" class="bottombutton" onclick="scrollToTop(100,1)">
 				GO TO TOP
 			</button>
@@ -183,7 +183,6 @@
 					<a id="Attire" href="webpages/attire.html">ATTIRE</a>
 				</nav>
 			</div>
-			<div class="bg-gradient-top"></div>
 			<div class="parallax-bg">
 				<header style="height: 80px;">
 					<div class="header-top">
@@ -205,13 +204,35 @@
 				<div class="parallax-layer" id="parallax-layer-3">
 					<img src="images/index/mobile/layer3.png" />
 					<img id="people" src="images/index/mobile/people.png" />
+					<div class="arrow bounce">
+						<span>&darr;</span>
+					</div>
 				</div>
 				<div class="parallax-layer" id="parallax-layer-4">
 					<img src="images/index/mobile/layer4.png" />
 				</div>
 				<div class="below-info">
-					<div class="info-section">Info page 1</div>
-					<div id="man" class="info-section">Info page 2</div>
+					<div class="info-section" id="info-section-1">
+						<div class="content">
+							<img id="people2" src="images/index/mobile/people2.png" alt="" />
+							<h1>What is BPA?</h1>
+							<p>With 45,000 members in over 1,800 chapters across 25 states and Puerto Rico, BPA is a co-curricular organization that supports business and information technology educators by offering co-curricular exercises based on national standards.</p>
+							<a href="http://www.BPA.org"><button><img id="cursor" src="images/generalicos/cursor.png" alt="bpa.org" />bpa.org</button></a>
+							<div style="margin: 2vh 0 0;">
+								<span>More Info</span>
+								<div class="arrow bounce">
+									<span>&darr;</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="info-section" id="info-section-2">
+						<div class="content">
+							<img id="people2" src="" alt="" />
+							<h1>What is the NLC?</h1>
+							<p>With 45,000 members in over 1,800 chapters across 25 states and Puerto Rico, BPA is a co-curricular organization that supports business and information technology educators by offering co-curricular exercises based on national standards.</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

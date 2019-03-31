@@ -6,7 +6,6 @@ var html, body, parllaxarea;
 
 window.addEventListener("scroll", function()
 {
-	console.log("yeet"); 
 	if (scrollTopBtn == null)
    {
 		scrollTopBtn = document.getElementById("scrolltotop");
@@ -32,36 +31,6 @@ window.addEventListener("scroll", function()
     	}
     }
 }, false)
-
-parllaxarea.addEventListener("scroll", function()
-{
-	console.log("yeet"); 
-	if (scrollTopBtn == null)
-   {
-		scrollTopBtn = document.getElementById("scrolltotop");
-   }
-    winheight = window.innerHeight || (document.documentElement || document.body).clientHeight;
-    scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
-    if (scrollTop > winheight)
-    {
-		if (scrolledDown == false)
-		{
-	    	scrolledDown = true;
-	    	scrollTopBtn.style.display = "block";
-	    	scrollTopBtn.style.animation = "scrollbtn-slide-in " + 1 + "s";
-    	}
-    }
-    else
-    {
-    	if (scrolledDown == true)
-		{
-	    	scrolledDown = false;
-	    	scrollTopBtn.style.animation = "scrollbtn-slide-out " + 1 + "s";
-	    	setTimeout(function() { scrollTopBtn.style.display = "none"; }, 1000);
-    	}
-    }
-}, false)
-
 
 function scrollToTop(totalTime, easingPower)
 {
