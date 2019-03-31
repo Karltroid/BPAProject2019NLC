@@ -750,8 +750,8 @@ div#mobile-nav-items nav a#Attire
 
 .parallax-bg
 {
-	-webkit-perspective: 100px;
-	perspective: 100px;
+	-webkit-perspective: 33vw;
+	perspective: 33vw;
 	height: 100vh;
 	overflow-x: hidden;
 }
@@ -761,7 +761,7 @@ div#mobile-nav-items nav a#Attire
 	position: absolute;
 	top: 0; right: 0;  bottom: 0; left: 0;
 }
-.parallax-layer img
+.parallax-layer img, .parallax-layer p
 {
 	display: block;
 	position: absolute;
@@ -816,17 +816,11 @@ div#mobile-nav-items nav a#Attire
 	color: white;
 	z-index: 100;
 }
-#parallax-layer-3 #man
+#parallax-layer-3 #people
 {
-	height: 65vh;
+	width: 90vw;
+	max-width: 450px;
 	bottom: 10vh;
-	right: 20%;
-	transform: translate(20%, 0);
-}
-#parallax-layer-3 #woman
-{
-	height: 65vh;
-	bottom: 10.5vh;
-	right: 1%;
-	transform: translate(1%, 0);
+	right: 50%;
+	transform: translate(50%, 0);
 }
