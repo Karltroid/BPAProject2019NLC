@@ -15,7 +15,7 @@ function opennav()
 	setTimeout(function()
 	{
 		document.getElementById("index-scrollable-area").style.display = "none";
-	}, openSpeed * 1000);
+	}, (openSpeed * .5) * 1000);
 }
 
 function closenav()
