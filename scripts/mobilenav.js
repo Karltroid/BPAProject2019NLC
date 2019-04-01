@@ -14,7 +14,8 @@ function opennav()
 
 	setTimeout(function()
 	{
-		document.getElementById("index-scrollable-area").style.display = "none";
+		if (document.getElementById("index-scrollable-area") != null)
+			document.getElementById("index-scrollable-area").style.display = "none";
 	}, (openSpeed * .5) * 1000);
 }
 
@@ -22,7 +23,8 @@ function closenav()
 {
 	var closeSpeed = 2;
 	var speed = 1;
-	document.getElementById("index-scrollable-area").style.display = "block";
+	if (document.getElementById("index-scrollable-area") != null)
+		document.getElementById("index-scrollable-area").style.display = "block";
 	document.getElementsByTagName("body")[0].style.overflow = "auto";
 	document.getElementById("mobile-nav-header").style.animation = "slide-out " + closeSpeed * 1 + "s";
 	for (i = 0; i < navitems.length; i++)
