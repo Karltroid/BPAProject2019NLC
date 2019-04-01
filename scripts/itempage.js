@@ -1,4 +1,4 @@
-var itempage, itemgallery, itemaddress, itemhours, hoursopendropdown, hoursopen, currentItemType;
+var itempage, itemgallery, itemaddress, itemhours, itemdresscodeF, itemdresscodeM, hoursopendropdown, dresscodeMdropdown, dresscodeFdropdown, hoursopen, dresscodeMopen, dresscodeFopen, currentItemType;
 var items = 
 [
 	[
@@ -60,10 +60,22 @@ var items =
 		["Potomac Riverboat", "Potomac Riverboat Company offers narrated sightseeing cruises, water taxi service and private parties along the Potomac River.", "https://www.potomacriverboatco.com/", "https://www.potomacriverboatco.com/water-taxi/wharf/", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/transit/items/PotomacRiverboat/1.jpg", "../images/transit/items/PotomacRiverboat/2.jpg", "../images/transit/items/PotomacRiverboat/3.jpg", "../images/transit/items/PotomacRiverboat/4.jpg"],
 		["Enterprise Holdings", "Enterprise Holdings offers extensive car rental, carsharing, retail car sales and other transportation services.", "https://www.enterprise.com", "https://www.enterprise.com/en/car-rental/locations/us/washington-dc.html", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/transit/items/EnterpriseHoldings/1.jpg", "../images/transit/items/EnterpriseHoldings/2.jpg", "../images/transit/items/EnterpriseHoldings/3.jpg", "../images/transit/items/EnterpriseHoldings/4.jpg"],
 		["Big Bus Tours", "The open top bus visits the City’s most iconic landmarks and allows unlimited access to hop-on and off.", "https://www.bigbustours.com/en/washington-dc/washington-dc-bus-tours/", "https://www.bigbustours.com/en/washington-dc/washington-dc-bus-tours/", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/transit/items/BigBusTours/1.jpg", "../images/transit/items/BigBusTours/2.jpg", "../images/transit/items/BigBusTours/3.jpg", "../images/transit/items/BigBusTours/4.jpg"],
-		["America Bus Service", "American Limousine & Bus Services Inc. offers professional and dependable transportation services to the DC metro area.", "sitelink", "estimatelink", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/transit/items/AmericaBusService/1.jpg", "../images/transit/items/AmericaBusService/2.jpg", "../images/transit/items/AmericaBusService/3.jpg", "../images/transit/items/AmericaBusService/4.jpg"],
-		["SET Management", "SETM have provided DC events and clients with Luxury Transportation across the metro area since 1995.", "sitelink", "estimatelink", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/transit/items/SETManagement/1.jpg", "../images/transit/items/SETManagement/2.jpg", "../images/transit/items/SETManagement/3.jpg", "../images/transit/items/SETManagement/4.jpg"],
+		["America Bus Service", "American Limousine & Bus Services Inc. offers professional and dependable transportation services to the DC metro area.", "http://americatransportation.com", "http://americatransportation.com", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/transit/items/AmericaBusService/1.jpg", "../images/transit/items/AmericaBusService/2.jpg", "../images/transit/items/AmericaBusService/3.jpg", "../images/transit/items/AmericaBusService/4.jpg"],
 		["title", "desc", "sitelink", "estimatelink", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/transit/items/PLACE/1.jpg", "../images/transit/items/PLACE/2.jpg", "../images/transit/items/PLACE/3.jpg", "../images/transit/items/PLACE/4.jpg"]
-	]  
+	],
+	[
+		// attire items - title, desc, images...
+		["General Sessions", "desc", "o", "o", "o", "o", "MCode1", "MCode2", "MCode3", "MCode4", "MCode5", "MCode6", "MCode7", "FCode1", "FCode2", "FCode3", "FCode4", "FCode5", "FCode6", "FCode7", "../images/attire/items/EVENT/1.jpg", "../images/transit/items/EVENT/2.jpg", "../images/transit/items/EVENT/3.jpg", "../images/transit/items/EVENT/4.jpg"],
+		["Tours", "desc", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "../images/attire/items/EVENT/1.jpg", "../images/transit/items/EVENT/2.jpg", "../images/transit/items/EVENT/3.jpg", "../images/transit/items/EVENT/4.jpg"],
+		["Competitive Events", "desc", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "../images/attire/items/EVENT/1.jpg", "../images/transit/items/EVENT/2.jpg", "../images/transit/items/EVENT/3.jpg", "../images/transit/items/EVENT/4.jpg"],
+		["Special Events", "desc", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "../images/attire/items/EVENT/1.jpg", "../images/transit/items/EVENT/2.jpg", "../images/transit/items/EVENT/3.jpg", "../images/transit/items/EVENT/4.jpg"],
+		["Campaign Rally", "desc", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "../images/attire/items/EVENT/1.jpg", "../images/transit/items/EVENT/2.jpg", "../images/transit/items/EVENT/3.jpg", "../images/transit/items/EVENT/4.jpg"],
+		["Exhibit Hall", "desc", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "../images/attire/items/EVENT/1.jpg", "../images/transit/items/EVENT/2.jpg", "../images/transit/items/EVENT/3.jpg", "../images/transit/items/EVENT/4.jpg"],
+		["Caucuses", "desc", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "../images/attire/items/EVENT/1.jpg", "../images/transit/items/EVENT/2.jpg", "../images/transit/items/EVENT/3.jpg", "../images/transit/items/EVENT/4.jpg"],
+		["Workshops", "desc", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "../images/attire/items/EVENT/1.jpg", "../images/transit/items/EVENT/2.jpg", "../images/transit/items/EVENT/3.jpg", "../images/transit/items/EVENT/4.jpg"],
+		["National Leadership Academy", "desc", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "../images/attire/items/EVENT/1.jpg", "../images/transit/items/EVENT/2.jpg", "../images/transit/items/EVENT/3.jpg", "../images/transit/items/EVENT/4.jpg"],
+		["title", "desc", "", "", "", "", "", "", "", "", "", "", "fcode1", "fcode2", "fcode3", "fcode4", "fcode5", "fcode6", "fcode7", "../images/attire/items/EVENT/1.jpg", "../images/transit/items/EVENT/2.jpg", "../images/transit/items/EVENT/3.jpg", "../images/transit/items/EVENT/4.jpg"]
+	]
 ];
 
 
@@ -92,17 +104,39 @@ function loaditem(itemtype, item)
 			}
 
 			// load "Hour Open" info
-			for (var x = 0; x <= 6; x++)
+			if (currentItemType == 0 || currentItemType == 1 || currentItemType == 2)
 			{
-				itemhours.getElementsByTagName("li")[x].innerHTML = items[itemtype][i][x + 6];
-			}
+				for (var x = 0; x <= 6; x++)
+				{
+					itemhours.getElementsByTagName("li")[x].innerHTML = items[itemtype][i][x + 6];
+				}
 
-			// load item's images
-			for (var j = 13; j <= items[itemtype][i].length-1; j++)
+				// load item's images
+				for (var j = 13; j <= items[itemtype][i].length-1; j++)
+				{
+					var img = document.createElement("img");
+					img.setAttribute("src", items[itemtype][i][j]);
+					document.getElementById("item-gallery").appendChild(img);
+				}
+			}
+			else
 			{
-				var img = document.createElement("img");
-				img.setAttribute("src", items[itemtype][i][j]);
-				document.getElementById("item-gallery").appendChild(img);
+				for (var x = 0; x <= 6; x++)
+				{
+					itemdresscodeM.getElementsByTagName("li")[x].innerHTML = items[itemtype][i][x + 6];
+				}
+				for (var x = 0; x <= 6; x++)
+				{
+					itemdresscodeF.getElementsByTagName("li")[x].innerHTML = items[itemtype][i][x + 13];
+				}
+
+				// load item's images
+				for (var j = 19; j <= items[itemtype][i].length-1; j++)
+				{
+					var img = document.createElement("img");
+					img.setAttribute("src", items[itemtype][i][j]);
+					document.getElementById("item-gallery").appendChild(img);
+				}
 			}
 		}
 	}
@@ -161,22 +195,59 @@ function hideitem()
 }
 
 
-function openclosedropmenu()
+function openclosedropmenu(menu)
 {
 	// when the hours open text is clicked it will open if the info isn't already open
 	// if it is already open it will instead close it
-	if (hoursopen)
+	if (menu == "hours")
 	{
-		hoursopen = false;
-		hoursopendropdown.style.transform = "rotate(0deg)";
-		itemhours.getElementsByTagName("ul")[0].style.display = "none";
+		if (hoursopen)
+		{
+			hoursopen = false;
+			hoursopendropdown.style.transform = "rotate(0deg)";
+			itemhours.getElementsByTagName("ul")[0].style.display = "none";
+		}
+		else
+		{
+			hoursopen = true;
+			hoursopendropdown.style.transform = "rotate(90deg)";
+			itemhours.getElementsByTagName("ul")[0].style.display = "block";
+		}
 	}
-	else
+	else if (menu == "dresscodeM")
 	{
-		hoursopen = true;
-		hoursopendropdown.style.transform = "rotate(90deg)";
-		itemhours.getElementsByTagName("ul")[0].style.display = "block";
+		if (dresscodeMopen)
+		{
+			dresscodeMopen = false;
+			dresscodeMdropdown.style.transform = "rotate(0deg)";
+			itemdresscodeM.getElementsByTagName("ul")[0].style.display = "none";
+		}
+		else if (!dresscodeMopen)
+		{
+			dresscodeMopen = true;
+			dresscodeMdropdown.style.transform = "rotate(90deg)";
+			itemdresscodeM.getElementsByTagName("ul")[0].style.display = "block";
+		}
 	}
+	else if (menu == "dresscodeF")
+	{
+		if (dresscodeFopen)
+		{
+			dresscodeFopen = false;
+			dresscodeFdropdown.style.transform = "rotate(0deg)";
+			itemdresscodeF.getElementsByTagName("ul")[0].style.display = "none";
+			console.log(itemdresscodeF.getElementsByTagName("ul")[0].style.display);
+		}
+		else if (!dresscodeFopen)
+		{
+			dresscodeFopen = true;
+			dresscodeFdropdown.style.transform = "rotate(90deg)";
+			itemdresscodeF.getElementsByTagName("ul")[0].style.display = "block";
+			console.log(itemdresscodeF.getElementsByTagName("ul")[0]);
+		}
+	}
+	
+	
 }
 
 
@@ -187,5 +258,10 @@ window.onload = function() // run when the page is ready
 	itemgallery = document.getElementById("item-gallery");
 	itemaddress = document.getElementById("item-address");
 	itemhours = document.getElementById("item-hours");
+	itemdresscodeM = document.getElementById("item-dresscode-m");
+	itemdresscodeF = document.getElementById("item-dresscode-f");
 	hoursopendropdown = document.getElementById("item-hours-arrow")
+	dresscodeMdropdown = document.getElementById("dresscodeM-arrow")
+	dresscodeFdropdown = document.getElementById("dresscodeF-arrow")
+	console.log(itemdresscodeF);
 }

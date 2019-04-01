@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- meta info-->
+		<meta charset="UTF-8" />
+		<meta name="description" content="A website to assist BPA chapters in planning their attendance at the NLC in Washington D.C." />
+		<meta name="keywords" content="BPA,business,professionals,America,NLC,Washington,DC" />
+		<meta name="author" content="Karl Palmer, Patrick Crowley, & Matthew Murphy" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- stylesheets & scripts -->
+		<link rel="stylesheet" type="text/css" href="../css/vars.css" />
+		<link rel="stylesheet" type="text/css" media="(min-width: 990px)" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" media="(max-width: 990px)" href="../css/indexmobile.css" />
+		<script src="../scripts/mobilenav.js"></script>
+		<script src="../scripts/search.js"></script>
+		<script src="../scripts/scrolltop.js"></script>
+		<script src="../scripts/itempage.js"></script>
+
+		<!-- site title & icon -->
+		<link rel="icon" type="image/x-icon" href="../images/meta/favicon.png" />
+		<title>BPA NLC</title>
+	</head>
+	<body>
+		<div id="desktop">
+
+		</div>
+
+		<div id="mobile">
+			<button id="scrolltotop" class="bottombutton" onclick="scrollToTop('',100,1)">
+				GO TO TOP
+			</button>
+			<div id="mobile-nav-items">
+				<header id="mobile-nav-header">
+					<div id="mobile-nav-title">
+						MENU
+					</div>
+					<nav id="mobile-nav">
+						<img onclick="closenav()" id="nav-button" src="../images/mobilenav/menuclose.png" />
+					</nav>
+				</header>
+				<nav>
+					<a id="Home" href="../index.html">HOME</a>
+					<a id="Map" href="map.html">MAP</a>
+					<a id="Places" href="places.html">PLACES</a>
+					<a id="Food" href="food.html">FOOD</a>
+					<a id="Transit" href="transit.html">TRANSIT</a>
+					<a id="Attire" href="attire.html"><span class="current-page">ATTIRE</span></a>
+				</nav>
+			</div>
+			<div class="bg-gradient"></div>
+			<header>
+				<div class="header-top">
+					<div class="header-top-left">
+						<img src="../images/attire/headico.png" />
+						<p>ATTIRE</p>
+					</div>
+					<img onclick="opennav()" class="header-top-right" src="../images/mobilenav/menuopen.png" />
+				</div>
+				<input type="text" id="searchbar" onkeyup="categoryfilter(currentFilter)" placeholder="Search...">
+			</header>
+			<div class="filters">
+				<ul>
+					<li onclick="categoryfilter('all')" id="all">ALL</li>
+					<li onclick="categoryfilter('casual')" id="casual">CASUAL</li>
+					<li onclick="categoryfilter('professional')" id="professional">PROFESSIONAL</li>
+					<li style="pointer-events: none;"><!-- empty space so last option isn't on the edge of the screen --></li>
+				</ul>
+			</div>
+			<div id="items">
+
+				<div class="item all professional" onclick="loaditem(3, 'General Sessions'); instantscrolltotop('item-info');">
+					<div class="item-pic" style="background-image: url('../images/transit/items/UBER/1.jpg')"></div>
+					<div class="item-info">
+						<h1>General Sessions</h1>
+						<p>...</p>
+					</div>
+				</div>
+
+				<div class="item all casual" onclick="loaditem(3, 'Tours'); instantscrolltotop('item-info');">
+					<div class="item-pic" style="background-image: url('../images/transit/items/UBER/1.jpg')"></div>
+					<div class="item-info">
+						<h1>Tours</h1>
+						<p>...</p>
+					</div>
+				</div>
+
+				<div class="item all professional" onclick="loaditem(3, 'Competitive Events'); instantscrolltotop('item-info');">
+					<div class="item-pic" style="background-image: url('../images/transit/items/UBER/1.jpg')"></div>
+					<div class="item-info">
+						<h1>Competitive Events</h1>
+						<p>...</p>
+					</div>
+				</div>
+
+				<div class="item all casual" onclick="loaditem(3, 'Special Events'); instantscrolltotop('item-info');">
+					<div class="item-pic" style="background-image: url('../images/transit/items/UBER/1.jpg')"></div>
+					<div class="item-info">
+						<h1>Special Events</h1>
+						<p>...</p>
+					</div>
+				</div>
+
+				<div class="item all professional" onclick="loaditem(3, 'Campaign Rally'); instantscrolltotop('item-info');">
+					<div class="item-pic" style="background-image: url('../images/transit/items/UBER/1.jpg')"></div>
+					<div class="item-info">
+						<h1>Campaign Rally</h1>
+						<p>...</p>
+					</div>
+				</div>
+
+				<div class="item all casual" onclick="loaditem(3, 'Exhibit Hall'); instantscrolltotop('item-info');">
+					<div class="item-pic" style="background-image: url('../images/transit/items/UBER/1.jpg')"></div>
+					<div class="item-info">
+						<h1>Exhibit Hall</h1>
+						<p>...</p>
+					</div>
+				</div>
+
+				<div class="item all professional" onclick="loaditem(3, 'Caucuses'); instantscrolltotop('item-info');">
+					<div class="item-pic" style="background-image: url('../images/transit/items/UBER/1.jpg')"></div>
+					<div class="item-info">
+						<h1>Caucuses</h1>
+						<p>...</p>
+					</div>
+				</div>
+
+				<div class="item all professional" onclick="loaditem(3, 'Workshops'); instantscrolltotop('item-info');">
+					<div class="item-pic" style="background-image: url('../images/transit/items/UBER/1.jpg')"></div>
+					<div class="item-info">
+						<h1>Workshops</h1>
+						<p>...</p>
+					</div>
+				</div>
+
+				<div class="item all professional" onclick="loaditem(3, 'National Leadership Academy'); instantscrolltotop('item-info');">
+					<div class="item-pic" style="background-image: url('../images/transit/items/UBER/1.jpg')"></div>
+					<div class="item-info">
+						<h1>National Leadership Academy</h1>
+						<p>...</p>
+					</div>
+				</div>
+
+			</div>
+
+			<div id="item-info">
+				<h1><!--Item Title--></h1>
+				<p><!--Item Desc--></p>
+				<a href=""><button style="margin: 0;"><img src="../images/generalicos/cursor.png" alt="Visit Their Site" />Visit Their Site</button></a>
+				<a href=""><button style="margin: 0;"><img src="../images/generalicos/cursor.png" alt="Menu" />Get Estimate</button></a>
+				<ul id="item-info-extra">
+					<li id="item-dresscode-m"><img src="../images/generalicos/shirt.png" /> <span  onclick="openclosedropmenu('dresscodeM');">Dress Code (Men) <span id="dresscodeM-arrow">&#10148;</span></span>
+						<ul>
+							<li><!--male dress code rule #1--></li>
+							<li><!--male dress code rule #2--></li>
+							<li><!--male dress code rule #3--></li>
+							<li><!--male dress code rule #4--></li>
+							<li><!--male dress code rule #5--></li>
+							<li><!--male dress code rule #6--></li>
+							<li><!--male dress code rule #7--></li>
+						</ul>
+					</li>
+
+					<li id="item-dresscode-f"><img src="../images/generalicos/shirt.png" /> <span  onclick="openclosedropmenu('dresscodeF');">Dress Code (Female) <span id="dresscodeF-arrow">&#10148;</span></span>
+						<ul>
+							<li><!--female dress code rule #1--></li>
+							<li><!--female dress code rule #2--></li>
+							<li><!--female dress code rule #3--></li>
+							<li><!--female dress code rule #4--></li>
+							<li><!--female dress code rule #5--></li>
+							<li><!--female dress code rule #6--></li>
+							<li><!--female dress code rule #7--></li>
+						</ul>
+					</li>
+				</ul>
+				<div id="item-gallery">
+					<h1>
+						GALLERY
+					</h1>
+				</div>
+				<div id="item-back">
+					<button onclick="hideitem();" class="bottombutton" style="display: block;">
+						BACK
+					</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
