@@ -2,7 +2,7 @@ var itempage, itemgallery, itemextrainfo, hoursopendropdown, hoursopen, currentI
 var items = 
 [
 	[
-		// food items - title, desc, site link, map, location, times, images...
+		// food items - title, desc, site link, menu link, map, location, times, images...
 		['Old Ebbitt Grill', 'Iconic tavern offering American meals, including popular oyster specials, in Victorian-style digs.', 'https://www.ebbitt.com/', 'https://www.ebbitt.com/menus/', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.1343824091286!2d-77.03544908523939!3d38.898042179570545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1553614542800', '675 15th St NW Washington, DC 20005', '<span>Sun</span> 8:30AM - 2AM', '<span>Mon</span> 7:30AM - 2AM', '<span>Tue</span> 7:30AM - 2AM', '<span>Wed</span> 7:30AM - 2AM', '<span>Thu</span> 7:30AM - 3AM', '<span>Fri</span> 7:30AM - 3AM', '<span>Sat</span> 8:30AM - 3AM', '../images/food/items/OldEbbittGrill/1.jpg', '../images/food/items/OldEbbittGrill/2.jpg', '../images/food/items/OldEbbittGrill/3.jpg', '../images/food/items/OldEbbittGrill/4.jpg', '../images/food/items/OldEbbittGrill/5.jpg'],
 		['Founding Farmers DC', 'Co-op-owned American eatery dishing out market-driven comfort cuisine along with rustic-chic style.', 'https://www.wearefoundingfarmers.com/', 'https://www.wearefoundingfarmers.com/menus/', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1305.5068409301718!2d-77.04520954436336!3d38.90029097254082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1553616507715', '1924 Pennsylvania Ave NW, Washington, DC 20006', '<span>Sun</span> 8:30AM - 10PM', '<span>Mon</span> 7AM - 10PM', '<span>Tue</span> 7AM - 11PM', '<span>Wed</span> 7AM - 11PM', '<span>Thu</span> 7AM - 11PM', '<span>Fri</span> 7AM - 12AM', '<span>Sat</span> 8:30AM - 12AM', '../images/food/items/FoundingFarmersDC/1.jpg', '../images/food/items/FoundingFarmersDC/2.jpg', '../images/food/items/FoundingFarmersDC/3.jpg', '../images/food/items/FoundingFarmersDC/4.jpg', '../images/food/items/FoundingFarmersDC/5.jpg'],
 		['Zaytinya DC', 'Chef José Andrés\' light, airy mainstay offers Eastern Mediterranean small plates & regional wines.', 'https://www.zaytinya.com/', 'https://www.zaytinya.com/menu/washington-dc/', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.1036729506463!2d-77.02587268523934!3d38.89874447957046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1553615547476', '701 9th St NW, Washington, DC 20001', '<span>Sun</span> 11AM - 10PM', '<span>Mon</span> 11AM - 10PM', '<span>Tue</span> 11AM - 11PM', '<span>Wed</span> 11AM - 11PM', '<span>Thu</span> 11AM - 11PM', '<span>Fri</span> 11AM - 12AM', '<span>Sat</span> 11AM - 10AM', 'images/food/items/ZaytinyaDC/1.jpg', '../images/food/items/ZaytinyaDC/2.jpg', '../images/food/items/ZaytinyaDC/3.jpg', '../images/food/items/ZaytinyaDC/4.jpg', '../images/food/items/ZaytinyaDC/5.jpg'],
@@ -34,36 +34,34 @@ var items =
 		["The White House", "The official residence and workplace of the President of the United States since John Adams in 1800.", "https://www.whitehouse.gov/about-the-white-house/the-white-house/", "", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.150381930867!2d-77.03872384979644!3d38.897676279470346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1553980916170!5m2!1sen!2sus", "1600 Pennsylvania Ave NW, Washington, DC 20500", "<span>Sun</span> Closed", "<span>Mon</span> Closed", "<span>Tue</span> 7:30AM - 11:30AM", "<span>Wed</span> 7:30AM - 11:30AM", "<span>Thu</span> 7:30AM - 11:30AM", "<span>Fri</span> 7:30AM - 1:30PM", "<span>Sat</span> 7:30AM - 1:30PM", "../images/places/items/TheWhiteHouse/1.jpg", "../images/places/items/TheWhiteHouse/2.jpg", "../images/places/items/TheWhiteHouse/3.jpg", "../images/places/items/TheWhiteHouse/4.jpg"],
 		["The Jefferson Memorial", "A memorial dedicated to Thomas Jefferson: American Founding Father, main author of the Declaration of Independence, and third President of the United States.", "https://washington.org/dc-guide-to/jefferson-memorial", "", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.8628070372097!2d-77.03864764979707!3d38.8813805794729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1553988321206!5m2!1sen!2sus", "701 E Basin Dr SW, Washington, DC 20242", "<span>Sun</span> All Day", "<span>Mon</span> All Day", "<span>Tue</span> All Day", "<span>Wed</span> All Day", "<span>Thu</span> All Day", "<span>Fri</span> All Day", "<span>Sat</span> All Day", "../images/places/items/ThomasJeffersonMemorial/1.jpg", "../images/places/items/ThomasJeffersonMemorial/2.jpg", "../images/places/items/ThomasJeffersonMemorial/3.jpg", "../images/places/items/ThomasJeffersonMemorial/4.jpg"],
 		["National Gallery of Art", "A national art museum open to the public and free of charge which contrains works from Leonardo da Vinci, Andrew W. Mellon, Paul Mellon, etc.", "https://www.nga.gov/", "", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.429262185593!2d-77.02215904970737!3d38.891297978980546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1553989322239!5m2!1sen!2sus", "Constitution Ave NW, Washington, DC 20565", "<span>Sun</span> 11:00AM - 6:00PM", "<span>Mon</span> 10:00AM - 5:00PM", "<span>Tue</span> 10:00AM - 5:00PM", "<span>Wed</span> 10:00AM - 5:00PM", "<span>Thu</span> 10:00AM - 5:00PM", "<span>Fri</span> 10:00AM - 5:00PM", "<span>Sat</span> 10:00AM - 5:00PM", "../images/places/items/NationalGalleryOfArt/1.jpg", "../images/places/items/NationalGalleryOfArt/2.jpg", "../images/places/items/NationalGalleryOfArt/3.jpg", "../images/places/items/NationalGalleryOfArt/4.jpg"],
-		["Arlington National Cemetary", "A cemetery in whose 624 acres the dead of the nation's conflicts have been buried, beginning with the Civil War and transferred dead from earlier wars.", "https://www.arlingtoncemetery.mil/#/", "", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.9963568644594!2d-77.0708650497972!3d38.878325179473244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1553990344619!5m2!1sen!2sus", "Arlington, VA 22211", "<span>Sun</span> 8:00AM - 7:00PM", "<span>Mon</span> 8:00AM - 7:00PM", "<span>Tue</span> 8:00AM - 7:00PM", "<span>Wed</span> 8:00AM - 7:00PM", "<span>Thu</span> 8:00AM - 7:00PM", "<span>Fri</span> 8:00AM - 7:00PM", "<span>Sat</span> 8:00AM - 7:00PM", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg", "../images/places/items/NAME/5.jpg"],
+		["Arlington National Cemetary", "A cemetery in whose 624 acres the dead of the nation's conflicts have been buried, beginning with the Civil War and transferred dead from earlier wars.", "https://www.arlingtoncemetery.mil/#/", "", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.9963568644594!2d-77.0708650497972!3d38.878325179473244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1553990344619!5m2!1sen!2sus", "Arlington, VA 22211", "<span>Sun</span> 8:00AM - 7:00PM", "<span>Mon</span> 8:00AM - 7:00PM", "<span>Tue</span> 8:00AM - 7:00PM", "<span>Wed</span> 8:00AM - 7:00PM", "<span>Thu</span> 8:00AM - 7:00PM", "<span>Fri</span> 8:00AM - 7:00PM", "<span>Sat</span> 8:00AM - 7:00PM", "../images/places/items/ArlingtonNationalCemetary/1.jpg", "../images/places/items/ArlingtonNationalCemetary/2.jpg", "../images/places/items/ArlingtonNationalCemetary/3.jpg", "../images/places/items/ArlingtonNationalCemetary/4.jpg"],
 		["Smithsonian National Zoo", 'One of the oldest zoos in the US, founded with the mission to "provide engaging experiences with animals and create/share knowledge to save wildlife and habitats."', "https://nationalzoo.si.edu/", "", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3103.7533120575363!2d-77.05197844979519!3d38.929615579465256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1553991070205!5m2!1sen!2sus", "3001 Connecticut Ave NW, Washington, DC 20008", "<span>Sun</span> 8:00AM - 5:00PM", "<span>Mon</span> 8:00AM - 5:00PM", "<span>Tue</span> 8:00AM - 5:00PM", "<span>Wed</span> 8:00AM - 5:00PM", "<span>Thu</span> 8:00AM - 5:00PM", "<span>Fri</span> 8:00AM - 5:00PM", "<span>Sat</span> 8:00AM - 5:00PM", "../images/places/items/SmithsonianNationalZoo/1.jpg", "../images/places/items/SmithsonianNationalZoo/2.jpg", "../images/places/items/SmithsonianNationalZoo/3.jpg", "../images/places/items/SmithsonianNationalZoo/4.jpg"],
 		["Vietnam Veterans Memorial", "A memorial honoring then U.S. armed forces members who fought, who were killed, and who were unaccounted for in the Vietnam War.", "http://thewall-usa.com/", "", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.4294676493873!2d-77.04990724979665!3d38.89129327947138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1553992593363!5m2!1sen!2sus", "5 Henry Bacon Dr NW, Washington, DC 20245", "<span>Sun</span> All Day", "<span>Mon</span> All Day", "<span>Tue</span> All Day", "<span>Wed</span> All Day", "<span>Thu</span> All Day", "<span>Fri</span> All Day", "<span>Sat</span> All Day", "../images/places/items/VietnamVeteransMemorial/1.jpg", "../images/places/items/VietnamVeteransMemorial/2.jpg", "../images/places/items/VietnamVeteransMemorial/3.jpg", "../images/places/items/VietnamVeteransMemorial/4.jpg"],
-		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg", "../images/places/items/NAME/5.jpg"],
-		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg", "../images/places/items/NAME/5.jpg"],
-		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg", "../images/places/items/NAME/5.jpg"],
-		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg", "../images/places/items/NAME/5.jpg"],
-		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg", "../images/places/items/NAME/5.jpg"],
-		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg", "../images/places/items/NAME/5.jpg"],
-		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg", "../images/places/items/NAME/5.jpg"],
-		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg", "../images/places/items/NAME/5.jpg"],
-		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg", "../images/places/items/NAME/5.jpg"],
-		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg", "../images/places/items/NAME/5.jpg"],
-		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg", "../images/places/items/NAME/5.jpg"],
-		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg", "../images/places/items/NAME/5.jpg"],
-	]
-	
-	// GOOGLE MAP LINE: Remove 1m2! to !5e0! from link
+		["National Museum of American History", "A museum that collects, preserves, and displays the social, political, cultural, scientific, and military history the United States with free admission.", "https://americanhistory.si.edu/", "", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.4347774685393!2d-77.0335264989227!3d38.891171829471354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1sen!2sus!4v1554063617362!5m2!1sen!2sus", "1300 Constitution Ave NW, Washington, DC 20560", "<span>Sun</span> 10:00AM - 5:30PM", "<span>Mon</span> 10:00AM - 3:00PM", "<span>Tue</span> 10:00AM - 5:30PM", "<span>Wed</span> 10:00AM - 5:30PM", "<span>Thu</span> 10:00AM - 5:30PM", "<span>Fri</span> 10:00AM - 5:30PM", "<span>Sat</span> 10:00AM - 5:30PM", "../images/places/items/NationalMuseumOfAmericanHistory/1.jpg", "../images/places/items/NationalMuseumOfAmericanHistory/2.jpg", "../images/places/items/NationalMuseumOfAmericanHistory/3.jpg", "../images/places/items/NationalMuseumOfAmericanHistory/4.jpg"],
+		["National Museum of Natural History", "The most visited natural history museum in the world which collects over 126 million specimens of plants, animals, fossils, minerals, meteorites, human remains, and human cultural artifacts.", "https://naturalhistory.si.edu/", "", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.4306524682115!2d-77.02825944892267!3d38.891266179471316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1554062862513!5m2!1sen!2sus", "10th St. & Constitution Ave. NW, Washington, DC 20560", "<span>Sun</span> 10:00AM - 5:30PM", "<span>Mon</span> 10:00AM - 5:30PM", "<span>Tue</span> 10:00AM - 5:30PM", "<span>Wed</span> 10:00AM - 5:30PM", "<span>Thu</span> 10:00AM - 5:30PM", "<span>Fri</span> 10:00AM - 5:30PM", "<span>Sat</span> 10:00AM - 5:30PM", "../images/places/items/NationalMuseumOfNaturalHistory/1.jpg", "../images/places/items/NationalMuseumOfNaturalHistory/2.jpg", "../images/places/items/NationalMuseumOfNaturalHistory/3.jpg", "../images/places/items/NationalMuseumOfNaturalHistory/4.jpg"],
+		["World War II Memorial", "A memorial to those who served in the US armed forces during World War II consisting of 56 pillars and a pair of small triumphal arches surrounding a square and fountain.", "https://www.wwiimemorial.com/", "", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1552.7558570249869!2d-77.04164962397425!3d38.889412044867846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1554064730489!5m2!1sen!2sus", "1750 Independence Ave SW, Washington, DC 20024", "<span>Sun</span> All Day", "<span>Mon</span> All Day", "<span>Tue</span> All Day", "<span>Wed</span> All Day", "<span>Thu</span> All Day", "<span>Fri</span> All Day", "<span>Sat</span> All Day", "../images/places/items/WorldWarIIMemorial/1.jpg", "../images/places/items/WorldWarIIMemorial/2.jpg", "../images/places/items/WorldWarIIMemorial/3.jpg", "../images/places/items/WorldWarIIMemorial/4.jpg"],
+		["Martin Luther King Junior Memorial", 'A granite statue memorial of the Civil Rights Movement leader, Martin Luther King Junior. The design is a line from his "I Have A Dream" speech: "Out of the mountain of despair, a stone of hope."', "https://washington.org/visit-dc/martin-luther-king-jr-memorial", "", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.652162031659!2d-77.04639784892275!3d38.88619937947209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1sen!2sus!4v1554065199577!5m2!1sen!2sus", "1964 Independence Ave SW, Washington, DC 20024", "<span>Sun</span> All Day", "<span>Mon</span> All Day", "<span>Tue</span> All Day", "<span>Wed</span> All Day", "<span>Thu</span> All Day", "<span>Fri</span> All Day", "<span>Sat</span> All Day", "../images/places/items/MartinLutherKingJrMemorial/1.jpg", "../images/places/items/MartinLutherKingJrMemorial/2.jpg", "../images/places/items/MartinLutherKingJrMemorial/3.jpg"],
+		["Holocaust Memorial Museum", "The US' official memorial to the Holocaust, providing the documentation, study, and interpretation of Holocaust history. It is dedicated to helping leaders and citizens of the world confront hatred, prevent genocide, promote human dignity, and strengthen democracy.", "https://www.ushmm.org/", "", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.629945719992!2d-77.03480144903811!3d38.88670757947211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1554076243725!5m2!1sen!2sus", "100 Raoul Wallenberg Pl SW, Washington, DC 20024", "<span>Sun</span> 10:00AM - 5:20PM", "<span>Mon</span> 10:00AM - 5:20PM", "<span>Tue</span> 10:00AM - 5:20PM", "<span>Wed</span> 10:00AM - 5:20PM", "<span>Thu</span> 10:00AM - 5:20PM", "<span>Fri</span> 10:00AM - 5:20PM", "<span>Sat</span> 10:00AM - 5:20PM", "../images/places/items/HolocaustMemorialMuseum/1.jpg", "../images/places/items/HolocaustMemorialMuseum/2.jpg", "../images/places/items/HolocaustMemorialMuseum/3.jpg", "../images/places/items/HolocaustMemorialMuseum/4.jpg"],
+		["National Air and Space Museum", "The most visited museum in the US, a center for research into the history and science of aviation and spaceflight, as well as planetary science and terrestrial geology and geophysics with almost all space and aircraft on display being originals.", "https://airandspace.si.edu", "", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.5664473388683!2d-77.02206194903799!3d38.88816007947194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1554077501802!5m2!1sen!2sus", "600 Independence Ave SW, Washington, DC 20560", "<span>Sun</span> 10:00AM - 5:30PM", "<span>Mon</span> 10:00AM - 5:30PM", "<span>Tue</span> 10:00AM - 5:30PM", "<span>Wed</span> 10:00AM - 5:30PM", "<span>Thu</span> 10:00AM - 5:30PM", "<span>Fri</span> 10:00AM - 5:30PM", "<span>Sat</span> 10:00AM - 5:30PM", "../images/places/items/NationalAirAndSpaceMuseum/1.jpg", "../images/places/items/NationalAirAndSpaceMuseum/2.jpg", "../images/places/items/NationalAirAndSpaceMuseum/3.jpg", "../images/places/items/NationalAirAndSpaceMuseum/4.jpg"],
+		["The Pentagon", "The headquarters of the United States Department of Defense. As a symbol of the U.S. military, the phrase The Pentagon is often used as a metonym for the Department of Defense and its leadership.", "https://pentagontours.osd.mil/Tours/", "", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3106.2765024295795!2d-77.05842847032284!3d38.87191525386652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1554078094063!5m2!1sen!2sus", "Washington, DC 22202", "<span>Sun</span> Closed", "<span>Mon</span> 9:00AM - 3:00PM", "<span>Tue</span> 9:00AM - 3:00PM", "<span>Wed</span> 9:00AM - 3:00PM", "<span>Thu</span> 9:00AM - 3:00PM", "<span>Fri</span> 9:00AM - 3:00PM", "<span>Sat</span> 9:00AM - 3:00PM", "../images/places/items/ThePentagon/1.jpg", "../images/places/items/ThePentagon/2.jpg", "../images/places/items/ThePentagon/3.jpg", "../images/places/items/ThePentagon/4.jpg"],
+		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg"],
+		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg"],
+		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg"],
+		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg"],
+		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg"],
+	]   // GOOGLE MAP LINE: Remove 1m2! to !5e0! from link
 ];
-
 
 
 function loaditem(itemtype, item)
 {
-	currentItemType = itemtype;
-	// load item page info
-	for (var i in items[itemtype])
+	currentItemType = itemtype; // set the current item type to passed in item type for unloading later
+
+	for (var i in items[itemtype]) // go through every item in item type
 	{
-		if (items[itemtype][i][0] == item)
+		if (items[itemtype][i][0] == item) // check to see if it is the wanted item
 		{
+			// load item's title, desc, buttons, maps, and address info
 			itempage.getElementsByTagName("h1")[0].innerHTML = items[itemtype][i][0];
 			itempage.getElementsByTagName("p")[0].innerHTML = items[itemtype][i][1];
 			itempage.getElementsByTagName("a")[0].href = items[itemtype][i][2];
@@ -73,14 +71,14 @@ function loaditem(itemtype, item)
 			}
 			itempage.getElementsByTagName("iframe")[0].src = items[itemtype][i][4];
 			itempage.getElementsByTagName("span")[0].innerHTML = items[itemtype][i][5];
-			itemextrainfo.getElementsByTagName("li")[0].innerHTML = items[itemtype][i][6];
-			itemextrainfo.getElementsByTagName("li")[1].innerHTML = items[itemtype][i][7];
-			itemextrainfo.getElementsByTagName("li")[2].innerHTML = items[itemtype][i][8];
-			itemextrainfo.getElementsByTagName("li")[3].innerHTML = items[itemtype][i][9];
-			itemextrainfo.getElementsByTagName("li")[4].innerHTML = items[itemtype][i][10];
-			itemextrainfo.getElementsByTagName("li")[5].innerHTML = items[itemtype][i][11];
-			itemextrainfo.getElementsByTagName("li")[6].innerHTML = items[itemtype][i][12];
 
+			// load "Hour Open" info
+			for (var x = 0; x <= 6; x++)
+			{
+				itemextrainfo.getElementsByTagName("li")[x].innerHTML = items[itemtype][i][x + 6];
+			}
+
+			// load item's images
 			for (var j = 13; j <= items[itemtype][i].length-1; j++)
 			{
 				var img = document.createElement("img");
@@ -106,7 +104,7 @@ function hideitem()
 		itempage.style.display = "none";
 	}, 240);
 
-	// unload item page' info
+	// unload item's title, desc, buttons, maps, and address info
 	itempage.getElementsByTagName("h1")[0].innerHTML = "";
 	itempage.getElementsByTagName("p")[0].innerHTML = "";
 	itempage.getElementsByTagName("a")[0].href = "";
@@ -116,18 +114,20 @@ function hideitem()
 	}
 	itempage.getElementsByTagName("iframe")[0].src = "";
 	itempage.getElementsByTagName("span")[0].innerHTML = "";
-	itemextrainfo.getElementsByTagName("li")[0].innerHTML = "";
-	itemextrainfo.getElementsByTagName("li")[1].innerHTML = "";
-	itemextrainfo.getElementsByTagName("li")[2].innerHTML = "";
-	itemextrainfo.getElementsByTagName("li")[3].innerHTML = "";
-	itemextrainfo.getElementsByTagName("li")[4].innerHTML = "";
-	itemextrainfo.getElementsByTagName("li")[5].innerHTML = "";
-	itemextrainfo.getElementsByTagName("li")[6].innerHTML = "";
+	
+	// unload "Hour Open" info
+	for (var x = 0; x <= 6; x++)
+	{
+		itemextrainfo.getElementsByTagName("li")[x].innerHTML = "";
+	}
+	
+	// unload item's images
 	var oldimages = itemgallery.getElementsByTagName("img");
 	for (var oldimage = oldimages.length - 1; oldimage >= 0; oldimage--)
 	{
 		oldimages[oldimage].parentNode.removeChild(oldimages[oldimage]);
 	}
+	
 	// close drop down menu if open
 	if (hoursopen)
 	{
@@ -140,6 +140,8 @@ function hideitem()
 
 function openclosedropmenu()
 {
+	// when the hours open text is clicked it will open if the info isn't already open
+	// if it is already open it will instead close it
 	if (hoursopen)
 	{
 		hoursopen = false;
@@ -155,9 +157,9 @@ function openclosedropmenu()
 }
 
 
-// run when the page is ready
-window.onload = function()
+window.onload = function() // run when the page is ready
 {
+	// set commonly used script variables
 	itempage = document.getElementById('item-info');
 	itemgallery = document.getElementById("item-gallery");
 	itemextrainfo = itempage.getElementsByTagName("li")[1];

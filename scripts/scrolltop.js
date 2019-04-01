@@ -32,11 +32,15 @@ window.addEventListener("scroll", function()
     }
 }, false)
 
-function scrollToTop(totalTime, easingPower)
+
+function scrollToTop(item, totalTime, easingPower)
 {
-	html = document.documentElement;
-  body = document.body;
-	var scrollTop = Math.round(body.scrollTop || html.scrollTop);
+	// get element the user is scrolling in
+	var element = document.getElementById(item);
+	if (element == null)
+		var element = document.documentElement;
+		
+	var scrollTop = Math.round(element.scrollTop);
 	var timeLeft = totalTime;
 	var scrollByPixel = setInterval(function()
 	{
@@ -44,8 +48,7 @@ function scrollToTop(totalTime, easingPower)
 		if (timeLeft >= 0)
 		{
 		  var newScrollTop = scrollTop * (1 - Math.pow(2 * percentSpent, easingPower));
-		  body.scrollTop = newScrollTop;
-		  html.scrollTop = newScrollTop;
+		  element.scrollTop = newScrollTop;
 		  timeLeft--;
 		}
 		else
@@ -55,8 +58,8 @@ function scrollToTop(totalTime, easingPower)
 	}, 1);
 }
 
-function instantscrolltotop()
+function instantscrolltotop(item)
 {
-	var element = document.getElementById('item-info');
+	var element = document.getElementById(item);
 	element.scrollTop = 0;
 }

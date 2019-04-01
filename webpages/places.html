@@ -24,7 +24,7 @@
 	<body>
 		<div id="desktop">DESKTOP MODE: Shrink to mobile</div>
 		<div id="mobile">
-			<button id="scrolltotop" class="bottombutton" onclick="scrollToTop(100,1)">
+			<button id="scrolltotop" class="bottombutton" onclick="scrollToTop('',100,1)">
 				GO TO TOP
 			</button>
 			<div id="mobile-nav-items">
@@ -68,7 +68,7 @@
 				</ul>
 			</div>
 			<div id="items">
-				<div class="item all government" onclick="loaditem(1, 'United States Capitol'); instantscrolltotop();">
+				<div class="item all government" onclick="loaditem(1, 'United States Capitol'); instantscrolltotop('item-info');">
 					<div class="item-pic" style="background-image: url('../images/places/items/UnitedStatesCapitol/1.jpg')"></div>
 					<div class="item-info">
 						<h1>United States Capitol</h1>
@@ -76,7 +76,7 @@
 					</div>
 				</div>
 
-				<div class="item all monument" onclick="loaditem(1, 'Lincoln Memorial'); instantscrolltotop();">
+				<div class="item all monument" onclick="loaditem(1, 'Lincoln Memorial'); instantscrolltotop('item-info');">
 					<div class="item-pic" style="background-image: url('../images/places/items/LincolnMemorial/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Lincoln Memorial</h1>
@@ -84,7 +84,7 @@
 					</div>
 				</div>
 
-				<div class="item all monument" onclick="loaditem(1, 'Washington Monument'); instantscrolltotop();">
+				<div class="item all monument" onclick="loaditem(1, 'Washington Monument'); instantscrolltotop('item-info');">
 					<div class="item-pic" style="background-image: url('../images/places/items/WashingtonMonument/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Washington Monument</h1>
@@ -92,7 +92,7 @@
 					</div>
 				</div>
 
-				<div class="item all government" onclick="loaditem(1, 'The White House'); instantscrolltotop();">
+				<div class="item all government" onclick="loaditem(1, 'The White House'); instantscrolltotop('item-info');">
 					<div class="item-pic" style="background-image: url('../images/places/items/TheWhiteHouse/1.jpg')"></div>
 					<div class="item-info">
 						<h1>The White House</h1>
@@ -100,7 +100,7 @@
 					</div>
 				</div>
 
-				<div class="item all monument" onclick="loaditem(1, 'Thomas Jefferson Memorial'); instantscrolltotop();">
+				<div class="item all monument" onclick="loaditem(1, 'Thomas Jefferson Memorial'); instantscrolltotop('item-info');">
 					<div class="item-pic" style="background-image: url('../images/places/items/ThomasJeffersonMemorial/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Thomas Jefferson Memorial</h1>
@@ -108,7 +108,7 @@
 					</div>
 				</div>
 
-				<div class="item all museum" onclick="loaditem(1, 'National Gallery of Art'); instantscrolltotop();">
+				<div class="item all museum" onclick="loaditem(1, 'National Gallery of Art'); instantscrolltotop('item-info');">
 					<div class="item-pic" style="background-image: url('../images/places/items/NationalGalleryOfArt/1.jpg')"></div>
 					<div class="item-info">
 						<h1>National Gallery of Art</h1>
@@ -116,7 +116,7 @@
 					</div>
 				</div>
 
-				<div class="item all monument" onclick="loaditem(1, 'Arlington National Cemetary'); instantscrolltotop();">
+				<div class="item all monument" onclick="loaditem(1, 'Arlington National Cemetary'); instantscrolltotop('item-info');">
 					<div class="item-pic" style="background-image: url('../images/places/items/ArlingtonNationalCemetary/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Arlington National Cemetary</h1>
@@ -124,7 +124,7 @@
 					</div>
 				</div>
 
-				<div class="item all park" onclick="loaditem(1, 'Smithsonian National Zoological Park'); instantscrolltotop();">
+				<div class="item all park" onclick="loaditem(1, 'Smithsonian National Zoological Park'); instantscrolltotop('item-info');">
 					<div class="item-pic" style="background-image: url('../images/places/items/SmithsonianNationalZoo/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Smithsonian National Zoo</h1>
@@ -132,7 +132,7 @@
 					</div>
 				</div>
 
-				<div class="item all monument" onclick="loaditem(1, 'Vietnam Veterans Memorial'); instantscrolltotop();">
+				<div class="item all monument" onclick="loaditem(1, 'Vietnam Veterans Memorial'); instantscrolltotop('item-info');">
 					<div class="item-pic" style="background-image: url('../images/places/items/VietnamVeteransMemorial/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Vietnam Veterans Memorial</h1>
@@ -140,15 +140,15 @@
 					</div>
 				</div>
 
-				<div class="item all museum" onclick="loaditem(1, 'National Museum of American History'); instantscrolltotop();">
+				<div class="item all museum" onclick="loaditem(1, 'National Museum of American History'); instantscrolltotop('item-info');">
 					<div class="item-pic" style="background-image: url('../images/places/items/NationalMuseumOfAmericanHistory/1.jpg')"></div>
 					<div class="item-info">
 						<h1>National Museum of American History</h1>
-						<p>A museum that collects, preserves, and displays the social, political, cultural, scientific, and military history the United States with free admission. </p>
+						<p>A museum that collects, preserves, and displays the social, political, cultural, scientific, and military history the United States with free admission.</p>
 					</div>
 				</div>
 
-				<div class="item all museum" onclick="loaditem(1, 'National Museum of Natural History'); instantscrolltotop();">
+				<div class="item all museum" onclick="loaditem(1, 'National Museum of Natural History'); instantscrolltotop('item-info');">
 					<div class="item-pic" style="background-image: url('../images/places/items/NationalMuseumOfNaturalHistory/1.jpg')"></div>
 					<div class="item-info">
 						<h1>National Museum of Natural History</h1>
@@ -156,7 +156,7 @@
 					</div>
 				</div>
 
-				<div class="item all monument" onclick="loaditem(1, 'World War II Memorial'); instantscrolltotop();">
+				<div class="item all monument" onclick="loaditem(1, 'World War II Memorial'); instantscrolltotop('item-info');">
 					<div class="item-pic" style="background-image: url('../images/places/items/WorldWarIIMemorial/1.jpg')"></div>
 					<div class="item-info">
 						<h1>World War II Memorial</h1>
@@ -164,7 +164,7 @@
 					</div>
 				</div>
 
-				<div class="item all monument" onclick="loaditem(1, 'Martin Luther King, Jr. Memorial'); instantscrolltotop();">
+				<div class="item all monument" onclick="loaditem(1, 'Martin Luther King, Jr. Memorial'); instantscrolltotop('item-info');">
 					<div class="item-pic" style="background-image: url('../images/places/items/MartinLutherKingJrMemorial/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Martin Luther King, Jr. Memorial</h1>
@@ -172,7 +172,7 @@
 					</div>
 				</div>
 
-				<div class="item all museum monument" onclick="loaditem(1, 'Holocaust Memorial Museum'); instantscrolltotop();">
+				<div class="item all museum monument" onclick="loaditem(1, 'Holocaust Memorial Museum'); instantscrolltotop('item-info');">
 					<div class="item-pic" style="background-image: url('../images/places/items/HolocaustMemorialMuseum/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Holocaust Memorial Museum</h1>
@@ -180,7 +180,7 @@
 					</div>
 				</div>
 
-				<div class="item all museum" onclick="loaditem(1, 'National Air and Space Museum'); instantscrolltotop();">
+				<div class="item all museum" onclick="loaditem(1, 'National Air and Space Museum'); instantscrolltotop('item-info');">
 					<div class="item-pic" style="background-image: url('../images/places/items/NationalAirAndSpaceMuseum/1.jpg')"></div>
 					<div class="item-info">
 						<h1>National Air and Space Museum</h1>
@@ -188,7 +188,7 @@
 					</div>
 				</div>
 
-				<div class="item all government" onclick="loaditem(1, 'The Pentagon'); instantscrolltotop();">
+				<div class="item all government" onclick="loaditem(1, 'The Pentagon'); instantscrolltotop('item-info');">
 					<div class="item-pic" style="background-image: url('../images/places/items/ThePentagon/1.jpg')"></div>
 					<div class="item-info">
 						<h1>The Pentagon</h1>
@@ -196,7 +196,7 @@
 					</div>
 				</div>
 
-				<div class="item all cathedral" onclick="loaditem(1, 'Washington National Cathedral'); instantscrolltotop();">
+				<div class="item all cathedral" onclick="loaditem(1, 'Washington National Cathedral'); instantscrolltotop('item-info');">
 					<div class="item-pic" style="background-image: url('../images/places/items/WashingtonNationalCathedral/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Washington National Cathedral</h1>
@@ -204,7 +204,7 @@
 					</div>
 				</div>
 
-				<div class="item all monument" onclick="loaditem(1, 'Korean War Veterans Memorial'); instantscrolltotop();">
+				<div class="item all monument" onclick="loaditem(1, 'Korean War Veterans Memorial'); instantscrolltotop('item-info');">
 					<div class="item-pic" style="background-image: url('../images/places/items/KoreanWarVeteransMemorial/1.jpg')"></div>
 					<div class="item-info">
 						<h1>Korean War Veterans Memorial</h1>
