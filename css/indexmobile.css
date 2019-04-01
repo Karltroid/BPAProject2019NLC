@@ -797,7 +797,7 @@ div#mobile-nav-items nav a#Attire
 	position: absolute;
 	color: white;
 }
-#parallax-layer-3 h1
+#parallax-layer-2 h1
 {
 	top: 17vh;
 	right: 50%;
@@ -807,6 +807,7 @@ div#mobile-nav-items nav a#Attire
 	position: absolute;
 	color: white;
 	text-align: center;
+	z-index: 10;
 }
 #parallax-layer-3 div .arrow
 {
