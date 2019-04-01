@@ -391,7 +391,7 @@ div#mobile-nav-items nav a#Home
 	background-color: var(--blue);
 	z-index: 10;
 }
-div#mobile-nav-items nav a#Maps
+div#mobile-nav-items nav a#Map
 {
 	background-color: rgb(132, 161, 240);
 	z-index: 9;
