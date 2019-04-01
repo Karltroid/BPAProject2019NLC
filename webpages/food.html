@@ -22,7 +22,188 @@
 		<title>BPA NLC</title>
 	</head>
 	<body>
-		<div id="desktop">DESKTOP MODE: Shrink to mobile</div>
+		<div id="desktop">
+				<img id="staticback1" src="../images/back2.png">
+		
+				<img id="staticback2" src="../images/middle2.png">
+				
+				<img id="staticback3" src="../images/front2.png">
+				
+				<img id="staticback4" src="../images/top2.png">
+			
+				<!--
+					Class name: menutext
+					
+					Content: Horizontal list of links to different sites, ul, li, and nav
+					
+					Developer: Patrick Crowley
+					
+					Purpose: This div contains the navigation buttons so the user can travel
+							 between pages
+				-->
+				
+				<nav class="menutext">
+				
+					<!-- 
+						List of the navigation buttons
+					-->
+					<ul>
+					
+						<!-- 
+							Navigation Buttons
+						-->
+						<li><a id="link" href="index.html">HOME</a></li>
+						
+						<li><a id="link" href="map.html">MAP</a></li>
+						
+						<li><a id="link" href="places.html">PLACES</a></li>
+						
+						<li id="page">FOOD</li>
+						
+						<li><a id="link" href="transit.html">TRANSIT</a></li>
+						
+						<li><a id="link" href="attire.html">ATTIRE</a></li> 
+						
+					</ul>
+					
+				</nav>
+				
+				<!--
+					This div contains the navigation gradient
+				-->
+				<div class="menubar">
+				</div>
+				
+				<!-- 
+					Food icon at top of page
+				-->
+				<img height="70px" id="titleimage" src="../images/headimages/foodlogo.png" />
+				
+				<p id="title">Food</p>
+				
+				<!-- 
+					Search bar that accepts user input
+				-->
+				<div class="search">
+				
+					<input type="text" placeholder="Search for food or locations" style="color: lightgrey;" />
+					
+				</div>
+				
+				<!-- 
+					Tags that the user can use to narow search results
+				-->
+				<pre><p id="tags">Breakfast   Lunch   Dinner   Dessert   Vegan   Convenience</p></pre>
+				
+				<!-- 
+					Div that the food locations will display inside of
+				-->
+				<div class="searchresults">
+					
+					<!-- 
+						List of food places the user can select and learn more on
+					-->
+					<div class="loc">
+					
+						<img id="place" src="../images/food/1.jpg" />
+					
+						<p id="head">Old Ebbit Grill</p>
+					
+						<p id="para">Iconic tavern offering American meals, including popular oyster specials, in Victorian-style digs.</p>
+					
+					</div>
+					
+					<div class="loc">
+					
+						<img id="place" src="../images/food/2.png" />
+					
+						<p id="head">Founding Farmers DC</p>
+					
+						<p id="para">Co-op-owned American eatery dishing out market-driven comfort cuisine along with rustic-chic style.</p>
+					
+					</div>
+					
+					<div class="loc">
+					
+						<img id="place" src="../images/food/3.png" />
+					
+						<p id="head">Zaytina DC</p>
+					
+						<p id="para">Chef José Andrés' light, airy mainstay offers Eastern Mediterranean small plates & regional wines.</p>
+					
+					</div>
+					
+					<div class="loc">
+					
+						<img id="place" src="../images/food/4.png" />
+					
+						<p id="head">Logan Tavern</p>
+					
+						<p id="para">Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch.</p>
+					
+					</div>
+					
+					<div class="loc">
+					
+						<img id="place" src="../images/food/.png" />
+					
+						<p id="head"></p>
+					
+						<p id="para"></p>
+					
+					</div>
+					
+					<div class="loc">
+					
+						<img id="place" src="../images/food/.png" />
+					
+						<p id="head"></p>
+					
+						<p id="para"></p>
+					
+					</div>
+					
+					<div class="loc">
+					
+						<img id="place" src="../images/food/.png" />
+					
+						<p id="head"></p>
+					
+						<p id="para"></p>
+					
+					</div>
+					
+					<div class="loc">
+					
+						<img id="place" src="../images/food/.png" />
+					
+						<p id="head"></p>
+					
+						<p id="para"></p>
+					
+					</div>
+					
+				</div>
+				
+				<!-- 
+					The Google Map div
+				-->
+				<div class="foodmap">
+				
+					<p id="heading">Select a location to visit their site</p>
+				
+					<div class="karl">
+				
+						<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d34623.427999004976!2d-77.03458694342002!3d38.90521426295529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1swashington+dc+restaurants!5e0!3m2!1sen!2sus!4v1553776276851" frameborder="0" style="border:0" allowfullscreen></iframe>
+						
+					</div>
+				
+				</div>
+				
+				<!-- 
+					Images that are used for the background
+				-->
+		</div>
 		<div id="mobile">
 			<button id="scrolltotop" class="bottombutton" onclick="scrollToTop('',100,1)">
 				GO TO TOP
@@ -38,7 +219,7 @@
 				</header>
 				<nav>
 					<a id="Home" href="../index.html">HOME</a>
-					<a id="Map" href="maps.html">MAP</a>
+					<a id="Map" href="map.html">MAP</a>
 					<a id="Places" href="places.html">PLACES</a>
 					<a id="Food" href="food.html"><span class="current-page">FOOD</span></a>
 					<a id="Transit" href="transit.html">TRANSIT</a>

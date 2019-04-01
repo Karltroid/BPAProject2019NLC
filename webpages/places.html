@@ -22,7 +22,239 @@
 		<title>BPA NLC</title>
 	</head>
 	<body>
-		<div id="desktop">DESKTOP MODE: Shrink to mobile</div>
+		<div id="desktop">
+				<img id="staticback1" src="../images/back2.png">
+		
+				<img id="staticback2" src="../images/middle2.png">
+				
+				<img id="staticback3" src="../images/front2.png">
+				
+				<img id="staticback4" src="../images/top2.png">
+			
+				<!--
+					Class name: menutext
+					
+					Content: Horizontal list of links to different sites, ul, li, and nav
+					
+					Developer: Patrick Crowley
+					
+					Purpose: This div contains the navigation buttons so the user can travel
+							 between pages
+				-->
+				
+				<nav class="menutext">
+				
+					<!-- 
+						List of the navigation buttons
+					-->
+					<ul>
+					
+						<!-- 
+							Navigation Buttons
+						-->
+						<li><a id="link" href="index.html">HOME</a></li>
+						
+						<li><a id="link" href="map.html">MAP</a></li>
+						
+						<li id="page">PLACES</li>
+						
+						<li><a id="link" href="food.html">FOOD</a></li>
+						
+						<li><a id="link" href="transit.html">TRANSIT</a></li>
+						
+						<li><a id="link" href="attire.html">ATTIRE</a></li> 
+						
+					</ul>
+					
+				</nav>
+				
+				<!--
+					This div contains the navigation gradient
+				-->
+				<div class="menubar">
+				</div>
+				
+				<!-- 
+					Food icon at top of page
+				-->
+				<img style="margin-left: 20px;" height="70px" id="titleimage" src="../images/headimages/placeslogo.png" />
+				
+				<p id="title">Places</p>
+				
+				<!--
+					Search bar that accepts user input
+				-->
+				<div class="search">
+				
+					<input type="text" placeholder="Search for attactions" style="color: lightgrey;" />
+					
+				</div>
+				
+				<!-- 
+					Tags that the user can use to narow search results
+				-->
+				<pre><p id="tags">Monuments   Museums   Shopping   Touism</p></pre>
+				
+				<!-- 
+					Div that the food locations will display inside of
+				-->
+				<div class="searchresults">
+				
+					<!-- 
+						List of food places the user can select and learn more on
+					-->
+					<div class="loc">
+					
+						<img id="place" src="../images/places/1.png" />
+					
+						<p id="head">White House</p>
+					
+						<p id="para">Home of the Nation's President</p>
+					
+					</div>
+					
+					<div class="loc">
+					
+						<img id="place" src="../images/places/2.png" />
+					
+						<p id="head">Capitol Building</p>
+					
+						<p id="para">Home to the United Sates Congress and Legislative Branch</p>
+					
+					</div>
+					
+					<div class="loc">
+					
+						<img id="place" src="../images/places/3.png" />
+					
+						<p id="head">Washington Monument</p>
+					
+						<p id="para">The Washington Monument is an obelisk on the National Mall in Washington D.C. built to commemorate George Washington</p>
+					
+					</div>
+					
+					<div class="loc">
+					
+						<img id="place" src="../images/places/4.png" />
+					
+						<p id="head">Lincoln Memorial</p>
+					
+						<p id="para">The Lincoln Memorial is an American national memorial built to honor Abraham Lincoln</p>
+					
+					</div>
+					
+					<div class="loc">
+					
+						<img id="place" src="../images/places/5.png" />
+					
+						<p id="head">Thomas Jefferson Memorial</p>
+					
+						<p id="para">The Jefferson Memorial is a presidential memorial dedicated to founding father Thomas Jefferson</p>
+					
+					</div>
+					
+					<div class="loc">
+					
+						<img id="place" src="../images/places/6.png" />
+					
+						<p id="head">Franklin D Roosevelt Memorial</p>
+					
+						<p id="para">The Franklin Delano Roosevelt Memorial is a memorial dedicated to the memory of Franklin Delano Roosevelt</p>
+					
+					</div>
+					
+					<div class="loc">
+					
+						<img id="place" src="../images/places/7.png" />
+					
+						<p id="head">Vietnam Memorial</p>
+					
+						<p id="para">The Vietnam Memorial is a memorial dedicated to the service members of the U.S. armed forces who fought in the Vietnam War</p>
+					
+					</div>
+					
+					<div class="loc">
+					
+						<img id="place" src="../images/places/8.png" />
+					
+						<p id="head">Albert Einstein Memorial</p>
+					
+						<p id="para">The Albert Einstein Memorial is a monumental bronze statue depicting Albert Einstein</p>
+					
+					</div>
+					
+					<div class="loc">
+					
+						<img id="place" src="../images/places/9.png" />
+					
+						<p id="head">Veterans Disabled For Life Memorial</p>
+					
+						<p id="para">The American Veterans Disabled for Life Memorial honors veterans of the US armed forces who were permanently disabled</p>
+					
+					</div>
+					
+					<div class="loc">
+					
+						<img id="place" src="../images/places/10.png" />
+					
+						<p id="head">Peace Monument</p>
+					
+						<p id="para">The Peace Monument stands on the grounds of the United States Capitol in Peace Circle</p>
+					
+					</div>
+					
+					<div class="loc">
+					
+						<img id="place" src="../images/places/11.png" />
+					
+						<p id="head">Tomb of the Unknown Soldier</p>
+					
+						<p id="para">The Tomb of the Unknown Soldier is dedicated to U.S. service members who have died without their remains being identified</p>
+					
+					</div>
+					
+					<div class="loc">
+					
+						<img id="place" src="../images/places/12.png" />
+					
+						<p id="head">Martin Luther King Jr. Memorial</p>
+					
+						<p id="para">The Martin Luther King Jr. Memorial is an American national memorial built to honor Martin Luther King Jr.</p>
+					
+					</div>
+					
+					<div class="loc">
+					
+						<img id="place" src="../images/places/13.png" />
+					
+						<p id="head">Arlington National Cemetery</p>
+					
+						<p id="para">The Arlington National Cemetery spans across over 624 acres housing every soldier who has died in combat</p>
+					
+					</div>
+					
+				
+				</div>
+				
+				<!-- 
+					The Google Map div
+				-->
+				<div class="foodmap">
+				
+					<p id="heading">Select a location for more information</p>
+				
+					<div class="karl">
+				
+						<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d34627.33134958135!2d-77.06445210359688!3d38.89720987632852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1swashington+dc+monuments!5e0!3m2!1sen!2sus!4v1553958166102!5m2!1sen!2sus" frameborder="0" style="border:0" allowfullscreen></iframe>
+						
+					</div>
+				
+				</div>
+				
+				<!-- 
+					Images that are used for the background
+				-->
+		</div>
 		<div id="mobile">
 			<button id="scrolltotop" class="bottombutton" onclick="scrollToTop('',100,1)">
 				GO TO TOP

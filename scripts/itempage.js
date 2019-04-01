@@ -1,4 +1,4 @@
-var itempage, itemgallery, itemextrainfo, hoursopendropdown, hoursopen, currentItemType;
+var itempage, itemgallery, itemaddress, itemhours, hoursopendropdown, hoursopen, currentItemType;
 var items = 
 [
 	[
@@ -50,9 +50,19 @@ var items =
 		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg"]
 	],
 	[
-		// transit items - title, desc, site link, map, location, times, images...
-		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg"]
-		["", "", "", "", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/places/items/NAME/1.jpg", "../images/places/items/NAME/2.jpg", "../images/places/items/NAME/3.jpg", "../images/places/items/NAME/4.jpg"]
+		// transit items - title, desc, site link, estimate link, times, images...
+		["UBER", "Uber offers services including peer-to-peer ridesharing, ride service hailing, food delivery, and a bicycle-sharing system.", "https://www.uber.com/", "https://www.uber.com/fare-estimate/", "", "", "<span>Sun</span> All Day", "<span>Mon</span> All Day", "<span>Tue</span> All Day", "<span>Wed</span> All Day", "<span>Thu</span> All Day", "<span>Fri</span> All Day", "<span>Sat</span> All Day", "../images/transit/items/UBER/1.jpg", "../images/transit/items/UBER/2.jpg", "../images/transit/items/UBER/3.jpg", "../images/transit/items/UBER/4.jpg"],
+		["Lyft", "An on-demand transportation company primarily providing ride-hailing services.", "https://www.lyft.com/", "https://www.lyft.com/fare-estimate", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/transit/items/Lyft/1.jpg", "../images/transit/items/Lyft/2.jpg", "../images/transit/items/Lyft/3.jpg", "../images/transit/items/Lyft/4.jpg"],
+		["Metro", "The Metropolitan Area Transit Authority is the main train and bus transit service in the Washington area.", "https://www.wmata.com/", "https://www.wmata.com/", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/transit/items/Metro/1.jpg", "../images/transit/items/Metro/2.jpg", "../images/transit/items/Metro/3.jpg", "../images/transit/items/Metro/4.jpg"],
+		["DC Yellow Cabs", "Yellow Cab Company of D.C. is a family owned and operated business serving the Washington Metropolitan area.", "https://dcyellowcab.com/", "https://dcyellowcab.com/fare-estimator/", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/transit/items/DCYellowCabs/1.jpg", "../images/transit/items/DCYellowCabs/2.jpg", "../images/transit/items/DCYellowCabs/3.jpg", "../images/transit/items/DCYellowCabs/4.jpg"],
+		["Capital Bike Share", "Capital Bikeshare is metro DC's bikeshare service, with 4,300 bikes and 500+ stations across 6 jurisdictions.", "https://www.capitalbikeshare.com/", "https://www.capitalbikeshare.com/pricing", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/transit/items/CapitalBikeShare/1.jpg", "../images/transit/items/CapitalBikeShare/2.jpg", "../images/transit/items/CapitalBikeShare/3.jpg", "../images/transit/items/CapitalBikeShare/4.jpg"],
+		["Academy Bus LLC", "This family-owned and operated business is one of the most reliable, efficient and safety-oriented motorcoach carriers in the nation's capital.", "sitelink", "estimatelink", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/transit/items/AcademyBusLLC/1.jpg", "../images/transit/items/AcademyBusLLC/2.jpg", "../images/transit/items/AcademyBusLLC/3.jpg", "../images/transit/items/AcademyBusLLC/4.jpg"],
+		["Potomac Riverboat", "Potomac Riverboat Company offers narrated sightseeing cruises, water taxi service and private parties along the Potomac River.", "https://www.potomacriverboatco.com/", "https://www.potomacriverboatco.com/water-taxi/wharf/", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/transit/items/PotomacRiverboat/1.jpg", "../images/transit/items/PotomacRiverboat/2.jpg", "../images/transit/items/PotomacRiverboat/3.jpg", "../images/transit/items/PotomacRiverboat/4.jpg"],
+		["Enterprise Holdings", "Enterprise Holdings offers extensive car rental, carsharing, retail car sales and other transportation services.", "https://www.enterprise.com", "https://www.enterprise.com/en/car-rental/locations/us/washington-dc.html", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/transit/items/EnterpriseHoldings/1.jpg", "../images/transit/items/EnterpriseHoldings/2.jpg", "../images/transit/items/EnterpriseHoldings/3.jpg", "../images/transit/items/EnterpriseHoldings/4.jpg"],
+		["Big Bus Tours", "The open top bus visits the City’s most iconic landmarks and allows unlimited access to hop-on and off.", "https://www.bigbustours.com/en/washington-dc/washington-dc-bus-tours/", "https://www.bigbustours.com/en/washington-dc/washington-dc-bus-tours/", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/transit/items/BigBusTours/1.jpg", "../images/transit/items/BigBusTours/2.jpg", "../images/transit/items/BigBusTours/3.jpg", "../images/transit/items/BigBusTours/4.jpg"],
+		["America Bus Service", "American Limousine & Bus Services Inc. offers professional and dependable transportation services to the DC metro area.", "sitelink", "estimatelink", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/transit/items/AmericaBusService/1.jpg", "../images/transit/items/AmericaBusService/2.jpg", "../images/transit/items/AmericaBusService/3.jpg", "../images/transit/items/AmericaBusService/4.jpg"],
+		["SET Management", "SETM have provided DC events and clients with Luxury Transportation across the metro area since 1995.", "sitelink", "estimatelink", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/transit/items/SETManagement/1.jpg", "../images/transit/items/SETManagement/2.jpg", "../images/transit/items/SETManagement/3.jpg", "../images/transit/items/SETManagement/4.jpg"],
+		["title", "desc", "sitelink", "estimatelink", "", "", "<span>Sun</span> ", "<span>Mon</span> ", "<span>Tue</span> ", "<span>Wed</span> ", "<span>Thu</span> ", "<span>Fri</span> ", "<span>Sat</span> ", "../images/transit/items/PLACE/1.jpg", "../images/transit/items/PLACE/2.jpg", "../images/transit/items/PLACE/3.jpg", "../images/transit/items/PLACE/4.jpg"]
 	]  
 ];
 
@@ -65,21 +75,26 @@ function loaditem(itemtype, item)
 	{
 		if (items[itemtype][i][0] == item) // check to see if it is the wanted item
 		{
-			// load item's title, desc, buttons, maps, and address info
+			// load item's title, desc, buttons, 
 			itempage.getElementsByTagName("h1")[0].innerHTML = items[itemtype][i][0];
 			itempage.getElementsByTagName("p")[0].innerHTML = items[itemtype][i][1];
 			itempage.getElementsByTagName("a")[0].href = items[itemtype][i][2];
-			if (currentItemType == 0)
+			if (currentItemType == 0 || currentItemType == 2)
 			{
 				itempage.getElementsByTagName("a")[1].href = items[itemtype][i][3];
 			}
-			itempage.getElementsByTagName("iframe")[0].src = items[itemtype][i][4];
-			itempage.getElementsByTagName("span")[0].innerHTML = items[itemtype][i][5];
+
+			// load maps and address info
+			if (currentItemType == 0 || currentItemType == 1)
+			{
+				itempage.getElementsByTagName("iframe")[0].src = items[itemtype][i][4];
+				itempage.getElementsByTagName("span")[0].innerHTML = items[itemtype][i][5];
+			}
 
 			// load "Hour Open" info
 			for (var x = 0; x <= 6; x++)
 			{
-				itemextrainfo.getElementsByTagName("li")[x].innerHTML = items[itemtype][i][x + 6];
+				itemhours.getElementsByTagName("li")[x].innerHTML = items[itemtype][i][x + 6];
 			}
 
 			// load item's images
@@ -112,21 +127,25 @@ function hideitem()
 	itempage.getElementsByTagName("h1")[0].innerHTML = "";
 	itempage.getElementsByTagName("p")[0].innerHTML = "";
 	itempage.getElementsByTagName("a")[0].href = "";
-	if (currentItemType == 0)
+	if (currentItemType == 0 || currentItemType == 2)
 	{
 		itempage.getElementsByTagName("a")[1].href = "";
 	}
-	itempage.getElementsByTagName("iframe")[0].src = "";
-	itempage.getElementsByTagName("span")[0].innerHTML = "";
-	
+	if (currentItemType == 0 || currentItemType == 1)
+	{
+		itempage.getElementsByTagName("iframe")[0].src = "";
+		itempage.getElementsByTagName("span")[0].innerHTML = "";
+	}
+
 	// unload "Hour Open" info
 	for (var x = 0; x <= 6; x++)
 	{
-		itemextrainfo.getElementsByTagName("li")[x].innerHTML = "";
+		itemhours.getElementsByTagName("li")[x].innerHTML = "";
 	}
 	
 	// unload item's images
 	var oldimages = itemgallery.getElementsByTagName("img");
+	console.log(oldimages);
 	for (var oldimage = oldimages.length - 1; oldimage >= 0; oldimage--)
 	{
 		oldimages[oldimage].parentNode.removeChild(oldimages[oldimage]);
@@ -137,7 +156,7 @@ function hideitem()
 	{
 		hoursopen = false;
 		hoursopendropdown.style.transform = "rotate(0deg)";
-		itemextrainfo.getElementsByTagName("ul")[0].style.display = "none";
+		itemhours.getElementsByTagName("ul")[0].style.display = "none";
 	}
 }
 
@@ -150,13 +169,13 @@ function openclosedropmenu()
 	{
 		hoursopen = false;
 		hoursopendropdown.style.transform = "rotate(0deg)";
-		itemextrainfo.getElementsByTagName("ul")[0].style.display = "none";
+		itemhours.getElementsByTagName("ul")[0].style.display = "none";
 	}
 	else
 	{
 		hoursopen = true;
 		hoursopendropdown.style.transform = "rotate(90deg)";
-		itemextrainfo.getElementsByTagName("ul")[0].style.display = "block";
+		itemhours.getElementsByTagName("ul")[0].style.display = "block";
 	}
 }
 
@@ -166,6 +185,7 @@ window.onload = function() // run when the page is ready
 	// set commonly used script variables
 	itempage = document.getElementById('item-info');
 	itemgallery = document.getElementById("item-gallery");
-	itemextrainfo = itempage.getElementsByTagName("li")[1];
+	itemaddress = document.getElementById("item-address");
+	itemhours = document.getElementById("item-hours");
 	hoursopendropdown = document.getElementById("item-hours-arrow")
 }
