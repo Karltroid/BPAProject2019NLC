@@ -22,91 +22,103 @@
 	</head>
 	<body id="home">
 		<div id="desktop">
-	
-			<!--
-				Developer: Patrick Crowley
-				Content: Horizontal list of links to different sites, ul, li, and nav
-				Purpose: This div contains the navigation buttons so the user can travel between pages
-			-->
-			<nav class="menutext">
-				<ul>
-					<li id="page">HOME</li>
-					<li><a class="link" href="webpages/map.html">MAP</a></li>
-					<li><a class="link" href="webpages/places.html">PLACES</a></li>
-					<li><a class="link" href="webpages/food.html">FOOD</a></li>
-					<li><a class="link" href="webpages/transit.html">TRANSIT</a></li>
-					<li><a class="link" href="webpages/attire.html">ATTIRE</a></li>
-				</ul>
-			</nav>
-			
-			<!--
-				Developer: Patrick Crowley
-				Purpose: This div contains the navigation gradient and BPA Logo
-				Content: Gradient, BPA Logo
-			-->
-			<div class="menubar">
-				<img id="logo" src="images/index/bpalogow.png" />
-			</div>
-			
-			<!--
-				Developer: Patrick Crowley
-				Purpose: This div contains the parallax scrolling effect on the home page
-				Content: Div, id, img, p
-			-->
-			<div class="parallax-bg">
-			
-				<div class="parallax-layer" id="parallax-layer-0">
-					<img id="back2" src="images/index/back2.png" />
-				</div>
-				
-				<div class="parallax-layer" id="parallax-layer-1">
-					<img id="middle2" src="images/index/middle2.png" />
-				</div>
-				
-				<div class="parallax-layer" id="parallax-layer-2">
-					<img id="front2" src="images/index/front2.png" />
-				</div>
-				
-				<div class="parallax-layer" id="parallax-layer-3">
-					<img id="top2" src="images/index/top2.png" />
-				</div>
-				
-				<div class="parallax-layer" id="parallax-layer-4">
-					<p id="bpanlc">BPA<br />NLC</p>
-				</div>
-				
-				<div class="parallax-layer" id="parallax-layer-5">
-					<img id="homepeople" src="images/index/people.png" />
-				</div>
-				
-				<div class="parallax-layer" id="parallax-layer-6">
-					<div id="paragraph">
-						<p id="homepara">
-							Welcome to the Business Professionals of<br />
-							America National leadership conference<br />
-							guide. Need information on what to do in D.C.?<br />
-							How you need to dress? Or just how to get<br />
-							around? You can find out here!
-						</p>			
-					</div>
-				</div>
-				
-				<!--
-					Developer: Patrick Crowley
-					Purpose: This div contains the pages the user can access below the parallax home page
-					Content: div
-				-->
-				<div class="below-info">
-				
-					<div class="info-section">Info page 1</div>
 
-					<div class="info-section">Info page 2</div>
+			<div class="parallax-bg" id="d-index-scrollable-area">
+
+				<div class="bg-gradient"></div>
+				<header>
+					<div id="desktop-header-left">
+						<span>Home</span>
+					</div>
+					<nav id="desktop-header-right">
+						<a href="../index.html">HOME</a>
+						<a href="map.html"class="current-page">MAP</a>
+						<a href="places.html">PLACES</a>
+						<a href="food.html">FOOD</a>
+						<a href="transit.html">TRANSIT</a>
+						<a href="attire.html">ATTIRE</a>
+					</nav>
+				</header>
+
+				<div class="parallax-layer" id="d-parallax-layer-0">
+					
+					<img src="images/index/mobile/layer0.png" />
 					
 				</div>
-				
+
+				<div class="parallax-layer" id="d-parallax-layer-1">
+					<img src="images/index/mobile/layer1.png" />
+				</div>
+
+				<div class="parallax-layer" id="d-parallax-layer-2">
+						<h1 style="top: 25vh;">Washington D.C.</h1>
+					<img src="images/index/mobile/layer2.png" />
+				</div>
+
+				<div class="parallax-layer" id="d-parallax-layer-3">
+					<img src="images/index/mobile/layer3.png" />
+					<img id="d-people" src="images/index/mobile/people.png" />
+					<div>
+						<div class="arrow bounce-down">
+							<span>&darr;</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="parallax-layer" id="d-parallax-layer-4">
+					<img src="images/index/mobile/layer4.png" />
+				</div>
+
+
+				<div class="below-info">
+
+					<div class="info-section" id="d-info-section-1">
+						<div class="content">
+							<img id="d-people2" src="images/index/mobile/people2.png" alt="" />
+							<h1>What is BPA?</h1>
+							<p>With 45,000 members in over 1,800 chapters across 25 states and Puerto Rico, BPA is a co-curricular organization that supports business and information technology educators by offering co-curricular exercises based on national standards.</p>
+							<a href="http://www.BPA.org"><button><img id="d-cursor" src="images/generalicos/cursor.png" alt="bpa.org" />bpa.org</button></a>
+							<div style="margin: 2vh 0 0;">
+								<span>More Info</span>
+								<div class="arrow bounce-down">
+									<span>&darr;</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="info-section" id="d-info-section-2">
+						<div class="content">
+							<img id="d-people3" src="images/index/mobile/people3.png" alt="" />
+							<h1>What is the NLC?</h1>
+							<p>After competing in their local state wide competition, the 1st place winners
+							will advance on to the National Leadership Conference where they will compete
+							again but on a national scale with the other state winners.</p>
+							<div class="arrow bounce-up">
+								<span>&uarr;</span>
+							</div>
+							<button onclick="scrollToTop('index-scrollable-area',100,1);"><img id="cursor" src="images/generalicos/cursor.png" alt="bpa.org" />Back to Top</button>
+						</div>
+					</div>
+
+				</div>
+
 			</div>
-		
+
 		</div>
+
+       <!--***************************************************
+
+
+
+
+			MOBILE VERSION
+
+
+
+
+		*****************************************************-->
+		
 		<div id="mobile">
 
 			<button id="scrolltotop" class="bottombutton" onclick="scrollToTop(100,1)">

@@ -43,16 +43,24 @@
 					<input type="text" id="d-searchbar" onkeyup="d_categoryfilter(d_currentFilter)" placeholder="Search...">
 					<div class="filters">
 						<ul>
-							<li onclick="categoryfilter('d-all')" id="d-all">ALL</li>
-							<li onclick="categoryfilter('d-monument')" id="d-monument">MONUMENTS</li>
-							<li onclick="categoryfilter('d-museum')" id="d-museum">MUSEUMS</li>
-							<li onclick="categoryfilter('d-government')" id="d-government">GOVERNMENT</li>
-							<li onclick="categoryfilter('d-cathedral')" id="d-cathedral">CATHEDRALS</li>
-							<li onclick="categoryfilter('d-park')" id="d-park">PARKS</li>
+							<li onclick="d_categoryfilter('d-all')" id="d-all">ALL</li>
+							<li onclick="d_categoryfilter('d-monument')" id="d-monument">MONUMENTS</li>
+							<li onclick="d_categoryfilter('d-museum')" id="d-museum">MUSEUMS</li>
+							<li onclick="d_categoryfilter('d-government')" id="d-government">GOVERNMENT</li>
+							<li onclick="d_categoryfilter('d-cathedral')" id="d-cathedral">CATHEDRALS</li>
+							<li onclick="d_categoryfilter('d-park')" id="d-park">PARKS</li>
 							<li style="pointer-events: none;"><!-- empty space so last option isn't on the edge of the screen --></li>
 						</ul>
 					</div>
 					<div id="d-items">
+
+						<!--*************************
+
+
+							PLACES LIST
+
+
+						***************************-->
 
 						<div class="d-item d-all d-government" onclick="d_loaditem(1, 'United States Capitol'); instantscrolltotop('item-info');">
 							<div class="item-pic" style="background-image: url('../images/places/items/UnitedStatesCapitol/1.jpg')"></div>
@@ -231,6 +239,18 @@
 				</div>
 			</div>
 		</div>
+
+        <!--***************************************************
+
+
+
+
+			MOBILE VERSION
+
+
+
+
+		*****************************************************-->
 		<div id="mobile">
 			<button id="scrolltotop" class="bottombutton" onclick="scrollToTop('',100,1)">
 				GO TO TOP
@@ -275,6 +295,15 @@
 					<li style="pointer-events: none;"><!-- empty space so last option isn't on the edge of the screen --></li>
 				</ul>
 			</div>
+
+			<!--*************************
+
+
+				PLACES LIST
+
+
+			***************************-->
+
 			<div id="items">
 				<div class="item all government" onclick="loaditem(1, 'United States Capitol'); instantscrolltotop('item-info');">
 					<div class="item-pic" style="background-image: url('../images/places/items/UnitedStatesCapitol/1.jpg')"></div>
