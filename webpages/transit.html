@@ -23,165 +23,146 @@
 	</head>
 	<body>
 		<div id="desktop">
-				<div class="menubar">
-					</div>
-					
-					<nav class="menutext">
-					
+			<div class="bg-gradient"></div>
+			<header>
+				<div id="desktop-header-left">
+					<img src="../images/headimages/transitlogo.png" alt="" />
+					<span>Transit</span>
+				</div>
+				<nav id="desktop-header-right">
+					<a href="../index.html">HOME</a>
+					<a href="map.html">MAP</a>
+					<a href="places.html">PLACES</a>
+					<a href="food.html">FOOD</a>
+					<a href="transit.html" class="current-page">TRANSIT</a>
+					<a href="attire.html">ATTIRE</a>
+				</nav>
+			</header>
+			<div id="desktop-content">
+				<div id="desktop-content-left">
+					<input type="text" id="d-searchbar" onkeyup="d_categoryfilter(d_currentFilter)" placeholder="Search...">
+					<div class="filters">
 						<ul>
-						
-							<li><a id="link" href="index.html">HOME</a></li>
-							
-							<li><a id="link" href="map.html">MAP</a></li>
-							
-							<li><a id="link" href="places.html">PLACES</a></li>
-							
-							<li><a id="link" href="food.html">FOOD</a></li>
-							
-							<li id="page">TRANSIT</li>
-							
-							<li><a id="link" href="attire.html">ATTIRE</a></li> 
-							
+								<li onclick="categoryfilter('d-all')" id="d-all">ALL</li>
+								<li onclick="categoryfilter('d-monument')" id="d-monument">MONUMENTS</li>
+								<li onclick="categoryfilter('d-museum')" id="d-museum">MUSEUMS</li>
+								<li onclick="categoryfilter('d-government')" id="d-government">GOVERNMENT</li>
+								<li onclick="categoryfilter('d-cathedral')" id="d-cathedral">CATHEDRALS</li>
+								<li onclick="categoryfilter('d-park')" id="d-park">PARKS</li>
+							<li style="pointer-events: none;"><!-- empty space so last option isn't on the edge of the screen --></li>
 						</ul>
-						
-					</nav>
-					
-					
-					
-					<img style="margin-left: 20px;" height="70px" id="titleimage" src="../images/headimages/transitlogo.png" />
-					
-					<p id="title">Transit</p>
-					
-					<div class="transitresults">
-					
-						<div class="viewtraffic">
-						
-							<p><a target="_blank" href="https://wtop.com/traffic/" style="text-decoration: none; color: lightgrey;">Traffic Report</a></p>
-							
-						</div>
-						
-						<div class="viewmap">
-						
-							<p>View Map</p>
-							
-						</div>
-						
-						<p id="washington">Washington D.C.</p>
-						
-						<p id="transitoptions">Transit Options</p>
-						
-						<div class="transitsearch">
-					
-							<input type="text" placeholder="Search for transit options" style="color: lightgrey;" />
-						
-						</div>
-					
-						<!-- 
-							List of food places the user can select and learn more on
-						-->
-						<div class="loc">
-						
-							<img id="place" src="../images/transit/uber.png" />
-						
-							<p id="head">Uber</p>
-						
-							<p id="para">Uber offers services including peer-to-peer ridesharing, ride service hailing, food delivery, and a bicycle-sharing system</p>
-						
-						</div>
-						
-						<div class="loc">
-						
-							<img id="place" src="../images/transit/metro.png" />
-						
-							<p id="head">Washington Metro</p>
-						
-							<p id="para">The Washington Metropolitan Area Transit Authority is the main transit service in the Washington Metropolitan area</p>
-						
-						</div>
-						
-						<div class="loc">
-						
-							<img id="place" src="../images/transit/dcyellow.png" />
-						
-							<p id="head">DC Yellow Cabs</p>
-						
-							<p id="para">Yellow Cab Company of D.C. is a family owned and operated business serving the Washington Metropolitan area</p>
-						
-						</div>
-						
-						<div class="loc">
-						
-							<img id="place" src="../images/transit/cb.png" />
-						
-							<p id="head">Capital Bike Share</p>
-						
-							<p id="para">Capital Bikeshare is metro DC's bikeshare service, with 4,300 bikes and 500+ stations across 6 jurisdictions</p>
-						
-						</div>
-						
-						<div class="loc">
-						
-							<img id="place" src="../images/transit/abllc.png" />
-						
-							<p id="head">Academy Bus LLC</p>
-						
-							<p id="para">This family-owned and operated business is one of the most reliable, efficient and safety-oriented motorcoach carriers in the nation's capital</p>
-						
-						</div>
-						
-						<div class="loc">
-						
-							<img id="place" src="../images/transit/pr.png" />
-						
-							<p id="head">Potomac Riverboat</p>
-						
-							<p id="para">Potomac Riverboat Company offers narrated sightseeing cruises, water taxi service and private parties along the Potomac River</p>
-						
-						</div>
-						
-						<div class="loc">
-						
-							<img id="place" src="../images/transit/e.png" />
-						
-							<p id="head">Enterprise Holdings</p>
-						
-							<p id="para">Enterprise Holdings offers extensive car rental, carsharing, retail car sales and other transportation services</p>
-						
-						</div>
-						
-						<div class="loc">
-						
-							<img id="place" src="../images/transit/bbt.png" />
-						
-							<p id="head">Big Bus Tours</p>
-						
-							<p id="para">The open top bus visits the City’s most iconic landmarks and allows unlimited access to hop-on and off</p>
-						
-						</div>
-						
-						<div class="loc">
-						
-							<img id="place" src="../images/transit/abs.png" />
-						
-							<p id="head">America Bus Service</p>
-						
-							<p id="para">American Limousine & Bus Services Inc. offers professional and dependable transportation services to the DC metro area</p>
-						
-						</div>
-						
-						<div class="loc">
-						
-							<img id="place" src="../images/transit/setm.png" />
-						
-							<p id="head">SET Management</p>
-						
-							<p id="para">SETM have provided DC events and clients with Luxury Transportation across the metro area since 1995</p>
-						
-						</div>
-					
 					</div>
-				
-					<iframe id="mappage" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96533.57343162326!2d-77.08826623875564!3d38.89952861298773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c6de5af6e45b%3A0xc2524522d4885d2a!2sWashington%2C+DC!5e0!3m2!1sen!2sus!4v1553869287339!5m2!1sen!2sus" frameborder="0" style="border:0" allowfullscreen></iframe>
+					<div id="d-items">
+
+						<div class="d-item d-all d-app d-car" onclick="d_loaditem(2, 'UBER'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/transit/items/UBER/1.jpg')"></div>
+							<div class="item-info">
+								<h1>UBER</h1>
+								<p>Uber offers services including peer-to-peer ridesharing, ride service hailing, food delivery, and a bicycle-sharing system.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-app d-car" onclick="d_loaditem(2, 'Lyft'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/transit/items/Lyft/1.jpg')"></div>
+							<div class="item-info">
+								<h1>Lyft</h1>
+								<p>An on-demand transportation company primarily providing ride-hailing services.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-train d-bus" onclick="d_loaditem(2, 'Metro'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/transit/items/Metro/1.jpg')"></div>
+							<div class="item-info">
+								<h1>Metro</h1>
+								<p>The Metropolitan Area Transit Authority is the main train and bus transit service in the Washington area.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-car d-app" onclick="d_loaditem(2, 'DC Yellow Cabs'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/transit/items/DCYellowCabs/1.jpg')"></div>
+							<div class="item-info">
+								<h1>DC Yellow Cabs</h1>
+								<p>Yellow Cab Company of D.C. is a family owned and operated business serving the Washington Metropolitan area.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-bike" onclick="d_loaditem(2, 'Capital Bike Share'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/transit/items/CapitalBikeShare/1.jpg')"></div>
+							<div class="item-info">
+								<h1>Capital Bike Share</h1>
+								<p>Capital Bikeshare is metro DC's bikeshare service, with 4,300 bikes and 500+ stations across 6 jurisdictions.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-bus" onclick="d_loaditem(2, 'Academy Bus LLC'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/transit/items/AcademyBusLLC/1.jpg')"></div>
+							<div class="item-info">
+								<h1>Academy Bus LLC</h1>
+								<p>This family-owned and operated business is one of the most reliable, efficient and safety-oriented motorcoach carriers in the nation's capital.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-boat" onclick="d_loaditem(2, 'Potomac Riverboat'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/transit/items/PotomacRiverboat/1.jpg')"></div>
+							<div class="item-info">
+								<h1>Potomac Riverboat</h1>
+								<p>Potomac Riverboat Company offers narrated sightseeing cruises, water taxi service and private parties along the Potomac River.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-car" onclick="d_loaditem(2, 'Enterprise Holdings'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/transit/items/EnterpriseHoldings/1.jpg')"></div>
+							<div class="item-info">
+								<h1>Enterprise Holdings</h1>
+								<p>Enterprise Holdings offers extensive car rental, carsharing, retail car sales and other transportation services.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all" onclick="d_loaditem(2, 'Big Bus Tours'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/transit/items/BigBusTours/1.jpg')"></div>
+							<div class="item-info">
+								<h1>Big Bus Tours</h1>
+								<p>The open top bus visits the City’s most iconic landmarks and allows unlimited access to hop-on and off.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all" onclick="d_loaditem(2, 'America Bus Service'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/transit/items/AmericaBusService/1.jpg')"></div>
+							<div class="item-info">
+								<h1>America Bus Service</h1>
+								<p>American Limousine & Bus Services Inc. offers professional and dependable transportation services to the DC metro area.</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div id="desktop-content-right">
+					<div id="d-item-info">
+						<h1><!--Item Title--></h1>
+						<p><!--Item Desc--></p>
+						<a href=""><button style="margin: 0;"><img src="../images/generalicos/cursor.png" alt="Visit Their Site" />Visit Their Site</button></a>
+						<a href=""><button style="margin: 0;"><img src="../images/generalicos/cursor.png" alt="Menu" />Get Estimate</button></a>
+						<ul id="d-item-info-extra">
+							<li id="d-item-hours"><img src="../images/generalicos/time.png" /> <span  onclick="d_openclosedropmenu('hours');">Hours Open <span id="d-item-hours-arrow">&#10148;</span></span>
+								<ul id="d-item-hours-info">
+									<li><!--sun--></li>
+									<li><!--mon--></li>
+									<li><!--tue--></li>
+									<li><!--wed--></li>
+									<li><!--thu--></li>
+									<li><!--fri--></li>
+									<li><!--sat--></li>
+								</ul>
+							</li>
+						</ul>
+						<div id="d-item-gallery">
+							<h1>
+								GALLERY
+							</h1>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div id="mobile">
 			<button id="scrolltotop" class="bottombutton" onclick="scrollToTop('',100,1)">

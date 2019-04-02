@@ -23,237 +23,213 @@
 	</head>
 	<body>
 		<div id="desktop">
-				<img id="staticback1" src="../images/back2.png">
-		
-				<img id="staticback2" src="../images/middle2.png">
-				
-				<img id="staticback3" src="../images/front2.png">
-				
-				<img id="staticback4" src="../images/top2.png">
-			
-				<!--
-					Class name: menutext
-					
-					Content: Horizontal list of links to different sites, ul, li, and nav
-					
-					Developer: Patrick Crowley
-					
-					Purpose: This div contains the navigation buttons so the user can travel
-							 between pages
-				-->
-				
-				<nav class="menutext">
-				
-					<!-- 
-						List of the navigation buttons
-					-->
-					<ul>
-					
-						<!-- 
-							Navigation Buttons
-						-->
-						<li><a id="link" href="index.html">HOME</a></li>
-						
-						<li><a id="link" href="map.html">MAP</a></li>
-						
-						<li id="page">PLACES</li>
-						
-						<li><a id="link" href="food.html">FOOD</a></li>
-						
-						<li><a id="link" href="transit.html">TRANSIT</a></li>
-						
-						<li><a id="link" href="attire.html">ATTIRE</a></li> 
-						
-					</ul>
-					
+			<div class="bg-gradient"></div>
+			<header>
+				<div id="desktop-header-left">
+					<img src="../images/headimages/placeslogo.png" alt="" />
+					<span>Places</span>
+				</div>
+				<nav id="desktop-header-right">
+					<a href="../index.html">HOME</a>
+					<a href="map.html">MAP</a>
+					<a href="places.html" class="current-page">PLACES</a>
+					<a href="food.html">FOOD</a>
+					<a href="transit.html">TRANSIT</a>
+					<a href="attire.html">ATTIRE</a>
 				</nav>
-				
-				<!--
-					This div contains the navigation gradient
-				-->
-				<div class="menubar">
+			</header>
+			<div id="desktop-content">
+				<div id="desktop-content-left">
+					<input type="text" id="d-searchbar" onkeyup="d_categoryfilter(d_currentFilter)" placeholder="Search...">
+					<div class="filters">
+						<ul>
+							<li onclick="categoryfilter('d-all')" id="d-all">ALL</li>
+							<li onclick="categoryfilter('d-monument')" id="d-monument">MONUMENTS</li>
+							<li onclick="categoryfilter('d-museum')" id="d-museum">MUSEUMS</li>
+							<li onclick="categoryfilter('d-government')" id="d-government">GOVERNMENT</li>
+							<li onclick="categoryfilter('d-cathedral')" id="d-cathedral">CATHEDRALS</li>
+							<li onclick="categoryfilter('d-park')" id="d-park">PARKS</li>
+							<li style="pointer-events: none;"><!-- empty space so last option isn't on the edge of the screen --></li>
+						</ul>
+					</div>
+					<div id="d-items">
+
+						<div class="d-item d-all d-government" onclick="d_loaditem(1, 'United States Capitol'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/places/items/UnitedStatesCapitol/1.jpg')"></div>
+							<div class="item-info">
+								<h1>United States Capitol</h1>
+								<p>Home of the United States Congress and the seat of the legislative branch of the U.S. federal government.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-monument" onclick="d_loaditem(1, 'Lincoln Memorial'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/places/items/LincolnMemorial/1.jpg')"></div>
+							<div class="item-info">
+								<h1>Lincoln Memorial</h1>
+								<p>American national monument built to honor the 16th President of the United States, Abraham Lincoln.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-monument" onclick="d_loaditem(1, 'Washington Monument'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/places/items/WashingtonMonument/1.jpg')"></div>
+							<div class="item-info">
+								<h1>Washington Monument</h1>
+								<p>An obelisk to commemorate George Washington, first US President and once commander-in-chief of the Continental Army.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-government" onclick="d_loaditem(1, 'The White House'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/places/items/TheWhiteHouse/1.jpg')"></div>
+							<div class="item-info">
+								<h1>The White House</h1>
+								<p>The official residence and workplace of the President of the United States since U.S. President John Adams in 1800.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-monument" onclick="d_loaditem(1, 'Thomas Jefferson Memorial'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/places/items/ThomasJeffersonMemorial/1.jpg')"></div>
+							<div class="item-info">
+								<h1>Thomas Jefferson Memorial</h1>
+								<p>Memorial dedicated to Thomas Jefferson, an American Founding Father as the main drafter/writer of the Declaration of Independence and etc.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-museum" onclick="d_loaditem(1, 'National Gallery of Art'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/places/items/NationalGalleryOfArt/1.jpg')"></div>
+							<div class="item-info">
+								<h1>National Gallery of Art</h1>
+								<p>A national art museum open to the public and free of charge which contrains works from Leonardo da Vinci, Andrew W. Mellon, Paul Mellon, etc.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-monument" onclick="d_loaditem(1, 'Arlington National Cemetary'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/places/items/ArlingtonNationalCemetary/1.jpg')"></div>
+							<div class="item-info">
+								<h1>Arlington National Cemetary</h1>
+								<p>A cemetery in whose 624 acres the dead of the nation's conflicts have been buried, beginning with the Civil War and transferred dead from earlier wars.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-park" onclick="d_loaditem(1, 'Smithsonian National Zoo'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/places/items/SmithsonianNationalZoo/1.jpg')"></div>
+							<div class="item-info">
+								<h1>Smithsonian National Zoo</h1>
+								<p>One of the oldest zoos in the US, founded with the mission to "provide engaging experiences with animals and create/share knowledge to save wildlife and habitats."</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-monument" onclick="d_loaditem(1, 'Vietnam Veterans Memorial'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/places/items/VietnamVeteransMemorial/1.jpg')"></div>
+							<div class="item-info">
+								<h1>Vietnam Veterans Memorial</h1>
+								<p>A memorial honoring then U.S. armed forces members who fought, who were killed, and who were unaccounted for in the Vietnam War.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-museum" onclick="d_loaditem(1, 'National Museum of American History'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/places/items/NationalMuseumOfAmericanHistory/1.jpg')"></div>
+							<div class="item-info">
+								<h1>National Museum of American History</h1>
+								<p>A museum that collects, preserves, and displays the social, political, cultural, scientific, and military history the United States with free admission.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-museum" onclick="d_loaditem(1, 'National Museum of Natural History'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/places/items/NationalMuseumOfNaturalHistory/1.jpg')"></div>
+							<div class="item-info">
+								<h1>National Museum of Natural History</h1>
+								<p>The most visited natural history museum in the world which collects over 126 million specimens of plants, animals, fossils, minerals, meteorites, human remains, and human cultural artifacts.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-monument" onclick="d_loaditem(1, 'World War II Memorial'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/places/items/WorldWarIIMemorial/1.jpg')"></div>
+							<div class="item-info">
+								<h1>World War II Memorial</h1>
+								<p>A memorial to those who served in the US armed forces during World War II consisting of 56 pillars and a pair of small triumphal arches surrounding a square and fountain.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-monument" onclick="d_loaditem(1, 'Martin Luther King, Jr. Memorial'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/places/items/MartinLutherKingJrMemorial/1.jpg')"></div>
+							<div class="item-info">
+								<h1>Martin Luther King, Jr. Memorial</h1>
+								<p>A granite statue memorial of the Civil Rights Movement leader, Martin Luther King Junior. The design is a line from King's "I Have A Dream" speech: "Out of the mountain of despair, a stone of hope."</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-museum d-monument" onclick="d_loaditem(1, 'Holocaust Memorial Museum'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/places/items/HolocaustMemorialMuseum/1.jpg')"></div>
+							<div class="item-info">
+								<h1>Holocaust Memorial Museum</h1>
+								<p>The US' official memorial to the Holocaust, providing the documentation, study, and interpretation of Holocaust history. It is dedicated to helping leaders and citizens of the world confront hatred, prevent genocide, promote human dignity, and strengthen democracy.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-museum" onclick="d_loaditem(1, 'National Air and Space Museum'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/places/items/NationalAirAndSpaceMuseum/1.jpg')"></div>
+							<div class="item-info">
+								<h1>National Air and Space Museum</h1>
+								<p>The most visited museum in the US, a center for research into the history and science of aviation and spaceflight, as well as planetary science and terrestrial geology and geophysics with almost all space and aircraft on display being originals.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-government" onclick="d_loaditem(1, 'The Pentagon'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/places/items/ThePentagon/1.jpg')"></div>
+							<div class="item-info">
+								<h1>The Pentagon</h1>
+								<p>The headquarters of the United States Department of Defense. As a symbol of the U.S. military, the phrase The Pentagon is often used as a metonym for the Department of Defense and its leadership.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-cathedral" onclick="d_loaditem(1, 'Washington National Cathedral'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/places/items/WashingtonNationalCathedral/1.jpg')"></div>
+							<div class="item-info">
+								<h1>Washington National Cathedral</h1>
+								<p>An American cathedral of the Episcopal Church. It is the second largest church building in the US., seating both the Presiding Bishop of the Episcopal Church, Michael Bruce Curry, and the bishop of the Diocese of Washington, Mariann Edgar Budde.</p>
+							</div>
+						</div>
+		
+						<div class="d-item d-all d-monument" onclick="d_loaditem(1, 'Korean War Veterans Memorial'); instantscrolltotop('item-info');">
+							<div class="item-pic" style="background-image: url('../images/places/items/KoreanWarVeteransMemorial/1.jpg')"></div>
+							<div class="item-info">
+								<h1>Korean War Veterans Memorial</h1>
+								<p>A memorial that is dedicated to the veterans who served in the Korean War, located in the West Potomac Park in DC.</p>
+							</div>
+						</div>
+
+					</div>
 				</div>
-				
-				<!-- 
-					Food icon at top of page
-				-->
-				<img style="margin-left: 20px;" height="70px" id="titleimage" src="../images/headimages/placeslogo.png" />
-				
-				<p id="title">Places</p>
-				
-				<!--
-					Search bar that accepts user input
-				-->
-				<div class="search">
-				
-					<input type="text" placeholder="Search for attactions" style="color: lightgrey;" />
-					
+				<div id="desktop-content-right">
+					<div id="d-item-info">
+						<h1><!--Item Title--></h1>
+						<p><!--Item Desc--></p>
+						<a href=""><button><img src="../images/generalicos/cursor.png" alt="Visit Their Site!" />Visit Their Site</button></a>
+						<div id="d-item-map">
+							<iframe src="" frameborder="0" style="border:0" allowfullscreen><!--GoogleMap--></iframe>
+						</div>
+						<ul id="d-item-info-extra">
+							<li id="d-item-address"><img src="../images/generalicos/location.png" /> <span><!--Address--></span></li><br />
+							<li id="d-item-hours"><img src="../images/generalicos/time.png" /> <span  onclick="d_openclosedropmenu('hours');">Hours Open <span id="d-item-hours-arrow">&#10148;</span></span>
+								<ul id="d-item-hours-info">
+									<li><!--sun--></li>
+									<li><!--mon--></li>
+									<li><!--tue--></li>
+									<li><!--wed--></li>
+									<li><!--thu--></li>
+									<li><!--fri--></li>
+									<li><!--sat--></li>
+								</ul>
+							</li>
+						</ul>
+						<div id="d-item-gallery">
+							<h1>
+								GALLERY
+							</h1>
+						</div>
+					</div>
 				</div>
-				
-				<!-- 
-					Tags that the user can use to narow search results
-				-->
-				<pre><p id="tags">Monuments   Museums   Shopping   Touism</p></pre>
-				
-				<!-- 
-					Div that the food locations will display inside of
-				-->
-				<div class="searchresults">
-				
-					<!-- 
-						List of food places the user can select and learn more on
-					-->
-					<div class="loc">
-					
-						<img id="place" src="../images/places/1.png" />
-					
-						<p id="head">White House</p>
-					
-						<p id="para">Home of the Nation's President</p>
-					
-					</div>
-					
-					<div class="loc">
-					
-						<img id="place" src="../images/places/2.png" />
-					
-						<p id="head">Capitol Building</p>
-					
-						<p id="para">Home to the United Sates Congress and Legislative Branch</p>
-					
-					</div>
-					
-					<div class="loc">
-					
-						<img id="place" src="../images/places/3.png" />
-					
-						<p id="head">Washington Monument</p>
-					
-						<p id="para">The Washington Monument is an obelisk on the National Mall in Washington D.C. built to commemorate George Washington</p>
-					
-					</div>
-					
-					<div class="loc">
-					
-						<img id="place" src="../images/places/4.png" />
-					
-						<p id="head">Lincoln Memorial</p>
-					
-						<p id="para">The Lincoln Memorial is an American national memorial built to honor Abraham Lincoln</p>
-					
-					</div>
-					
-					<div class="loc">
-					
-						<img id="place" src="../images/places/5.png" />
-					
-						<p id="head">Thomas Jefferson Memorial</p>
-					
-						<p id="para">The Jefferson Memorial is a presidential memorial dedicated to founding father Thomas Jefferson</p>
-					
-					</div>
-					
-					<div class="loc">
-					
-						<img id="place" src="../images/places/6.png" />
-					
-						<p id="head">Franklin D Roosevelt Memorial</p>
-					
-						<p id="para">The Franklin Delano Roosevelt Memorial is a memorial dedicated to the memory of Franklin Delano Roosevelt</p>
-					
-					</div>
-					
-					<div class="loc">
-					
-						<img id="place" src="../images/places/7.png" />
-					
-						<p id="head">Vietnam Memorial</p>
-					
-						<p id="para">The Vietnam Memorial is a memorial dedicated to the service members of the U.S. armed forces who fought in the Vietnam War</p>
-					
-					</div>
-					
-					<div class="loc">
-					
-						<img id="place" src="../images/places/8.png" />
-					
-						<p id="head">Albert Einstein Memorial</p>
-					
-						<p id="para">The Albert Einstein Memorial is a monumental bronze statue depicting Albert Einstein</p>
-					
-					</div>
-					
-					<div class="loc">
-					
-						<img id="place" src="../images/places/9.png" />
-					
-						<p id="head">Veterans Disabled For Life Memorial</p>
-					
-						<p id="para">The American Veterans Disabled for Life Memorial honors veterans of the US armed forces who were permanently disabled</p>
-					
-					</div>
-					
-					<div class="loc">
-					
-						<img id="place" src="../images/places/10.png" />
-					
-						<p id="head">Peace Monument</p>
-					
-						<p id="para">The Peace Monument stands on the grounds of the United States Capitol in Peace Circle</p>
-					
-					</div>
-					
-					<div class="loc">
-					
-						<img id="place" src="../images/places/11.png" />
-					
-						<p id="head">Tomb of the Unknown Soldier</p>
-					
-						<p id="para">The Tomb of the Unknown Soldier is dedicated to U.S. service members who have died without their remains being identified</p>
-					
-					</div>
-					
-					<div class="loc">
-					
-						<img id="place" src="../images/places/12.png" />
-					
-						<p id="head">Martin Luther King Jr. Memorial</p>
-					
-						<p id="para">The Martin Luther King Jr. Memorial is an American national memorial built to honor Martin Luther King Jr.</p>
-					
-					</div>
-					
-					<div class="loc">
-					
-						<img id="place" src="../images/places/13.png" />
-					
-						<p id="head">Arlington National Cemetery</p>
-					
-						<p id="para">The Arlington National Cemetery spans across over 624 acres housing every soldier who has died in combat</p>
-					
-					</div>
-					
-				
-				</div>
-				
-				<!-- 
-					The Google Map div
-				-->
-				<div class="foodmap">
-				
-					<p id="heading">Select a location for more information</p>
-				
-					<div class="karl">
-				
-						<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d34627.33134958135!2d-77.06445210359688!3d38.89720987632852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1swashington+dc+monuments!5e0!3m2!1sen!2sus!4v1553958166102!5m2!1sen!2sus" frameborder="0" style="border:0" allowfullscreen></iframe>
-						
-					</div>
-				
-				</div>
-				
-				<!-- 
-					Images that are used for the background
-				-->
+			</div>
 		</div>
 		<div id="mobile">
 			<button id="scrolltotop" class="bottombutton" onclick="scrollToTop('',100,1)">

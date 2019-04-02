@@ -1,4 +1,4 @@
-var itempage, itemgallery, itemaddress, itemhours, itemdresscodeF, itemdresscodeM, hoursopendropdown, dresscodeMdropdown, dresscodeFdropdown, hoursopen, dresscodeMopen, dresscodeFopen, currentItemType;
+var itempage, itemgallery, itemaddress, itemhours, itemdresscodeF, itemdresscodeM, hoursopendropdown, dresscodeMdropdown, dresscodeFdropdown, hoursopen, dresscodeMopen, dresscodeFopen, currentItemType, d_itempage, d_itemgallery, d_itemaddress, d_itemhours, d_itemdresscodeF, d_itemdresscodeM, d_hoursopendropdown, d_dresscodeMdropdown, d_dresscodeFdropdown, d_hoursopen, d_dresscodeMopen, d_dresscodeFopen, d_currentItemType;
 var items = 
 [
 	[
@@ -6,7 +6,7 @@ var items =
 		// food items - title, desc, site link, menu link, map, location, times, images...
 		['Old Ebbitt Grill', 'Iconic tavern offering American meals, including popular oyster specials, in Victorian-style digs.', 'https://www.ebbitt.com/', 'https://www.ebbitt.com/menus/', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.1343824091286!2d-77.03544908523939!3d38.898042179570545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1553614542800', '675 15th St NW Washington, DC 20005', '<span>Sun</span> 8:30AM - 2AM', '<span>Mon</span> 7:30AM - 2AM', '<span>Tue</span> 7:30AM - 2AM', '<span>Wed</span> 7:30AM - 2AM', '<span>Thu</span> 7:30AM - 3AM', '<span>Fri</span> 7:30AM - 3AM', '<span>Sat</span> 8:30AM - 3AM', '../images/food/items/OldEbbittGrill/1.jpg', '../images/food/items/OldEbbittGrill/2.jpg', '../images/food/items/OldEbbittGrill/3.jpg', '../images/food/items/OldEbbittGrill/4.jpg', '../images/food/items/OldEbbittGrill/5.jpg'],
 		['Founding Farmers DC', 'Co-op-owned American eatery dishing out market-driven comfort cuisine along with rustic-chic style.', 'https://www.wearefoundingfarmers.com/', 'https://www.wearefoundingfarmers.com/menus/', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1305.5068409301718!2d-77.04520954436336!3d38.90029097254082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1553616507715', '1924 Pennsylvania Ave NW, Washington, DC 20006', '<span>Sun</span> 8:30AM - 10PM', '<span>Mon</span> 7AM - 10PM', '<span>Tue</span> 7AM - 11PM', '<span>Wed</span> 7AM - 11PM', '<span>Thu</span> 7AM - 11PM', '<span>Fri</span> 7AM - 12AM', '<span>Sat</span> 8:30AM - 12AM', '../images/food/items/FoundingFarmersDC/1.jpg', '../images/food/items/FoundingFarmersDC/2.jpg', '../images/food/items/FoundingFarmersDC/3.jpg', '../images/food/items/FoundingFarmersDC/4.jpg', '../images/food/items/FoundingFarmersDC/5.jpg'],
-		['Zaytinya DC', 'Chef José Andrés\' light, airy mainstay offers Eastern Mediterranean small plates & regional wines.', 'https://www.zaytinya.com/', 'https://www.zaytinya.com/menu/washington-dc/', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.1036729506463!2d-77.02587268523934!3d38.89874447957046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1553615547476', '701 9th St NW, Washington, DC 20001', '<span>Sun</span> 11AM - 10PM', '<span>Mon</span> 11AM - 10PM', '<span>Tue</span> 11AM - 11PM', '<span>Wed</span> 11AM - 11PM', '<span>Thu</span> 11AM - 11PM', '<span>Fri</span> 11AM - 12AM', '<span>Sat</span> 11AM - 10AM', 'images/food/items/ZaytinyaDC/1.jpg', '../images/food/items/ZaytinyaDC/2.jpg', '../images/food/items/ZaytinyaDC/3.jpg', '../images/food/items/ZaytinyaDC/4.jpg', '../images/food/items/ZaytinyaDC/5.jpg'],
+		['Zaytinya DC', 'Chef José Andrés\' light, airy mainstay offers Eastern Mediterranean small plates & regional wines.', 'https://www.zaytinya.com/', 'https://www.zaytinya.com/menu/washington-dc/', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.1036729506463!2d-77.02587268523934!3d38.89874447957046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1553615547476', '701 9th St NW, Washington, DC 20001', '<span>Sun</span> 11AM - 10PM', '<span>Mon</span> 11AM - 10PM', '<span>Tue</span> 11AM - 11PM', '<span>Wed</span> 11AM - 11PM', '<span>Thu</span> 11AM - 11PM', '<span>Fri</span> 11AM - 12AM', '<span>Sat</span> 11AM - 10AM', '../images/food/items/ZaytinyaDC/1.jpg', '../images/food/items/ZaytinyaDC/2.jpg', '../images/food/items/ZaytinyaDC/3.jpg', '../images/food/items/ZaytinyaDC/4.jpg', '../images/food/items/ZaytinyaDC/5.jpg'],
 		['Logan Tavern', 'Casual American eatry with a modern tavern feel, known for pre-theater dining & Sunday brunch. (vegan friendly)', 'https://www.logantavern.com/', 'https://www.logantavern.com/menus/', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3104.620800172237!2d-77.0348886852389!3d38.90978597956869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1553615643332', '1423 P St NW, Washington, DC 20005', '<span>Sun</span> 10:30AM - 10:30PM', '<span>Mon</span> 11:30AM - 10:30PM', '<span>Tue</span> 11:30AM - 10:30PM', '<span>Wed</span> 11:30AM - 10:30PM', '<span>Thu</span> 11:30AM - 10:30PM', '<span>Fri</span> 11:30AM - 11:30PM', '<span>Sat</span> 10:30AM - 11:30PM', '../images/food/items/LoganTavern/1.jpg', '../images/food/items/LoganTavern/2.jpg', '../images/food/items/LoganTavern/3.jpg', '../images/food/items/LoganTavern/4.jpg', '../images/food/items/LoganTavern/5.jpg'],
 		["Le Diplomate", "Bustling brasserie serves classic French fare & drinks amid a zinc bar, tile floors & sidewalk cafe.", "https://www.lediplomatedc.com", "https://lediplomatedc.com/#menus", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3104.5516026155983!2d-77.03376108507699!3d38.91136805372642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1553776889231", "1601 14th St NW, Washington, DC 20009", "<span>Sun</span> 9:30AM - 11:00PM", "<span>Mon</span> 5:00PM - 11:00PM", "<span>Tue</span> 5:00PM - 11:00PM", "<span>Wed</span> 5:00PM - 11:00PM", "<span>Thu</span> 5:00PM - 11:00PM", "<span>Fri</span> 5:00PM - 12:00AM", "<span>Sat</span> 9:30AM - 12AM", "../images/food/items/LeDiplomate/1.jpg", "../images/food/items/LeDiplomate/2.jpg", "../images/food/items/LeDiplomate/3.jpg", "../images/food/items/LeDiplomate/4.jpg", "../images/food/items/LeDiplomate/5.jpg"],
 		["The Dabney", "Chef Jeremiah Langhorne serves Mid-Atlantic cuisine at this rustic spot set in a former row house.", "https://thedabney.com/", "https://thedabney.com/menu", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3104.5516026155983!2d-77.03376108507699!3d38.91136805372642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1553780706191", "1601 14th St NW, Washington, DC 20009", "<span>Sun</span> 5:00PM - 10:00PM", "<span>Mon</span> Closed", "<span>Tue</span> 5:30PM - 10:00PM", "<span>Wed</span> 5:30PM - 10:00PM", "<span>Thu</span> 5:30PM - 10:00PM", "<span>Fri</span> 5:00PM - 11:00PM", "<span>Sat</span> 5:00PM - 11:00PM", "../images/food/items/TheDabney/1.jpg", "../images/food/items/TheDabney/2.jpg", "../images/food/items/TheDabney/3.jpg", "../images/food/items/TheDabney/4.jpg"],
@@ -65,16 +65,15 @@ var items =
 	],
 	[
 		// attire items - title, desc, images...
-		["General Sessions", "A general sessions are events which invites all BPA attendees to receive some amount of information, a collective meal, or awards.", "", "", "", "", "Dress slacks, dress shirt, and tie.", "Suit, dress shirt, and tie.", "Sport coat, coordinated dress slacks, dress shirt, and tie.", "BPA blazer with dress slacks, dress shirt, and tie.", "Dress shoes and dress socks are required with all of the above.", "This excludes all denim for any of the above.", "", "Pant or skirt suit.", "Dress skirt or dress slacks with coordinated blouse and/or sweater.", "Business professional \“dress.\”", "BPA blazer with dress skirt or dress slacks and blouse or sweater.", "Dress shoes or dress sandals with heel are required with all of the above.", "Skirt length may be no greater than two inches above the top of the knee.", "This excludes all denim for any of the above.", "../images/attire/items/EVENT/1.jpg"],
-		["Tours", "BPA offers tours of the surrounding DC area including nationally renouned memorials, museums, and other tourist attractions to give attendees opportunities to enjoy their time in Wasington DC.", "", "", "", "", "Sportswear (jeans), pants, and shirt, T-shirt, and shorts.", "Footwear required with all of the above.", "", "", "", "", "", "", "Sportswear (jeans), pants, and shirt, T-shirt, and shorts.", "Footwear required with all of the above.", "", "", "", "", "../images/attire/items/EVENT/1.jpg"],
-		["Competitive Events", "", "", "", "", "", "Dress slacks, dress shirt, and tie.", "Suit, dress shirt, and tie.", "Sport coat, coordinated dress slacks, dress shirt, and tie.", "BPA blazer with dress slacks, dress shirt, and tie.", "Dress shoes and dress socks are required with all of the above.", "This excludes all denim for any of the above.", "", "Pant or skirt suit.", "Dress skirt or dress slacks with coordinated blouse and/or sweater.", "Business professional \“dress.\”", "BPA blazer with dress skirt or dress slacks and blouse or sweater.", "Dress shoes or dress sandals with heel are required with all of the above.", "Skirt length may be no greater than two inches above the top of the knee.", "This excludes all denim for any of the above.", "../images/attire/items/EVENT/1.jpg"],
-		["Special Events", "These include any sort of parties or fun events that may be held during the conference as a way to encourage social interactions with other business professionals and just have some fun.", "", "", "", "", "Sportswear (jeans), pants, and shirt, T-shirt, and shorts.", "Footwear required with all of the above.", "", "", "", "", "", "", "Sportswear (jeans), pants, and shirt, T-shirt, and shorts.", "Footwear required with all of the above.", "", "", "", "", "../images/attire/items/EVENT/1.jpg", "../images/transit/items/EVENT/2.jpg", "../images/transit/items/EVENT/3.jpg", "../images/transit/items/EVENT/4.jpg"],
-		["Campaign Rally", "desc", "", "", "", "", "Dress slacks, dress shirt, and tie.", "Suit, dress shirt, and tie.", "Sport coat, coordinated dress slacks, dress shirt, and tie.", "BPA blazer with dress slacks, dress shirt, and tie.", "Dress shoes and dress socks are required with all of the above.", "This excludes all denim for any of the above.", "", "Pant or skirt suit.", "Dress skirt or dress slacks with coordinated blouse and/or sweater.", "Business professional \“dress.\”", "BPA blazer with dress skirt or dress slacks and blouse or sweater.", "Dress shoes or dress sandals with heel are required with all of the above.", "Skirt length may be no greater than two inches above the top of the knee.", "This excludes all denim for any of the above.", "../images/attire/items/EVENT/1.jpg"],
-		["Exhibit Hall", "desc", "", "", "", "", "Sportswear (jeans), pants, and shirt, T-shirt, and shorts.", "Footwear required with all of the above.", "", "", "", "", "", "", "Sportswear (jeans), pants, and shirt, T-shirt, and shorts.", "Footwear required with all of the above.", "", "", "", "", "../images/attire/items/EVENT/1.jpg", "../images/transit/items/EVENT/2.jpg", "../images/transit/items/EVENT/3.jpg", "../images/transit/items/EVENT/4.jpg"],
-		["Caucuses", "desc", "", "", "", "", "Dress slacks, dress shirt, and tie.", "Suit, dress shirt, and tie.", "Sport coat, coordinated dress slacks, dress shirt, and tie.", "BPA blazer with dress slacks, dress shirt, and tie.", "Dress shoes and dress socks are required with all of the above.", "This excludes all denim for any of the above.", "", "Pant or skirt suit.", "Dress skirt or dress slacks with coordinated blouse and/or sweater.", "Business professional \“dress.\”", "BPA blazer with dress skirt or dress slacks and blouse or sweater.", "Dress shoes or dress sandals with heel are required with all of the above.", "Skirt length may be no greater than two inches above the top of the knee.", "This excludes all denim for any of the above.", "../images/attire/items/EVENT/1.jpg", "../images/transit/items/EVENT/2.jpg", "../images/transit/items/EVENT/3.jpg", "../images/transit/items/EVENT/4.jpg"],
-		["Workshops", "desc", "", "", "", "", "Dress slacks, dress shirt, and tie.", "Suit, dress shirt, and tie.", "Sport coat, coordinated dress slacks, dress shirt, and tie.", "BPA blazer with dress slacks, dress shirt, and tie.", "Dress shoes and dress socks are required with all of the above.", "This excludes all denim for any of the above.", "", "Pant or skirt suit.", "Dress skirt or dress slacks with coordinated blouse and/or sweater.", "Business professional \“dress.\”", "BPA blazer with dress skirt or dress slacks and blouse or sweater.", "Dress shoes or dress sandals with heel are required with all of the above.", "Skirt length may be no greater than two inches above the top of the knee.", "This excludes all denim for any of the above.", "../images/attire/items/EVENT/1.jpg", "../images/transit/items/EVENT/2.jpg", "../images/transit/items/EVENT/3.jpg", "../images/transit/items/EVENT/4.jpg"],
-		["National Leadership Academy", "desc", "", "", "", "", "Dress slacks, dress shirt, and tie.", "Suit, dress shirt, and tie.", "Sport coat, coordinated dress slacks, dress shirt, and tie.", "BPA blazer with dress slacks, dress shirt, and tie.", "Dress shoes and dress socks are required with all of the above.", "This excludes all denim for any of the above.", "", "Pant or skirt suit.", "Dress skirt or dress slacks with coordinated blouse and/or sweater.", "Business professional \“dress.\”", "BPA blazer with dress skirt or dress slacks and blouse or sweater.", "Dress shoes or dress sandals with heel are required with all of the above.", "Skirt length may be no greater than two inches above the top of the knee.", "This excludes all denim for any of the above.", "../images/attire/items/EVENT/1.jpg", "../images/transit/items/EVENT/2.jpg", "../images/transit/items/EVENT/3.jpg", "../images/transit/items/EVENT/4.jpg"],
-		["title", "desc", "", "", "", "", "", "", "", "", "", "", "fcode1", "fcode2", "fcode3", "fcode4", "fcode5", "fcode6", "fcode7", "../images/attire/items/EVENT/1.jpg", "../images/transit/items/EVENT/2.jpg", "../images/transit/items/EVENT/3.jpg", "../images/transit/items/EVENT/4.jpg"]
+		["General Sessions", "General sessions are events which invites all BPA attendees to receive some amount of information, a collective meal, or awards.", "", "", "", "", "Dress slacks, dress shirt, and tie.", "Suit, dress shirt, and tie.", "Sport coat, coordinated dress slacks, dress shirt, and tie.", "BPA blazer with dress slacks, dress shirt, and tie.", "Dress shoes and dress socks are required with all of the above.", "This excludes all denim for any of the above.", "", "Pant or skirt suit.", "Dress skirt or dress slacks with coordinated blouse and/or sweater.", "Business professional \“dress.\”", "BPA blazer with dress skirt or dress slacks and blouse or sweater.", "Dress shoes or dress sandals with heel are required with all of the above.", "Skirt length may be no greater than two inches above the top of the knee.", "This excludes all denim for any of the above.", "../images/attire/form/1.png", "../images/attire/form/2.png"],
+		["Tours", "BPA offers tours of the surrounding DC area including nationally renouned memorials, museums, and other tourist attractions to give attendees opportunities to enjoy their time in Wasington DC.", "", "", "", "", "Sportswear (jeans), pants, and shirt, T-shirt, and shorts.", "Footwear required with all of the above.", "", "", "", "", "", "", "Sportswear (jeans), pants, and shirt, T-shirt, and shorts.", "Footwear required with all of the above.", "", "", "", "", "../images/attire/items/cas/1.png", "../images/attire/items/cas/2.png"],
+		["Competitive Events", "One of the fundemental aspects of BPA is competition, and it is always important to look your best when competing at what you are best at!", "", "", "", "", "Dress slacks, dress shirt, and tie.", "Suit, dress shirt, and tie.", "Sport coat, coordinated dress slacks, dress shirt, and tie.", "BPA blazer with dress slacks, dress shirt, and tie.", "Dress shoes and dress socks are required with all of the above.", "This excludes all denim for any of the above.", "", "Pant or skirt suit.", "Dress skirt or dress slacks with coordinated blouse and/or sweater.", "Business professional \“dress.\”", "BPA blazer with dress skirt or dress slacks and blouse or sweater.", "Dress shoes or dress sandals with heel are required with all of the above.", "Skirt length may be no greater than two inches above the top of the knee.", "This excludes all denim for any of the above.", "../images/attire/form/1.png", "../images/attire/form/2.png"],
+		["Special Events", "These special events include any sort of parties or fun activities that may be held during the conference as a way to encourage social interactions with other business professionals and just have some fun.", "", "", "", "", "Sportswear (jeans), pants, and shirt, T-shirt, and shorts.", "Footwear required with all of the above.", "", "", "", "", "", "", "Sportswear (jeans), pants, and shirt, T-shirt, and shorts.", "Footwear required with all of the above.", "", "", "", "", "../images/attire/cas/1.png", "../images/attire/cas/2.png"],
+		["Campaign Rally", "Another fundemental aspect of BPA is leadership, and to promote that, we hold a campaign rally where candidates for national office give a speech about their plans to further the causes of BPA and try and win votes for themselves.", "", "", "", "", "Dress slacks, dress shirt, and tie.", "Suit, dress shirt, and tie.", "Sport coat, coordinated dress slacks, dress shirt, and tie.", "BPA blazer with dress slacks, dress shirt, and tie.", "Dress shoes and dress socks are required with all of the above.", "This excludes all denim for any of the above.", "", "Pant or skirt suit.", "Dress skirt or dress slacks with coordinated blouse and/or sweater.", "Business professional \“dress.\”", "BPA blazer with dress skirt or dress slacks and blouse or sweater.", "Dress shoes or dress sandals with heel are required with all of the above.", "Skirt length may be no greater than two inches above the top of the knee.", "This excludes all denim for any of the above.", "../images/attire/items/form/1.png", "../images/attire/items/form/2.png"],
+		["Exhibit Hall", "BPA's Exhibit Hall gives young business professionals the opportunity to seek out colleges and employers which suit their interests.", "", "", "", "", "Sportswear (jeans), pants, and shirt, T-shirt, and shorts.", "Footwear required with all of the above.", "", "", "", "", "", "", "Sportswear (jeans), pants, and shirt, T-shirt, and shorts.", "Footwear required with all of the above.", "", "", "", "", "../images/attire/cas/1.png", "../images/attire/cas/2.png"],
+		["Caucuses", "In order to ensure the BPA student leadership accurately represents those attending, we let the BPA attendees vote on who their representatives individually to make sure that everyone's voice is heard.", "", "", "", "", "Dress slacks, dress shirt, and tie.", "Suit, dress shirt, and tie.", "Sport coat, coordinated dress slacks, dress shirt, and tie.", "BPA blazer with dress slacks, dress shirt, and tie.", "Dress shoes and dress socks are required with all of the above.", "This excludes all denim for any of the above.", "", "Pant or skirt suit.", "Dress skirt or dress slacks with coordinated blouse and/or sweater.", "Business professional \“dress.\”", "BPA blazer with dress skirt or dress slacks and blouse or sweater.", "Dress shoes or dress sandals with heel are required with all of the above.", "Skirt length may be no greater than two inches above the top of the knee.", "This excludes all denim for any of the above.", "../images/attire/form/1.png", "../images/attire/form/2.png"],
+		["Workshops", "Workshops are just another way that BPA helps students to improve their professionalism skills and pursue interests further.", "", "", "", "", "Dress slacks, dress shirt, and tie.", "Suit, dress shirt, and tie.", "Sport coat, coordinated dress slacks, dress shirt, and tie.", "BPA blazer with dress slacks, dress shirt, and tie.", "Dress shoes and dress socks are required with all of the above.", "This excludes all denim for any of the above.", "", "Pant or skirt suit.", "Dress skirt or dress slacks with coordinated blouse and/or sweater.", "Business professional \“dress.\”", "BPA blazer with dress skirt or dress slacks and blouse or sweater.", "Dress shoes or dress sandals with heel are required with all of the above.", "Skirt length may be no greater than two inches above the top of the knee.", "This excludes all denim for any of the above.", "../images/attire/form/1.png", "../images/attire/form/2.png"],
+		["National Leadership Academy", "Partnerning with ULEAD, BPA will be providing an opportunity for students to learn more about personal branding, making ethical decisions, and the art and science of collaboration.", "", "", "", "", "Dress slacks, dress shirt, and tie.", "Suit, dress shirt, and tie.", "Sport coat, coordinated dress slacks, dress shirt, and tie.", "BPA blazer with dress slacks, dress shirt, and tie.", "Dress shoes and dress socks are required with all of the above.", "This excludes all denim for any of the above.", "", "Pant or skirt suit.", "Dress skirt or dress slacks with coordinated blouse and/or sweater.", "Business professional \“dress.\”", "BPA blazer with dress skirt or dress slacks and blouse or sweater.", "Dress shoes or dress sandals with heel are required with all of the above.", "Skirt length may be no greater than two inches above the top of the knee.", "This excludes all denim for any of the above.", "../images/attire/form/1.png", "../images/attire/form/2.png"]
 	]
 ];
 
@@ -148,39 +147,121 @@ function loaditem(itemtype, item)
 	itempage.style.animation = "itempage-slide-in " + .5 + "s ease-in-out";
 }
 
+function d_loaditem(itemtype, item)
+{
+	hideitem();
+	currentItemType = itemtype; // set the current item type to passed in item type for unloading later
+
+	for (var i in items[itemtype]) // go through every item in item type
+	{
+		if (items[itemtype][i][0] == item) // check to see if it is the wanted item
+		{
+			// load item's title, desc, buttons, 
+			d_itempage.getElementsByTagName("h1")[0].innerHTML = items[itemtype][i][0];
+			d_itempage.getElementsByTagName("p")[0].innerHTML = items[itemtype][i][1];
+			if (currentItemType == 0 || currentItemType == 1 || currentItemType == 2)
+			{
+				d_itempage.getElementsByTagName("a")[0].href = items[itemtype][i][2];
+			}
+			if (currentItemType == 0 || currentItemType == 2)
+				d_itempage.getElementsByTagName("a")[1].href = items[itemtype][i][3];
+
+			// load maps and address info
+			if (currentItemType == 0 || currentItemType == 1)
+			{
+				d_itempage.getElementsByTagName("iframe")[0].src = items[itemtype][i][4];
+				d_itempage.getElementsByTagName("span")[0].innerHTML = items[itemtype][i][5];
+			}
+
+			// load dropdown menus info
+			if (currentItemType == 0 || currentItemType == 1 || currentItemType == 2)
+			{
+				for (var x = 0; x <= 6; x++)
+				{
+					d_itemhours.getElementsByTagName("li")[x].innerHTML = items[itemtype][i][x + 6];
+				}
+
+				// load item's images
+				for (var j = 13; j <= items[itemtype][i].length-1; j++)
+				{
+					var img = document.createElement("img");
+					img.setAttribute("src", items[itemtype][i][j]);
+					document.getElementById("d-item-gallery").appendChild(img);
+				}
+			}
+			else
+			{
+				for (var x = 0; x <= 6; x++)
+				{
+					d_itemdresscodeM.getElementsByTagName("li")[x].innerHTML = items[itemtype][i][x + 6];
+				}
+				for (var x = 0; x <= 6; x++)
+				{
+					d_itemdresscodeF.getElementsByTagName("li")[x].innerHTML = items[itemtype][i][x + 13];
+				}
+
+				// load item's images
+				for (var j = 20; j <= items[itemtype][i].length-1; j++)
+				{
+					var img = document.createElement("img");
+					img.setAttribute("src", items[itemtype][i][j]);
+					document.getElementById("d-item-gallery").appendChild(img);
+				}
+			}
+		}
+	}
+
+	// show item page and slide it up
+	d_itempage.style.display = "block";
+}
+
 function hideitem()
 {
 	// slide item page down and hide it
 	itempage.style.animation = "itempage-slide-out " + .25 + "s ease-in-out";
 	setTimeout(function()
 	{
-		document.getElementsByTagName("body")[0].style.overflow = "auto"
+		document.getElementsByTagName("body")[0].style.overflow = "auto";
 		itempage.style.display = "none";
 	}, 240);
 
 	// unload item's title, desc, buttons, maps, and address info
 	itempage.getElementsByTagName("h1")[0].innerHTML = "";
 	itempage.getElementsByTagName("p")[0].innerHTML = "";
-	itempage.getElementsByTagName("a")[0].href = "";
+
+	if (currentItemType == 0 || currentItemType == 1 || currentItemType == 2)
+		itempage.getElementsByTagName("a")[0].href = "";
+	
+	d_itempage.getElementsByTagName("h1")[0].innerHTML = "";
+	d_itempage.getElementsByTagName("p")[0].innerHTML = "";
+	d_itempage.getElementsByTagName("a")[0].href = "";
 	if (currentItemType == 0 || currentItemType == 2)
 	{
 		itempage.getElementsByTagName("a")[1].href = "";
+		d_itempage.getElementsByTagName("a")[1].href = "";
 	}
 	if (currentItemType == 0 || currentItemType == 1)
 	{
 		itempage.getElementsByTagName("iframe")[0].src = "";
 		itempage.getElementsByTagName("span")[0].innerHTML = "";
+		d_itempage.getElementsByTagName("iframe")[0].src = "";
+		d_itempage.getElementsByTagName("span")[0].innerHTML = "";
 	}
 
 	// unload "Hour Open" info
 	for (var x = 0; x <= 6; x++)
 	{
 		itemhours.getElementsByTagName("li")[x].innerHTML = "";
+		d_itemhours.getElementsByTagName("li")[x].innerHTML = "";
 	}
 	
 	// unload item's images
 	var oldimages = itemgallery.getElementsByTagName("img");
-	console.log(oldimages);
+	for (var oldimage = oldimages.length - 1; oldimage >= 0; oldimage--)
+	{
+		oldimages[oldimage].parentNode.removeChild(oldimages[oldimage]);
+	}
+	oldimages = d_itemgallery.getElementsByTagName("img");
 	for (var oldimage = oldimages.length - 1; oldimage >= 0; oldimage--)
 	{
 		oldimages[oldimage].parentNode.removeChild(oldimages[oldimage]);
@@ -192,6 +273,24 @@ function hideitem()
 		hoursopen = false;
 		hoursopendropdown.style.transform = "rotate(0deg)";
 		itemhours.getElementsByTagName("ul")[0].style.display = "none";
+		d_hoursopendropdown.style.transform = "rotate(0deg)";
+		d_itemhours.getElementsByTagName("ul")[0].style.display = "none";
+	}
+	if (dresscodeMopen)
+	{
+		dresscodeMopen = false;
+		dresscodeMdropdown.style.transform = "rotate(0deg)";
+		itemdresscodeM.getElementsByTagName("ul")[0].style.display = "none";
+		d_dresscodeMdropdown.style.transform = "rotate(0deg)";
+		d_itemdresscodeM.getElementsByTagName("ul")[0].style.display = "none";
+	}
+	if (dresscodeFopen)
+	{
+		dresscodeFopen = false;
+		dresscodeFdropdown.style.transform = "rotate(0deg)";
+		itemdresscodeF.getElementsByTagName("ul")[0].style.display = "none";
+		d_dresscodeFdropdown.style.transform = "rotate(0deg)";
+		d_itemdresscodeF.getElementsByTagName("ul")[0].style.display = "none";
 	}
 }
 
@@ -221,7 +320,6 @@ function openclosedropmenu(menu)
 		{
 			dresscodeMopen = false;
 			dresscodeMdropdown.style.transform = "rotate(0deg)";
-			console.log(dresscodeMdropdown);
 			itemdresscodeM.getElementsByTagName("ul")[0].style.display = "none";
 		}
 		else
@@ -229,7 +327,6 @@ function openclosedropmenu(menu)
 			dresscodeMopen = true;
 			dresscodeMdropdown.style.transform = "rotate(90deg)";
 			itemdresscodeM.getElementsByTagName("ul")[0].style.display = "block";
-			console.log(dresscodeMdropdown);
 		}
 	}
 	else if (menu == "dresscodeF")
@@ -249,8 +346,58 @@ function openclosedropmenu(menu)
 			console.log(itemdresscodeF.getElementsByTagName("ul")[0]);
 		}
 	}
-	
-	
+}
+
+
+function d_openclosedropmenu(menu)
+{
+	// when the hours open text is clicked it will open if the info isn't already open
+	// if it is already open it will instead close it
+	if (menu == "hours")
+	{
+		if (hoursopen)
+		{
+			hoursopen = false;
+			d_hoursopendropdown.style.transform = "rotate(0deg)";
+			d_itemhours.getElementsByTagName("ul")[0].style.display = "none";
+		}
+		else
+		{
+			hoursopen = true;
+			d_hoursopendropdown.style.transform = "rotate(90deg)";
+			d_itemhours.getElementsByTagName("ul")[0].style.display = "block";
+		}
+	}
+	else if (menu == "dresscodeM")
+	{
+		if (dresscodeMopen)
+		{
+			dresscodeMopen = false;
+			d_dresscodeMdropdown.style.transform = "rotate(0deg)";
+			d_itemdresscodeM.getElementsByTagName("ul")[0].style.display = "none";
+		}
+		else
+		{
+			dresscodeMopen = true;
+			d_dresscodeMdropdown.style.transform = "rotate(90deg)";
+			d_itemdresscodeM.getElementsByTagName("ul")[0].style.display = "block";
+		}
+	}
+	else if (menu == "dresscodeF")
+	{
+		if (dresscodeFopen)
+		{
+			dresscodeFopen = false;
+			d_dresscodeFdropdown.style.transform = "rotate(0deg)";
+			d_itemdresscodeF.getElementsByTagName("ul")[0].style.display = "none";
+		}
+		else if (!dresscodeFopen)
+		{
+			dresscodeFopen = true;
+			d_dresscodeFdropdown.style.transform = "rotate(90deg)";
+			d_itemdresscodeF.getElementsByTagName("ul")[0].style.display = "block";
+		}
+	}
 }
 
 
@@ -266,4 +413,14 @@ window.onload = function() // run when the page is ready
 	hoursopendropdown = document.getElementById("item-hours-arrow")
 	dresscodeMdropdown = document.getElementById("dresscodeM-arrow")
 	dresscodeFdropdown = document.getElementById("dresscodeF-arrow")
+
+	d_itempage = document.getElementById('d-item-info');
+	d_itemgallery = document.getElementById("d-item-gallery");
+	d_itemaddress = document.getElementById("d-item-address");
+	d_itemhours = document.getElementById("d-item-hours");
+	d_itemdresscodeM = document.getElementById("d-item-dresscode-m");
+	d_itemdresscodeF = document.getElementById("d-item-dresscode-f");
+	d_hoursopendropdown = document.getElementById("d-item-hours-arrow")
+	d_dresscodeMdropdown = document.getElementById("d-dresscodeM-arrow")
+	d_dresscodeFdropdown = document.getElementById("d-dresscodeF-arrow")
 }

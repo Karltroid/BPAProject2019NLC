@@ -40,30 +40,30 @@
 			</header>
 			<div id="desktop-content">
 				<div id="desktop-content-left">
-					<input type="text" id="searchbar" onkeyup="categoryfilter(currentFilter)" placeholder="Search...">
+					<input type="text" id="d-searchbar" onkeyup="d_categoryfilter(d_currentFilter)" placeholder="Search...">
 					<div class="filters">
 						<ul>
-							<li onclick="categoryfilter('d-all')" id="d-all">ALL</li>
-							<li onclick="categoryfilter('d-breakfast')" id="d-breakfast">BREAKFAST</li>
-							<li onclick="categoryfilter('d-lunch')" id="d-lunch">LUNCH</li>
-							<li onclick="categoryfilter('d-dinner')" id="d-dinner">DINNER</li>
-							<li onclick="categoryfilter('d-vegan')" id="d-vegan">VEGAN</li>
-							<li onclick="categoryfilter('d-american')" id="d-american">AMERICAN</li>
-							<li onclick="categoryfilter('d-hispanic-latino')" id="d-hispanic-latino">HISPANIC/LATINO</li>
-							<li onclick="categoryfilter('d-greek')" id="d-greek">GREEK</li>
-							<li onclick="categoryfilter('d-middle-eastern')" id="d-middle-eastern">MIDDLE EASTERN</li>
-							<li onclick="categoryfilter('d-chinese')" id="d-chinese">CHINESE</li>
-							<li onclick="categoryfilter('d-italian')" id="d-italian">ITALIAN</li>
-							<li onclick="categoryfilter('d-japanese')" id="d-japanese">JAPANESE</li>
-							<li onclick="categoryfilter('d-thai')" id="d-thai">THAI</li>
-							<li onclick="categoryfilter('d-french')" id="d-french">FRENCH</li>
-							<li onclick="categoryfilter('d-outdoor-seats')" id="d-outdoor-seats">OUTDOOR-SEATS</li>
-							<li onclick="categoryfilter('d-free-wifi')" id="d-free-wifi">FREE-WIFI</li>
+							<li onclick="d_categoryfilter('d-all')" id="d-all">ALL</li>
+							<li onclick="d_categoryfilter('d-breakfast')" id="d-breakfast">BREAKFAST</li>
+							<li onclick="d_categoryfilter('d-lunch')" id="d-lunch">LUNCH</li>
+							<li onclick="d_categoryfilter('d-dinner')" id="d-dinner">DINNER</li>
+							<li onclick="d_categoryfilter('d-vegan')" id="d-vegan">VEGAN</li>
+							<li onclick="d_categoryfilter('d-american')" id="d-american">AMERICAN</li>
+							<li onclick="d_categoryfilter('d-hispanic-latino')" id="d-hispanic-latino">HISPANIC/LATINO</li>
+							<li onclick="d_categoryfilter('d-greek')" id="d-greek">GREEK</li>
+							<li onclick="d_categoryfilter('d-middle-eastern')" id="d-middle-eastern">MIDDLE EASTERN</li>
+							<li onclick="d_categoryfilter('d-chinese')" id="d-chinese">CHINESE</li>
+							<li onclick="d_categoryfilter('d-italian')" id="d-italian">ITALIAN</li>
+							<li onclick="d_categoryfilter('d-japanese')" id="d-japanese">JAPANESE</li>
+							<li onclick="d_categoryfilter('d-thai')" id="d-thai">THAI</li>
+							<li onclick="d_categoryfilter('d-french')" id="d-french">FRENCH</li>
+							<li onclick="d_categoryfilter('d-outdoor-seats')" id="d-outdoor-seats">OUTDOOR-SEATS</li>
+							<li onclick="d_categoryfilter('d-free-wifi')" id="d-free-wifi">FREE-WIFI</li>
 							<li style="pointer-events: none;"><!-- empty space so last option isn't on the edge of the screen --></li>
 						</ul>
 					</div>
 					<div id="d-items">
-						<div class="item all breakfast lunch dinner vegan american" onclick="loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-breakfast d-lunch d-dinner d-vegan d-american" onclick="d_loaditem(0, 'Old Ebbitt Grill'); instantscrolltotop('item-info');">
 							<div class="item-pic" style="background-image: url('../images/food/items/OldEbbittGrill/1.jpg')"></div>
 							<div class="item-info">
 								<h1>Old Ebbitt Grill</h1>
@@ -73,7 +73,7 @@
 							</div>
 						</div>
 
-						<div class="item all breakfast lunch dinner vegan american free-wifi" onclick="loaditem(0, 'Founding Farmers DC'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-breakfast d-lunch d-dinner d-vegan d-american d-free-wifi" onclick="d_loaditem(0, 'Founding Farmers DC'); instantscrolltotop('item-info');">
 							<div class="item-pic" style="background-image: url('../images/food/items/FoundingFarmersDC/1.jpg')"></div>
 							<div class="item-info">
 								<h1>Founding Farmers DC</h1>
@@ -83,7 +83,7 @@
 							</div>
 						</div>
 
-						<div class="item all breakfast lunch dinner vegan greek outdoor-seats" onclick="loaditem(0, 'Zaytinya DC'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-breakfast d-lunch d-dinner d-vegan d-greek d-outdoor-seats" onclick="d_loaditem(0, 'Zaytinya DC'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/ZaytinyaDC/1.jpg')"></div>
 							<div class="item-info">
 								<h1>Zaytinya DC</h1>
@@ -93,7 +93,7 @@
 							</div>
 						</div>
 
-						<div class="item all breakfast lunch dinner vegan american outdoor-seats free-wifi" onclick="loaditem(0, 'Logan Tavern'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-breakfast d-lunch d-dinner d-vegan d-american d-outdoor-seats d-free-wifi" onclick="d_loaditem(0, 'Logan Tavern'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/LoganTavern/1.jpg')"></div>
 							<div class="item-info">
 								<h1>Logan Tavern</h1>
@@ -103,7 +103,7 @@
 							</div>
 						</div>
 
-						<div class="item all breakfast lunch dinner vegan french outdoor-seats free-wifi" onclick="loaditem(0, 'Le Diplomate'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-breakfast d-lunch d-dinner d-vegan d-french d-outdoor-seats d-free-wifi" onclick="d_loaditem(0, 'Le Diplomate'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/LeDiplomate/1.jpg')"></div>
 							<div class="item-info">
 								<h1>Le Diplomate</h1>
@@ -113,7 +113,7 @@
 							</div>
 						</div>
 
-						<div class="item all dinner vegan american outdoor-seats" onclick="loaditem(0, 'The Dabney'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-dinner d-vegan d-american d-outdoor-seats" onclick="d_loaditem(0, 'The Dabney'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/TheDabney/1.jpg')"></div>
 							<div class="item-info">
 								<h1>The Dabney</h1>
@@ -123,7 +123,7 @@
 							</div>
 						</div>
 
-						<div class="item all dinner vegan american outdoor-seats" onclick="loaditem(0, 'Rose\'s Luxury'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-dinner d-vegan d-american d-outdoor-seats" onclick="d_loaditem(0, 'Rose\'s Luxury'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/RosesLuxury/1.jpg')"></div>
 							<div class="item-info">
 								<h1>Rose's Luxury</h1>
@@ -133,7 +133,7 @@
 							</div>
 						</div>
 
-						<div class="item all dinner american" onclick="loaditem(0, 'Pineapple and Pearls'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-dinner d-american" onclick="d_loaditem(0, 'Pineapple and Pearls'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/PineappleAndPearls/1.jpg')"></div>
 							<div class="item-info">
 								<h1>Pineapple and Pearls</h1>
@@ -143,7 +143,7 @@
 							</div>
 						</div>
 
-						<div class="item all dinner vegan japanese outdoor-seats" onclick="loaditem(0, 'Himitisu'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-dinner d-vegan d-japanese d-outdoor-seats" onclick="d_loaditem(0, 'Himitisu'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/Himitisu/1.jpg')"></div>
 							<div class="item-info">
 								<h1>Himitisu</h1>
@@ -153,7 +153,7 @@
 							</div>
 						</div>
 
-						<div class="item all dinner thai" onclick="loaditem(0, 'Little Serow'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-dinner d-thai" onclick="d_loaditem(0, 'Little Serow'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/LittleSerow/1.jpg')"></div>
 							<div class="item-info">
 								<h1>Little Serow</h1>
@@ -163,7 +163,7 @@
 							</div>
 						</div>
 
-						<div class="item all dinner vegan american" onclick="loaditem(0, 'Kinship'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-dinner d-vegan d-american" onclick="d_loaditem(0, 'Kinship'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/Kinship/1.jpg')"></div>
 							<div class="item-info">
 								<h1>Kinship</h1>
@@ -173,7 +173,7 @@
 							</div>
 						</div>
 
-						<div class="item all lunch dinner vegan greek outdoor-seats" onclick="loaditem(0, 'Iron Gate Restaurant'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-lunch d-dinner d-vegan d-greek d-outdoor-seats" onclick="d_loaditem(0, 'Iron Gate Restaurant'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/IronGateRestaurant/1.jpg')"></div>
 							<div class="item-info">
 								<h1>Iron Gate Restaurant</h1>
@@ -183,7 +183,7 @@
 							</div>
 						</div>
 
-						<div class="item all dinner vegan greek" onclick="loaditem(0, 'Tail Up Goat'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-dinner d-vegan d-greek" onclick="d_loaditem(0, 'Tail Up Goat'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/TailUpGoat/1.jpg')"></div>
 							<div class="item-info">
 								<h1>Tail Up Goat</h1>
@@ -193,7 +193,7 @@
 							</div>
 						</div>
 
-						<div class="item all dinner italian outdoor-seats" onclick="loaditem(0, 'The Red Hen'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-dinner d-italian d-outdoor-seats" onclick="d_loaditem(0, 'The Red Hen'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/TheRedHen/1.jpg')"></div>
 							<div class="item-info">
 								<h1>The Red Hen</h1>
@@ -203,7 +203,7 @@
 							</div>
 						</div>
 						
-						<div class="item all lunch dinner vegan hispanic-latino outdoor-seats free-wifi" onclick="loaditem(0, 'Jaleo'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-lunch d-dinner d-vegan d-hispanic-latino d-outdoor-seats d-free-wifi" onclick="d_loaditem(0, 'Jaleo'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/Jaleo/1.jpg')"></div>
 							<div class="item-info">
 								<h1>Jaleo</h1>
@@ -213,7 +213,7 @@
 							</div>
 						</div>
 						
-						<div class="item all dinner vegan american outdoor-seats" onclick="loaditem(0, 'Chloe'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-dinner d-vegan d-american d-outdoor-seats" onclick="d_loaditem(0, 'Chloe'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/Chloe/1.jpg')"></div>
 							<div class="item-info">
 								<h1>Chloe</h1>
@@ -223,7 +223,7 @@
 							</div>
 						</div>
 						
-						<div class="item all dinner vegan middle-eastern outdoor-seats" onclick="loaditem(0, 'Maydan'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-dinner d-vegan d-middle-eastern d-outdoor-seats" onclick="d_loaditem(0, 'Maydan'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/Maydan/1.jpg')"></div>
 							<div class="item-info">
 								<h1>Maydan</h1>
@@ -233,7 +233,7 @@
 							</div>
 						</div>
 						
-						<div class="item all lunch dinner vegan hispanic-latino free-wifi" onclick="loaditem(0, 'China Chilcano'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-lunch d-dinner d-vegan d-hispanic-latino d-free-wifi" onclick="d_loaditem(0, 'China Chilcano'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/ChinaChilcano/1.jpg')"></div>
 							<div class="item-info">
 								<h1>China Chilcano</h1>
@@ -243,7 +243,7 @@
 							</div>
 						</div>
 						
-						<div class="item all lunch dinner vegan hispanic-latino" onclick="loaditem(0, 'Estadio'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-lunch d-dinner d-vegan d-hispanic-latino" onclick="d_loaditem(0, 'Estadio'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/Estadio/1.jpg')"></div>
 							<div class="item-info">
 								<h1>Estadio</h1>
@@ -253,7 +253,7 @@
 							</div>
 						</div>
 						
-						<div class="item all dinner vegan thai" onclick="loaditem(0, 'Bad Saint'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-dinner d-vegan d-thai" onclick="d_loaditem(0, 'Bad Saint'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/BadSaint/1.jpg')"></div>
 							<div class="item-info">
 								<h1>Bad Saint</h1>
@@ -263,7 +263,7 @@
 							</div>
 						</div>
 						
-						<div class="item all dinner vegan italian outdoor-seating" onclick="loaditem(0, 'Masseria'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-dinner d-vegan d-italian d-outdoor-seating" onclick="d_loaditem(0, 'Masseria'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/Masseria/1.jpg')"></div>
 							<div class="item-info">
 								<h1>Masseria</h1>
@@ -273,7 +273,7 @@
 							</div>
 						</div>
 
-						<div class="item all breakfast lunch dinner vegan chinese outdoor-seats free-wifi" onclick="loaditem(0, 'Da Hong Pao Restaurant and Bar'); instantscrolltotop('item-info');">
+						<div class="d-item d-all d-breakfast d-lunch d-dinner d-vegan d-chinese d-outdoor-seats d-free-wifi" onclick="d_loaditem(0, 'Da Hong Pao Restaurant and Bar'); instantscrolltotop('item-info');">
 							<div class="item-pic"  style="background-image: url('../images/food/items/DaHongPaoRestaurantAndBar/1.jpg')"></div>
 							<div class="item-info">
 								<h1>Da Hong Pao Restaurant and Bar</h1>
@@ -286,7 +286,34 @@
 					</div>
 				</div>
 				<div id="desktop-content-right">
-					test2
+					<div id="d-item-info">
+						<h1><!--Item Title--></h1>
+						<p><!--Item Desc--></p>
+						<a href=""><button><img src="../images/generalicos/cursor.png" alt="Visit Their Site" />Visit Their Site</button></a>
+						<a href=""><button><img src="../images/generalicos/cursor.png" alt="Menu" />Menu</button></a>
+						<div id="d-item-map">
+							<iframe src="" frameborder="0" style="border:0" allowfullscreen><!--GoogleMap--></iframe>
+						</div>
+						<ul id="d-item-info-extra">
+							<li id="d-item-address"><img src="../images/generalicos/location.png" /> <span><!--Address--></span></li><br />
+							<li id="d-item-hours"><img src="../images/generalicos/time.png" /> <span  onclick="d_openclosedropmenu('hours');">Hours Open <span id="d-item-hours-arrow">&#10148;</span></span>
+								<ul id="d-item-hours-info">
+									<li><!--sun--></li>
+									<li><!--mon--></li>
+									<li><!--tue--></li>
+									<li><!--wed--></li>
+									<li><!--thu--></li>
+									<li><!--fri--></li>
+									<li><!--sat--></li>
+								</ul>
+							</li>
+						</ul>
+						<div id="d-item-gallery">
+							<h1>
+								GALLERY
+							</h1>
+						</div>
+					</div>
 				</div>
 			</div>
 			
