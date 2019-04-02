@@ -21,6 +21,7 @@ body
 body#home
 {
 	background: var(--blue);
+	margin-bottom: -100px;
 }
 
 
